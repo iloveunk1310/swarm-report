@@ -1,0 +1,101 @@
+\babel@toc {vietnamese}{}\relax 
+\contentsline {section}{\numberline {}Lời mở đầu}{3}{Doc-Start}%
+\contentsline {section}{\numberline {1}Giới thiệu chung}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Thuật toán heuristic}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Swarm intelligence algorithm}{3}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Ant Colony Optimization}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Giới thiệu thuật toán}{3}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Ý tưởng thuật toán}{3}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Lịch sử thuật toán}{3}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Những ứng dụng}{4}{subsubsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.2}Cơ sở toán học}{4}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Quy tắc Lựa chọn Đường đi (Xây dựng Giải pháp)}{4}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Quy tắc Cập nhật Pheromone (Học tập)}{4}{subsubsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.3}Triển khai thuật toán}{5}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Cách hoạt động của thuật toán}{5}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Triển khai kỹ thuật}{6}{subsubsection.2.3.2}%
+\contentsline {section}{\numberline {3}Particle swarm optimization}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Giới thiệu thuật toán}{6}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Ý tưởng thuật toán}{6}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Lịch sử thuật toán}{7}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Những ứng dụng}{7}{subsubsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.2}Cơ sở toán học của thuật toán}{7}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Phương trình Cập nhật Vận tốc (Velocity Update)}{7}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Phương trình Cập nhật Vị trí (Position Update)}{8}{subsubsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.3}Triển khai thuật toán}{8}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Cách hoạt động của thuật toán}{8}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Triển khai kỹ thuật}{9}{subsubsection.3.3.2}%
+\contentsline {section}{\numberline {4}Artificial Bee Colony}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Giới thiệu thuật toán}{9}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Ý tưởng thuật toán và nguyên lý hoạt động}{10}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Giải thích cơ chế hoạt động bằng công cụ toán học}{10}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Ký hiệu và các tham số chính}{10}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Nguyên lý}{10}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Mã giả (Pseudo-code) thuật toán ABC}{11}{subsubsection.4.3.3}%
+\contentsline {section}{\numberline {5}Firefly Algorithm}{12}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Giới thiệu}{12}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Ý tưởng cốt lõi}{12}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}Lịch sử ngắn gọn}{12}{subsubsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.3}Ứng dụng tiêu biểu}{12}{subsubsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.2}Cơ sở toán học của thuật toán}{13}{subsection.5.2}%
+\contentsline {paragraph}{Độ sáng (Brightness).}{13}{paragraph*.1}%
+\contentsline {paragraph}{Hấp dẫn suy giảm theo khoảng cách.}{13}{paragraph*.2}%
+\contentsline {paragraph}{Quy tắc cập nhật (không gian liên tục).}{13}{paragraph*.3}%
+\contentsline {paragraph}{Xử lý biên.}{13}{paragraph*.4}%
+\contentsline {paragraph}{Rời rạc hoá cho Knapsack 0/1.}{13}{paragraph*.5}%
+\contentsline {paragraph}{Gợi ý lựa chọn tham số.}{14}{paragraph*.6}%
+\contentsline {subsection}{\numberline {5.3}Chi tiết triển khai thuật toán (Mã giả)}{14}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Thuật toán dùng để so sánh}{15}{subsection.5.4}%
+\contentsline {paragraph}{Hill Climbing (HC).}{15}{paragraph*.7}%
+\contentsline {paragraph}{Simulated Annealing (SA).}{15}{paragraph*.8}%
+\contentsline {paragraph}{Genetic Algorithm (GA).}{16}{paragraph*.9}%
+\contentsline {paragraph}{Firefly Algorithm (FA).}{16}{paragraph*.10}%
+\contentsline {subsection}{\numberline {5.5}Bài toán kiểm tra và tiêu chí đánh giá}{17}{subsection.5.5}%
+\contentsline {paragraph}{Bài toán Rastrigin (liên tục).}{17}{paragraph*.11}%
+\contentsline {paragraph}{Bài toán Knapsack 0/1 (rời rạc).}{17}{paragraph*.12}%
+\contentsline {paragraph}{Chỉ số đánh giá.}{18}{paragraph*.13}%
+\contentsline {subsection}{\numberline {5.6}Kết quả benchmark và phân tích}{18}{subsection.5.6}%
+\contentsline {subsubsection}{\numberline {5.6.1}Rastrigin: mức độ tiệm cận nghiệm tối ưu và đặc trưng hội tụ}{18}{subsubsection.5.6.1}%
+\contentsline {paragraph}{ECDF theo ngưỡng mục tiêu.}{18}{paragraph*.14}%
+\contentsline {paragraph}{Fixed-Budget Performance: sai số cuối cùng dưới các mức ngân sách cố định.}{20}{paragraph*.18}%
+\contentsline {paragraph}{ERT, performance profiles và data profiles.}{22}{paragraph*.22}%
+\contentsline {subsubsection}{\numberline {5.6.2}Rastrigin: đa dạng quần thể và hiện tượng dừng sớm (stagnation)}{25}{subsubsection.5.6.2}%
+\contentsline {paragraph}{Đa dạng quần thể theo thời gian.}{25}{paragraph*.28}%
+\contentsline {paragraph}{Phân tích stagnation.}{27}{paragraph*.32}%
+\contentsline {paragraph}{Kết luận cục bộ cho 1.6.2.}{29}{paragraph*.36}%
+\contentsline {subsubsection}{\numberline {5.6.3}Knapsack: hiệu năng fixed-budget (gap tới nghiệm tối ưu)}{29}{subsubsection.5.6.3}%
+\contentsline {paragraph}{Nhận xét tổng hợp cho Knapsack.}{31}{paragraph*.41}%
+\contentsline {subsubsection}{\numberline {5.6.4}Knapsack: performance/data profiles và so sánh thống kê}{32}{subsubsection.5.6.4}%
+\contentsline {subsection}{\numberline {5.7}Thảo luận và kết luận}{38}{subsection.5.7}%
+\contentsline {paragraph}{Rastrigin: giới hạn của bộ thuật toán trong bối cảnh high-dimensional.}{38}{paragraph*.48}%
+\contentsline {paragraph}{Firefly Algorithm trên Rastrigin: tác động của độ suy giảm hấp dẫn.}{38}{paragraph*.49}%
+\contentsline {paragraph}{Knapsack: sức mạnh của FA rời rạc kết hợp repair heuristic.}{38}{paragraph*.50}%
+\contentsline {paragraph}{Ý nghĩa và hạn chế của performance/data profiles khi success rate thấp.}{39}{paragraph*.51}%
+\contentsline {paragraph}{Không có thuật toán tối ưu “mọi nơi”: liên hệ với No Free Lunch.}{39}{paragraph*.52}%
+\contentsline {paragraph}{Bài học về thiết kế benchmark và cách diễn giải kết quả.}{39}{paragraph*.53}%
+\contentsline {paragraph}{Tổng kết.}{39}{paragraph*.54}%
+\contentsline {section}{\numberline {6}Cuckoo Search}{40}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Giới thiệu thuật toán}{40}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Ý tưởng thuật toán}{40}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Cơ sở toán học của thuật toán}{40}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Triển khai thuật toán}{41}{subsection.6.4}%
+\contentsline {subsubsection}{\numberline {6.4.1}Cách hoạt động của thuật toán}{41}{subsubsection.6.4.1}%
+\contentsline {subsubsection}{\numberline {6.4.2}Mã giả }{41}{subsubsection.6.4.2}%
+\contentsline {section}{\numberline {7}Các thuật toán truyền thống để so sánh}{41}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Genetic Algorithm}{41}{subsection.7.1}%
+\contentsline {subsubsection}{\numberline {7.1.1}Giới thiệu chung}{41}{subsubsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.2}Cơ sở toán học}{42}{subsubsection.7.1.2}%
+\contentsline {paragraph}{Không gian nghiệm và mã hoá.}{42}{paragraph*.56}%
+\contentsline {paragraph}{Chọn lọc (Selection).}{42}{paragraph*.57}%
+\contentsline {paragraph}{Schema và Schema Theorem.}{42}{paragraph*.58}%
+\contentsline {paragraph}{Các tham số quan trọng (toán học).}{43}{paragraph*.59}%
+\contentsline {subsubsection}{\numberline {7.1.3}Cách hoạt động của thuật toán}{43}{subsubsection.7.1.3}%
+\contentsline {paragraph}{Các toán tử chính.}{43}{paragraph*.60}%
+\contentsline {section}{\numberline {8}Các bài toán sử dụng để đánh giá}{44}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Các bài toán rời rạc}{44}{subsection.8.1}%
+\contentsline {subsubsection}{\numberline {8.1.1}The travelling salesman problem}{44}{subsubsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.2}Các bài toán liên tục}{46}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Phân tích kết quả bài toán}{46}{section.9}%
+\contentsline {section}{\numberline {10}Phân tích so sánh và kết luận}{46}{section.10}%
+\contentsline {section}{\numberline {}Phân công công việc}{46}{section.10}%
+\contentsline {section}{\numberline {}Phụ lục}{46}{section.10}%

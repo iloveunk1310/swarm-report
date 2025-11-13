@@ -1,0 +1,78 @@
+% sections/problems.tex – Problems for evaluation section
+
+\section{Các bài toán sử dụng để đánh giá}
+\subsection{Các bài toán rời rạc}
+\subsubsection{The travelling salesman problem}
+\textbf{Giới thiệu chung}
+
+The travelling saleman problem (TSP) là một bài toán kinh điển trong lý thuyết đồ thị và có rất nhiều ứng dụng trong thực tế và kĩ thuật.
+
+Bài toán yêu cầu tìm ra tuyến đường ngắn nhất để một người đi qua tất cả các thành phố được cho, mỗi thành phố chỉ ghé thăm đúng một lần, và quay trở lại điểm xuất phát ban đầu.
+
+Nó có thể được phát biểu dưới dạng đồ thị như sau: Cho một đồ thị vô hướng có trọng số, tìm chu trình ngắn nhất xuất phát từ một đỉnh bất kì, đi qua tất cả các đỉnh đúng một lần và quay về điểm xuất phát (chu trình hamilton ngắn nhất). Đây là một bài toán NP-hard, có thể hiểu đơn giản là chúng ta chưa thể tìm ra lời giải đa thức chính xác cho bài toán này. Vì vậy, các phương pháp metaheuristic được đưa ra nhằm tìm ra lời giải chính xác gần đúng trong thời gian hợp lý.
+
+Bài toán được ứng dụng rộng rãi trong các lĩnh vực của kĩ thuật và đời sống, đặc biệt là các bài toán tối ưu hóa như lập kế hoạch, lập lịch trình, hậu cần, đóng gói,...
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{picture/tsp.png}
+\caption{Minh họa TSP (nguồn: Gate Vidyalay)}
+\end{figure}
+
+\textbf{Những thuật toán áp dụng}
+
+\textbf{ACO}
+
+ACO (Ant Colony Optimization) là một metaheuristic phù hợp cho các bài toán đồ thị, đặc biệt là TSP. 
+
+\textbf{PSO}
+
+PSO (Particle Swarm Optimization) vốn thiết kế cho bài toán liên tục nhưng có thể điều chỉnh cho TSP bằng cách biểu diễn \emph{thứ tự các thành phố} (permutation) là vị trí của từng hạt và biểu diễn vận tốc bằng các thao tác hoán vị (swap).
+
+\textit{Tóm tắt cách PSO hoạt động trong TSP:}
+\begin{enumerate}
+  \item Mỗi hạt lưu một \texttt{route} (một hoán vị — chuỗi các chỉ số thành phố, bắt đầu và kết thúc tại 0).
+  \item Đánh giá độ phù hợp (fitness) của mỗi route bằng tổng khoảng cách giữa các cặp liên tiếp (dùng ma trận khoảng cách hoặc tính từ tọa độ).
+  \item Cập nhật ``vận tốc'' dưới dạng danh sách các cặp hoán đổi (swaps) dựa trên 3 thành phần: \emph{inertia} (w) giữ một phần vận tốc cũ, \emph{cognitive} (c1) hướng về personal best, và \emph{social} (c2) hướng về global best.
+  \item Áp dụng các swap lên route để tạo route mới; nếu cần, thực hiện reshuffle (xáo trộn) để tăng khám phá.
+  \item Lặp lại cho đến khi đạt điều kiện dừng (số iter, hội tụ, v.v.).
+\end{enumerate}
+
+\underline{Swap operation}
+\begin{itemize}
+  \item \textit{Định nghĩa:} Một \emph{swap} là thao tác hoán đổi hai vị trí trong chuỗi route, ví dụ swap$(i,j)$ sẽ hoán đổi phần tử ở chỉ số $i$ với phần tử ở chỉ số $j$ trong route.
+  \item \textit{Ý nghĩa:} Mỗi swap thay đổi thứ tự thăm các thành phố, do đó có thể làm tăng hoặc giảm tổng chiều dài chuyến đi. Dùng tập hợp các swap (vận tốc rời rạc) để biểu diễn hướng di chuyển của một hạt trong không gian hoán vị.
+  \item \textit{Cách áp dụng trong PSO rời rạc:}
+    \begin{enumerate}
+      \item Xây danh sách swap mới (kết hợp giữ lại một phần swap cũ theo \emph{inertia}, thêm swap do \emph{personal best} và swap do \emph{global best}).
+      \item Áp từng swap (theo thứ tự) lên route hiện tại: với mỗi $(a,b)$ thực hiện hoán đổi phần tử tại vị trí $a$ và $b$.
+      \item Đảm bảo sau khi áp swap, route vẫn là một hoán vị hợp lệ (không xuất hiện đỉnh trùng lặp) — thao tác swap nguyên thủy luôn giữ tính hợp lệ vì chỉ hoán đổi vị trí giữa hai thành phần.
+    \end{enumerate}
+\end{itemize}
+
+\textbf{Genetic Algorithm (GA)}
+GA là thuật toán truyền thống dùng so sánh với ACO và PSO. GA thường thao tác trên biểu diễn nhiễm sắc (genotype) — ví dụ tọa độ thực của các thành phố hoặc hoán vị — và dùng các toán tử lai ghép (crossover), đột biến (mutation) để tìm kiếm. Trong đề tài này, GA có thể nhận tọa độ thực của thành phố làm đầu vào, sau đó chuyển sang ma trận khoảng cách để so sánh với ACO/PSO.
+
+\subsection{Các bài toán liên tục}
+Để đánh giá hiệu quả của các thuật toán, nhóm tiến hành thử nghiệm trên một tập các bài toán tối ưu liên tục chuẩn thường được sử dụng trong lĩnh vực tối ưu metaheuristic. Các hàm này có đặc điểm đa dạng về độ lồi, số lượng cực trị và độ phức tạp, giúp đánh giá khả năng hội tụ toàn cục và cục bộ của thuật toán.
+
+\begin{itemize}
+    \item \textbf{Sphere function}:
+    \[
+    f(x) = \sum_{i=1}^d x_i^2, \quad x_i \in [-5.12, 5.12]
+    \]
+    Đây là hàm đơn giản, lồi và có nghiệm tối ưu toàn cục tại $x = 0$, $f_{min} = 0$.
+
+    \item \textbf{Rosenbrock function}:
+    \[
+    f(x) = \sum_{i=1}^{d-1} [100(x_{i+1} - x_i^2)^2 + (x_i - 1)^2]
+    \]
+    Hàm phi tuyến, có rãnh hẹp dẫn đến cực tiểu toàn cục tại $x = (1, 1, \ldots, 1)$.
+
+    \item \textbf{Rastrigin function}:
+    \[
+    f(x) = 10d + \sum_{i=1}^d [x_i^2 - 10\cos(2\pi x_i)]
+    \]
+    Hàm có nhiều cực trị cục bộ, được dùng để kiểm tra khả năng thoát bẫy cục bộ của thuật toán.
+
+\end{itemize}

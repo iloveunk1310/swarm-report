@@ -1,0 +1,19 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{IEH{\etalchar{+}}25}
+
+\bibitem[IEH{\etalchar{+}}25]{ibrahim2025artificial}
+Ashraf~Osman Ibrahim, Elsadig Mohammed~Elbushra Elfadel, Ibrahim Abaker~Targio Hashem, Hassan~Jamil Syed, Moh~Arfian Ismail, Ahmed~Hamza Osman, and Ali Ahmed.
+\newblock The artificial bee colony algorithm: A comprehensive survey of variants, modifications, applications, developments, and opportunities.
+\newblock {\em Archives of Computational Methods in Engineering}, pages 1--35, 2025.
+
+\bibitem[KA09]{karaboga2009comparative}
+Dervis Karaboga and Bahriye Akay.
+\newblock A comparative study of artificial bee colony algorithm.
+\newblock {\em Applied mathematics and computation}, 214(1):108--132, 2009.
+
+\bibitem[Kum13]{kumar2013review}
+Dharmender Kumar.
+\newblock A review on artificial bee colony algorithm.
+\newblock {\em International Journal of Engineering \& Technology}, 2013.
+
+\end{thebibliography}

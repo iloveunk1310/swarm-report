@@ -1,0 +1,89 @@
+% sections/genetic_algorithm.tex – Genetic Algorithm section
+
+\section{Các thuật toán truyền thống để so sánh}
+\subsection{Genetic Algorithm}
+\subsubsection{Giới thiệu chung}
+
+Genetic Algorithm (GA - Giải thuật di truyền) là một kĩ thuật tìm kiếm nhằm tìm ra đáp án gần đúng trong các bài toán tối ưu hóa mô hình và bài toán tìm kiếm. GA được xem là một trong những metaheuristic phổ biến và được ứng dụng nhiều nhất.
+
+Trong một quần thể trong tự nhiên, các loài sinh vật phải thích nghi và thay đổi qua từng thế hệ để có thể sinh tồn, đó gọi là sự tiến hóa (theo học thuyết tiến hóa của Darwin). Ở hình trên, các con hươu cao cổ thông qua một cơ chế tiến hóa gọi là chọn lọc tự nhiên, những con thấp sẽ không thể ăn lá và chết dần, qua thời gian dài chỉ còn lại những con cao hơn tiếp tục sinh sản và phát triển quần thể. Như vậy, các loài sinh vật luôn phải tiến hóa để tránh bị đào thải trong môi trường tự nhiên khắc nghiệt.
+
+GA được phát minh bởi John Holland và các cộng sự tại đại học Michigan vào những năm 1960, dựa trên các nguyên tắc của tiến hóa, bao gồm các quá trình lai tạo (crossover), đột biến (mutation) và chọn lọc (selection). Nó bắt đầu phổ biến vào những năm 1990, khi người ta bắt đầu tìm kiếm những công cụ heuristic để giải quyết những bài toán mà giải thuật chính xác không khả thi.
+
+Thuật giải GA đã và đang được ứng dụng để giải quyết các bài toán trong rất nhiều lĩnh vực của cuộc sống cũng như trong kỹ thuật, ví dụ như tối ưu hóa, học máy, ….
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{picture/giraffe.png}
+\caption{ Quá trình tiến hóa của hươu cao cổ (Ảnh: CK-12 Foundation)}
+\end{figure}
+
+\subsubsection{Cơ sở toán học}
+
+\paragraph{Không gian nghiệm và mã hoá.}
+Gọi $\mathcal{C}$ là không gian các nhiễm sắc thể (chromosomes). Một nhiễm sắc thể thường được biểu diễn là một chuỗi ký tự có độ dài $l$:
+\[ c = (c_1,c_2,\dots,c_l) \in \{0,1\}^l \quad \text{hoặc} \quad c\in \mathbb{R}^l \]
+Mỗi nhiễm sắc thể $c$ tương ứng với một \emph{phenotype} (lời giải) thông qua một ánh xạ giải mã $\phi:\mathcal{C}\to\mathcal{X}$. Hàm đánh giá (fitness) là
+\[ F:\mathcal{C}\to\mathbb{R},\qquad F(c)\text{ là mức "tốt" của lời giải }c.\]
+
+\paragraph{Chọn lọc (Selection).}
+Một phương pháp phổ biến là chọn theo tỉ lệ fitness (roulette-wheel). Nếu quần thể hiện tại có $N$ cá thể $c^{(1)},\dots,c^{(N)}$ thì xác suất chọn cá thể $i$ là:
+\begin{equation}\label{eq:roulette}
+p_i = \frac{F(c^{(i)})}{\sum_{j=1}^N F(c^{(j)})}.
+\end{equation}
+
+\paragraph{Schema và Schema Theorem.}
+Một \emph{schema} $H$ là một mẫu cố định trên một số vị trí của nhiễm sắc thể, ký hiệu bằng chuỗi trong bảng chữ cái $\{0,1,*\}$ ("*" là wildcard). Đặt:
+\begin{itemize}
+\item $m_H(t)$: số cá thể thuộc schema $H$ ở thế hệ $t$;
+\item $\bar F_H(t)$: độ fitness trung bình của các cá thể trong $H$;
+\item $\bar F(t)$: độ fitness trung bình toàn quần thể;
+\item $F_H(t)=\dfrac{\bar F_H(t)}{\bar F(t)}$ là \emph{relative fitness} của schema $H$;
+\item $l_H$ là khoảng cách giữa gene đầu và gene cuối được cố định trong $H$ (schema length);
+\item $o_H$ là order của $H$ (số bit cố định trong schema);
+\item $p_c$ là xác suất crossover, $p_m$ là xác suất mutation (tại mỗi locus).
+\end{itemize}
+
+Schema Theorem (dạng bất đẳng thức cho kì vọng):
+\begin{equation}\label{eq:schema}
+\mathbb{E}[m_H(t+1)] \ge F_H(t)\, m_H(t)\, \Big(1 - p_c\frac{l_H}{l-1}\Big)\,(1-p_m)^{o_H}.
+\end{equation}
+
+Ý nghĩa: những schema ngắn, có ít bit cố định (nhỏ $o_H$), và có relative fitness $F_H(t)>1$ sẽ có xu hướng gia tăng trong quần thể. Đây là cơ sở trực giác cho "building-block hypothesis": GA kết hợp những phần tốt (building blocks) từ nhiều cá thể để tạo ra lời giải tốt hơn.
+
+\paragraph{Các tham số quan trọng (toán học).}
+\begin{itemize}
+\item Kích thước quần thể $N$: quyết định độ phong phú mẫu cho phân phối; quá nhỏ dễ mất đa dạng.
+\item Xác suất crossover $p_c$ và mutation $p_m$: ảnh hưởng cân bằng khám phá/khai thác.
+\item Cost đánh giá fitness: độ phức tạp tính toán thường là $\mathcal{O}(N\cdot \text{cost\_eval}\cdot G)$ với $G$ là số thế hệ.
+\end{itemize}
+
+\subsubsection{Cách hoạt động của thuật toán}
+
+\paragraph{Các toán tử chính.}
+\begin{itemize}
+\item \textbf{Selection:} Lấy mẫu theo phân phối $p_i$ như phương trình \ref{eq:roulette} hoặc dùng tournament selection.
+\item \textbf{Crossover:} Cho hai cha mẹ $c^{(a)}$ và $c^{(b)}$. Với 1-point crossover tại vị trí $k$ với $1\le k < l$, sinh con:
+\[ c^{(child)} = (c^{(a)}_1,\dots,c^{(a)}_k,\, c^{(b)}_{k+1},\dots,c^{(b)}_l). \]
+\item \textbf{Mutation:} Với mỗi locus, thực hiện biến đổi theo Bernoulli($p_m$). Với mã hóa bit-string, mutation là bit-flip.
+\item \textbf{Elitism:} Giữ lại $e$ cá thể tốt nhất sang thế hệ sau để tránh mất nghiệm tốt do tính ngẫu nhiên.
+\end{itemize}
+
+\begin{algorithm}[H]
+\caption{Genetic Algorithm (GA)}
+\begin{algorithmic}[1]
+\STATE \textbf{Input:} kích thước quần thể $N$, chiều dài NST $l$, xác suất crossover $p_c$, xác suất mutation $p_m$, số thế hệ tối đa $G$, elitism $e$.
+\STATE Khởi tạo quần thể $P^0 = \{c^{(1)},\dots,c^{(N)}\}$ (thường ngẫu nhiên).
+\FOR{$t = 0$ \TO $G-1$}
+    \STATE Tính $F(c)$ cho mọi $c \in P^t$.
+    \STATE Sao chép $e$ cá thể tốt nhất sang $P^{t+1}$ (elitism).
+    \WHILE{size($P^{t+1}$) $<$ $N$}
+        \STATE Chọn cặp cha mẹ theo selection (ví dụ roulette hoặc tournament).
+        \STATE Với xác suất $p_c$, áp dụng crossover để sinh 1 hoặc 2 con; ngược lại sao chép cha mẹ.
+        \STATE Áp dụng mutation cho từng con với xác suất $p_m$ trên mỗi locus.
+        \STATE Thêm con vào $P^{t+1}$.
+    \ENDWHILE
+\ENDFOR
+\STATE Trả về cá thể tốt nhất tìm được.
+\end{algorithmic}
+\end{algorithm}

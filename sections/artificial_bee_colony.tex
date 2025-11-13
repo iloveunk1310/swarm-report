@@ -1,0 +1,100 @@
+% sections/artificial_bee_colony.tex – Artificial Bee Colony section
+
+\section{Artificial Bee Colony}
+\subsection{Giới thiệu thuật toán} \cite{karaboga2009comparative}
+
+Thuật toán đàn ong nhân tạo (Artificial Bee Colony - ABC) được đề xuất bởi Derviş Karaboğa (2005), mô phỏng hành vi tìm kiếm và chia sẻ thông tin về nguồn mật hoa của đàn ong mật trong tự nhiên. Mục tiêu là tìm lời giải tốt nhất cho bài toán tối ưu hóa bằng cách mô phỏng quá trình ong tìm mật. Trong đồ án này, bài toán được sử dụng là tìm giá trị nhỏ nhất của hàm số 2 biến.
+
+\subsection{Ý tưởng thuật toán và nguyên lý hoạt động}
+Trong tự nhiên, ong mật chia thành 3 nhóm: ong thợ, ong quan sát và ong trinh sát. Nhiệm vụ của mỗi nhóm như sau:
+
+\begin{itemize}
+    \item Ong thợ tìm kiếm thức ăn xung quanh nguồn mật bằng trí nhớ, đồng thời chia sẻ thông tin về những nguồn mật này cho ong quan sát. 
+    
+    \item Ong quan sát có xu hướng chọn nguồn mật tốt từ những nguồn mà ong thợ tìm thấy. Nguồn mật có chất lượng cao hơn (độ thích nghi cao) sẽ có nhiều khả năng được ong quan sát lựa chọn hơn. 
+    
+    \item Khi nguồn mật đã cạn, ong do thám sẽ bỏ nguồn mật hiện tại và tìm kiếm nguồn mới ngẫu nhiên.
+
+\end{itemize}
+
+Ong thợ và ong quan sát tìm kiếm các nguồn mật xung quanh tổ. Những con ong thợ lưu trữ thông tin về nguồn mật và chia sẻ thông tin với những con ong quan sát. Số lượng nguồn mật bằng với số lượng ong thợ. Một con ong thợ sau khi khai thác một nguồn một số lần nhất định mà chất lượng nguồn mật của chúng không thể cải thiện, nó sẽ trở thành ong trinh sát và bỏ nguồn mật cũ đi. Tương tự trong bài toán tối ưu hóa, số lượng nguồn mật trong thuật toán ABC đại diện cho số lượng chất lượng nguồn mật trong quần thể (càng nhiều mật thì chất lượng mật càng tốt và ngược lại). Nói cách khác, nếu các con ong tìm được một nguồn mật tốt, đây có khả năng sẽ là điểm tối ưu và sẽ có xu hướng thu hút các con ong khác tới khai thác.
+
+\subsection{Giải thích cơ chế hoạt động bằng công cụ toán học}
+
+\subsubsection{Ký hiệu và các tham số chính}
+\begin{itemize}
+    \item $\textbf{f(x)}$: Hàm mục tiêu cần tối ưu hoá
+    \item $\textbf{SN}$: Số lượng ong thợ (cũng bằng số nguồn mật)
+    \item $\textbf{limit}$: Giới hạn số lần không cải thiện trước khi ong thợ trở thành ong do thám (để đi tìm nguồn mật tốt hơn), tránh trường hợp các con ong "quanh quẩn" ở điểm tối ưu cục bộ, nơi có nguồn mật tốt hơn so với các nguồn xung quanh nhưng không phải nguồn mật tốt nhất có thể khai thác.
+    \item $\textbf{maxCycle}$: Số vòng lặp tối đa, nếu sau maxCycle lần khai thác và tìm kiếm, các con ong vẫn tập trung tại một nguồn mật nào đó, điểm này sẽ được xác định là điểm tối ưu, dừng thuật toán.
+\end{itemize}
+
+\subsubsection{Nguyên lý}
+
+Thuật toán ABC gồm 4 giai đoạn chính như sau: \cite{kumar2013review}
+
+\begin{enumerate}
+    \item \textbf{Khởi tạo quần thể}
+    
+    Ban đầu tất cả $SN$ ong trong quần thể sẽ là ong do thám, khi đó tương ứng $SN$ nguồn mật sẽ được sinh ra ngẫu nhiên trong không gian tìm kiếm điểm tối ưu. Mỗi nguồn mật (ký hiệu bởi $x_m$) là một vector có $D$ chiều, là số chiều của không gian tìm kiếm, được sinh bởi công thức:
+    \begin{equation*}
+        x_{m} = l_i + rand(0, 1) \times (u_i - l_i)
+    \end{equation*}
+    với $u_i$ và $l_i$ lần lượt là cận trên và cận dưới của không gian tìm kiếm, $rand(0, 1)$ là một số ngẫu nhiên thuộc đoạn $[0, 1]$
+    
+    \item \textbf{Pha ong thợ}
+    
+    Từ nguồn mật hiện tại $x_i$, ong thợ bay đến một nguồn mật $v_i$ khác trong khu vực lân cận. So sánh giá trị của $f(x_i)$ và $f(v_i)n$, nếu nguồn mật chất lượng hơn (giá trị hàm đạt được tại $v_i$ tốt hơn) sẽ thay thế cho nguồn cũ. Giá trị của mỗi chiều của $v_i$ được sinh bởi công thức:
+    $$
+    v_{ij} = x_{ij} + \phi_{ij}(x_{ij} - x_{kj})
+    $$
+    Trong đó $j = \overline{1..D}$, $\phi_{m}$ là một số ngẫu nhiên thuộc đoạn $[-1, 1]$
+
+    \item \textbf{Pha ong quan sát}
+    Mỗi ong quan sát chọn nguồn mật dựa trên xác suất được tính bởi phương trình:
+
+    $$
+    p_i = \frac{fit_i}{\displaystyle \sum_{j=1}^{SN} fit_j}
+    $$
+    
+    Với $fit_i$ là độ phù hợp của từng nguồn mật, được tính theo công thức:
+    $$
+    fit_i =
+    \begin{cases}
+        \frac{1}{1 + f(x_i)}, & f(x_i) \ge 0 \\
+        1 + |f(x_i)|, & f_(x_i) < 0
+    \end{cases}
+    $$
+
+    Sau khi chọn, ong quan sát cũng tạo nguồn mật mới theo công thức tương tự như ở pha ong thợ. Nếu tốt hơn, cập nhật nguồn mật tương ứng.
+    
+    \item \textbf{Pha ong do thám}
+    Nếu một nguồn mật không được cải thiện sau $limit$ lần, ong thợ sẽ bỏ nguồn mật này đi và trở thành ong do thám. Sau đó, chúng sẽ tạo nguồn mật mới ngẫu nhiên bằng công thức như ở pha khởi tạo quần thể:
+
+    \item \textbf{Lặp lại}
+
+    Lặp lại các pha 2 đến 4 cho đến khi đạt số vòng lặp $maxCycle$ hoặc đạt tiêu chí hội tụ (không còn cải thiện) 
+\end{enumerate}
+
+\subsubsection{Mã giả (Pseudo-code) thuật toán ABC} \cite{ibrahim2025artificial}
+
+\begin{algorithm} [H]
+\begin{algorithmic}[1]
+\STATE Khởi tạo quần thể gồm $SN$ nguồn thức ăn $x_i$ ($i = 1,2,\dots,SN$)
+\STATE Đánh giá độ thích nghi (fitness) của từng nguồn thức ăn
+\REPEAT
+    \FOR{mỗi ong thợ}
+        \STATE Sinh ra ứng viên mới $v_i$ lân cận $x_i$
+        \STATE Đánh giá độ thích nghi của $v_i$
+        \STATE Lựa chọn giữa $x_i$ và $v_i$ 
+    \ENDFOR
+    \FOR{mỗi ong quan sát}
+        \STATE Chọn nguồn thức ăn $x_i$ với xác suất tỉ lệ thuận với độ thích nghi của nó
+        \STATE Sinh ra ứng viên mới $v_i$
+        \STATE Lựa chọn giữa $x_i$ và $v_i$ 
+    \ENDFOR
+    \STATE Nếu một nguồn thức ăn không được cải thiện sau một số vòng lặp giới hạn, thay thế bằng một nguồn ngẫu nhiên mới (giai đoạn ong do thám)
+    \STATE Ghi nhớ nghiệm tốt nhất hiện tại
+\UNTIL{thoả mãn điều kiện dừng}
+\end{algorithmic}
+\end{algorithm}

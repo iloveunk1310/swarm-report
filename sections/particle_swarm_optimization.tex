@@ -1,0 +1,134 @@
+% sections/particle_swarm_optimization.tex – Particle Swarm Optimization section
+
+\section{Particle swarm optimization}
+\subsection{Giới thiệu thuật toán}
+
+Particle swarm optimization (tối ưu hóa bầy đàn) là một thuật toán heuristic mạnh mẽ được lấy cảm hứng bởi hành vi bầy đàn được quan sát trong tự nhiên như đàn cá và chim. PSO là một mô phỏng của một hệ thống xã hội được đơn giản hóa.
+
+\subsubsection{Ý tưởng thuật toán}
+Ý đồ của thuật toán PSO là mô phỏng lại cách di chuyển phức tạp của đàn chim. Trong tự nhiên, tầm nhìn của một con chim đơn lẻ là bị giới hạn. Tuy nhiên, có nhiều hơn một con chim cho phép đàn chim ý thức được vị trí của chúng trên một không gian rộng lớn hơn.
+
+Không gian tìm kiếm thức ăn lúc này là toàn bộ không gian ba chiều.
+Tại thời điểm bắt đầu tìm kiếm cả đàn bay theo một hướng thường là ngẫu nhiên.. Tuy nhiên sau một thời gian tìm kiếm một số cá thể trong đàn bắt đầu tìm ra được nơi có chứa thức ăn. 
+
+Tùy theo số lượng thức ăn vừa tìm kiếm, mà cá thể gửi tín hiệu đến các các cá thể khác đang tìm kiếm ở vùng lân cận. Tín hiệu này lan truyền trên toàn quần thể. 
+
+Dựa vào thông tin nhận được mỗi cá thể sẽ điều chỉnh hướng bay và vận tốc theo hướng về nơi có nhiều thức ăn nhất. 
+
+Cơ chế truyền tin như vậy thường được xem như là một kiểu hình của trí tuệ bầy đàn. Cơ chế này giúp cả đàn chim tìm ra nơi có nhiều thức ăn nhất trên không gian tìm kiếm vô cùng rộng lớn.
+
+\subsubsection{Lịch sử thuật toán}
+Nghiên cứu sớm về ứng dụng tập tính bầy đàn trong thuật toán là mô hình "Boids" của Craig Reynolds. Reynolds đã chỉ ra rằng hành vi bầy đàn phức tạp có thể được mô phỏng chỉ bằng ba quy tắc đơn giản mà mỗi cá thể tuân theo (tách biệt, thẳng hàng, và gắn kết).
+
+Thuật toán PSO được giới thiệu lần đầu tiên vào năm 1995 bởi hai nhà nghiên cứu: James Kennedy và Russell Eberhart, dựa trên công trình của Reynolds. PSO nhanh chóng trở nên phổ biến vì nó đơn giản hơn đáng kể so với các thuật toán tiến hóa khác như Giải thuật Di truyền (Genetic Algorithms - GA).
+
+\subsubsection{Những ứng dụng}
+Thuật toán PSO được ứng dụng rộng rãi trong nhiều lĩnh vực nhờ độ hiệu quả, tính đơn giản và linh hoạt của nó. Nó được ứng dụng trong nhiều lĩnh vực khác nhau:
+\begin{itemize}
+    \item Chăm sóc sức khỏe: Chẩn đoán thông minh, Phát hiện và phân loại bệnh, Phân đoạn hình ảnh y tế,...
+    \item Môi trường: Giám sát chất lượng nước, giám sát lũ lụt,...
+    \item Công nghiệp: Điều phối sản lượng điện (economic dispatch), Lập lịch tải điện, Tối ưu hóa Lưới điện thông minh,...
+    \item Thương mại: Dự đoán chi phí và giá cả, đánh giá rủi ro,...
+\end{itemize}
+
+\subsection{Cơ sở toán học của thuật toán}
+Cơ sở toán học của thuật toán PSO được thể hiện qua hai phương trình cốt lõi: Cập nhật Vận tốc và Cập nhật Vị trí. Cơ sở toán học này mô tả cách mỗi "hạt" (tương ứng với mỗi cá thể chim trong đàn) trong bầy đàn điều chỉnh chuyển động của nó qua không gian tìm kiếm.
+
+\subsubsection{Phương trình Cập nhật Vận tốc (Velocity Update)}
+Phương trình này tính toán vận tốc mới (véc-tơ di chuyển) cho một hạt ở vòng lặp (thế hệ) tiếp theo. Vận tốc mới được quyết định bởi ba thành phần:
+\begin{itemize}
+    \item \textbf{Quán tính (Inertia):} Vận tốc hiện tại của hạt, giữ cho nó di chuyển theo hướng cũ.
+    \item \textbf{Thành phần Nhận thức (Cognitive Component):} Hướng di chuyển về phía vị trí tốt nhất cá nhân (pbest) mà hạt đó đã từng đạt được.
+    \item \textbf{Thành phần Xã hội (Social Component):} Hướng di chuyển về phía vị trí tốt nhất toàn bầy (gbest) mà bất kỳ hạt nào trong bầy đã từng đạt được.
+\end{itemize}
+
+Công thức toán học như sau:
+\begin{equation}
+    \mathbf{v}_{i}(t+1) = w \cdot \mathbf{v}_{i}(t) + c_1 \cdot r_1 \cdot (\mathbf{pbest}_{i} - \mathbf{x}_{i}(t)) + c_2 \cdot r_2 \cdot (\mathbf{gbest} - \mathbf{x}_{i}(t))
+\end{equation}
+
+Trong đó:
+\begin{itemize}
+    \item $ \mathbf{v}_{i}(t+1) $: Là vận tốc mới (dự kiến) của hạt $i$ tại vòng lặp $t+1$.
+    \item $ w $: \textbf{Trọng số quán tính (Inertia weight)}.
+    \item $ \mathbf{v}_{i}(t) $: Vận tốc hiện tại của hạt $i$ tại vòng lặp $t$.
+    \item $ c_1, c_2 $: \textbf{Hệ số học tập (Learning coefficients)} (hằng số gia tốc).
+    \item $ r_1, r_2 $: Là hai số ngẫu nhiên được tạo ra trong khoảng $[0, 1]$.
+    \item $ \mathbf{pbest}_{i} $: Vị trí tốt nhất mà cá nhân hạt $i$ đã tìm thấy.
+    \item $ \mathbf{gbest} $: Vị trí tốt nhất mà cả bầy đàn đã tìm thấy.
+    \item $ \mathbf{x}_{i}(t) $: Vị trí hiện tại của hạt $i$ tại vòng lặp $t$.
+\end{itemize}
+
+\subsubsection{Phương trình Cập nhật Vị trí (Position Update)}
+Sau khi tính toán vận tốc mới, hạt sẽ sử dụng vận tốc đó để di chuyển đến một vị trí mới trong không gian tìm kiếm.
+
+Công thức toán học như sau:
+\begin{equation}
+    \mathbf{x}_{i}(t+1) = \mathbf{x}_{i}(t) + \mathbf{v}_{i}(t+1)
+\end{equation}
+
+Trong đó:
+\begin{itemize}
+    \item $ \mathbf{x}_{i}(t+1) $: Là vị trí mới của hạt $i$ tại vòng lặp $t+1$.
+    \item $ \mathbf{x}_{i}(t) $: Vị trí hiện tại của hạt $i$ tại vòng lặp $t$.
+    \item $ \mathbf{v}_{i}(t+1) $: Vận tốc mới vừa được tính toán từ phương trình (1).
+\end{itemize}
+
+\subsection{Triển khai thuật toán}
+
+\subsubsection{Cách hoạt động của thuật toán}
+Thuật toán PSO mô phỏng một bầy đàn "bay"  qua không gian tìm kiếm để tìm giải pháp tối ưu.
+
+\begin{algorithm}[H]
+\caption{Thuật toán Tối ưu hóa Bầy đàn Hạt (PSO)}
+\label{alg:pso_algorithm}
+\begin{algorithmic}[1]
+    \STATE \textbf{[PHẦN 1: KHỞI TẠO]}
+    \STATE Khởi tạo một bầy đàn (population) gồm $N$ hạt.
+    \FOR{mỗi hạt $i$ (từ 1 đến $N$)}
+        \STATE Khởi tạo vị trí ban đầu $\mathbf{x}_i$ (ngẫu nhiên).
+        \STATE Khởi tạo vận tốc ban đầu $\mathbf{v}_i$ (bằng 0).
+        \STATE Tính giá trị thích nghi (fitness) $f(\mathbf{x}_i)$.
+        \STATE $\mathbf{pbest}_i \leftarrow \mathbf{x}_i$
+    \ENDFOR
+    \STATE $\mathbf{gbest} \leftarrow$ hạt có giá trị thích nghi tốt nhất trong bầy.
+    
+    \STATE \textbf{[PHẦN 2: VÒNG LẶP CHÍNH]}
+    \WHILE{chưa đạt điều kiện dừng (ví dụ: $t < T_{\text{max}}$)}
+        \FOR{mỗi hạt $i$ (từ 1 đến $N$)}
+            \STATE Cập nhật Vận tốc theo phương trình (1)
+            \STATE $\mathbf{v}_{i}(t+1)$
+            
+            \STATE Cập nhật Vị trí theo phương trình (2)
+            \STATE $\mathbf{x}_{i}(t+1) \leftarrow \mathbf{x}_{i}(t) + \mathbf{v}_{i}(t+1)$
+            
+            \STATE Đánh giá vị trí mới
+            \STATE Tính $f(\mathbf{x}_{i}(t+1))$
+            
+            \STATE Cập nhật pbest (bộ nhớ cá nhân)
+            \IF{$f(\mathbf{x}_{i}(t+1))$ tốt hơn $f(\mathbf{pbest}_i)$}
+                \STATE $\mathbf{pbest}_i \leftarrow \mathbf{x}_{i}(t+1)$
+            \ENDIF
+            
+            \STATE Cập nhật gbest (bộ nhớ bầy đàn)
+            \IF{$f(\mathbf{x}_{i}(t+1))$ tốt hơn $f(\mathbf{gbest})$}
+                \STATE $\mathbf{gbest} \leftarrow \mathbf{x}_{i}(t+1)$
+            \ENDIF
+        \ENDFOR
+    \ENDWHILE
+    
+    \STATE \textbf{TRẢ VỀ:} $\mathbf{gbest}$ (Vị trí của giải pháp tốt nhất)
+\end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Triển khai kỹ thuật}
+\begin{itemize}
+    \item \textbf{Ngôn ngữ:} Python
+    \item \textbf{Các thư viện sử dụng:} numpy, random, matplotlib
+    \item \textbf{Các class:}
+    \begin{itemize}
+        \item Class \texttt{PSO\_Solver}: chứa các hàm chính để giải bài toán và kiểm thử trên tập dữ liệu cho trước.
+        \item Class \texttt{Agent}: triển khai một giải pháp tiềm năng cho bài toán.
+    \end{itemize}
+    \item Chi tiết triển khai ở github repository (nằm trong phần phụ lục).
+\end{itemize}
