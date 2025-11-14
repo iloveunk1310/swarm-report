@@ -53,26 +53,144 @@ PSO (Particle Swarm Optimization) vốn thiết kế cho bài toán liên tục 
 \textbf{Genetic Algorithm (GA)}
 GA là thuật toán truyền thống dùng so sánh với ACO và PSO. GA thường thao tác trên biểu diễn nhiễm sắc (genotype) — ví dụ tọa độ thực của các thành phố hoặc hoán vị — và dùng các toán tử lai ghép (crossover), đột biến (mutation) để tìm kiếm. Trong đề tài này, GA có thể nhận tọa độ thực của thành phố làm đầu vào, sau đó chuyển sang ma trận khoảng cách để so sánh với ACO/PSO.
 
-\subsection{Các bài toán liên tục}
-Để đánh giá hiệu quả của các thuật toán, nhóm tiến hành thử nghiệm trên một tập các bài toán tối ưu liên tục chuẩn thường được sử dụng trong lĩnh vực tối ưu metaheuristic. Các hàm này có đặc điểm đa dạng về độ lồi, số lượng cực trị và độ phức tạp, giúp đánh giá khả năng hội tụ toàn cục và cục bộ của thuật toán.
+
+% ======================
+% Các bài toán rời rạc
+% ======================
+
+\subsubsection{Knapsack Problem (KP)}
+
+\textbf{Giới thiệu chung}
+
+Knapsack Problem (KP) là một bài toán tối ưu tổ hợp kinh điển. Phát biểu 0–1 Knapsack chuẩn như sau: cho $n$ món đồ, mỗi món có trọng lượng $w_i > 0$ và giá trị $v_i > 0$, cùng một balo có sức chứa tối đa $W$. Ta cần chọn một tập con các món sao cho:
+\[
+\max_{x \in \{0,1\}^n} f(x) = \sum_{i=1}^n v_i x_i
+\quad \text{thoả} \quad
+\sum_{i=1}^n w_i x_i \le W,
+\]
+trong đó $x_i = 1$ nghĩa là chọn món $i$, $x_i = 0$ là không chọn.
+
+Bài toán 0–1 KP thuộc lớp NP-hard và là mô hình trừu tượng cho nhiều bài toán phân bổ tài nguyên: lựa chọn danh mục dự án dưới ràng buộc ngân sách, tải hàng lên xe với giới hạn tải trọng, chọn tập đặc trưng (feature subset selection) có chi phí, v.v.
+
+Trong phạm vi đồ án, KP được dùng như một bài toán rời rạc đại diện, có không gian nghiệm $\{0,1\}^n$ và landscape nhiều cực trị cục bộ, giúp đánh giá khả năng tìm kiếm trên không gian tổ hợp của các thuật toán.
+
+\textbf{Những thuật toán áp dụng}
 
 \begin{itemize}
-    \item \textbf{Sphere function}:
-    \[
-    f(x) = \sum_{i=1}^d x_i^2, \quad x_i \in [-5.12, 5.12]
-    \]
-    Đây là hàm đơn giản, lồi và có nghiệm tối ưu toàn cục tại $x = 0$, $f_{min} = 0$.
+    \item \textbf{Firefly Algorithm (FA) rời rạc}: mỗi con đom đóm mã hoá một vector nhị phân $x \in \{0,1\}^n$; các phép ``di chuyển'' được cài bằng operator nhị phân (flip bit có điều khiển, mask, crossover đơn giản) kết hợp thủ tục \emph{repair} để xử lý nghiệm vi phạm ràng buộc $\sum w_i x_i \le W$.
+    \item \textbf{Genetic Algorithm (GA)}: vector nhị phân là nhiễm sắc thể; dùng crossover một điểm hoặc hai điểm và mutation bit–flip. Ràng buộc được xử lý bằng phạt (penalty) trong hàm fitness hoặc bằng repair heuristic.
+    \item \textbf{Hill Climbing (HC) và Simulated Annealing (SA)}: định nghĩa lân cận bằng các phép flip đơn hoặc swap hai bit $x_i, x_j$; HC/SA cho KP cung cấp baseline local search đơn giản để so sánh với FA/GA.
+\end{itemize}
 
-    \item \textbf{Rosenbrock function}:
-    \[
-    f(x) = \sum_{i=1}^{d-1} [100(x_{i+1} - x_i^2)^2 + (x_i - 1)^2]
-    \]
-    Hàm phi tuyến, có rãnh hẹp dẫn đến cực tiểu toàn cục tại $x = (1, 1, \ldots, 1)$.
 
-    \item \textbf{Rastrigin function}:
-    \[
-    f(x) = 10d + \sum_{i=1}^d [x_i^2 - 10\cos(2\pi x_i)]
-    \]
-    Hàm có nhiều cực trị cục bộ, được dùng để kiểm tra khả năng thoát bẫy cục bộ của thuật toán.
+\subsubsection{Graph Coloring (GC)}
 
+\textbf{Giới thiệu chung}
+
+Graph Coloring (GC) là bài toán tô màu đồ thị: cho một đồ thị vô hướng $G = (V,E)$, mục tiêu là gán màu (số nguyên) cho mỗi đỉnh sao cho hai đỉnh kề nhau không trùng màu. Bài toán tối ưu kinh điển là tìm \emph{chromatic number} $\chi(G)$ — số màu ít nhất cần dùng.
+
+Có thể phát biểu dạng tối ưu:
+\[
+\min_{c: V \to \{1,\dots,k\}} k
+\quad \text{s.t.} \quad c(u) \ne c(v),~\forall (u,v)\in E.
+\]
+Bài toán quyết định ``đồ thị có tô được bằng $\le k$ màu hay không'' là NP-complete với hầu hết $k \ge 3$, và bài toán tìm $\chi(G)$ là NP-hard. GC xuất hiện trong nhiều ứng dụng: lập lịch thi, xếp ca kíp, phân bổ tần số, register allocation trong compiler, v.v.
+
+Trong đồ án, GC đóng vai trò một bài toán rời rạc có cấu trúc đồ thị rõ ràng, giúp đánh giá khả năng xử lý ràng buộc cứng (hard constraints) của các thuật toán heuristic.
+
+\textbf{Những thuật toán áp dụng}
+
+\begin{itemize}
+    \item \textbf{Genetic Algorithm (GA)}: mỗi cá thể là một gán màu $c:V\to\{1,\dots,k\}$; fitness có thể định nghĩa theo số cạnh vi phạm (hai đầu cùng màu) cộng với penalty theo số màu sử dụng.
+    \item \textbf{Hill Climbing (HC) và Simulated Annealing (SA)}: lân cận được xây bằng thao tác đổi màu một đỉnh, hoặc swap màu giữa hai đỉnh; SA đặc biệt phù hợp vì việc cho phép nghiệm tạm thời xấu hơn giúp thoát bẫy khi nhiều cạnh xung đột.
+    \item \textbf{Firefly Algorithm (FA) rời rạc (tuỳ cấu hình nhóm)}: biểu diễn mỗi nghiệm bằng vector màu và thiết kế operator di chuyển tương tự local search (đổi màu ưu tiên các đỉnh xung đột).
+\end{itemize}
+
+\subsection{Các bài toán liên tục}
+
+Để đánh giá hiệu quả của các thuật toán metaheuristic trên không gian liên tục, nhóm sử dụng một bộ hàm chuẩn (benchmark functions) có tính chất đa dạng về độ lồi, số cực trị và mức độ ``gai góc'' của landscape. Các hàm này đều là bài toán tối thiểu hoá, với nghiệm tối ưu toàn cục và giá trị tối ưu đã biết trước, thuận tiện cho việc so sánh.
+
+\subsubsection{Sphere function}
+
+\textbf{Giới thiệu chung}
+
+Sphere là hàm chuẩn đơn giản nhất, lồi, trơn, tách biến, thường dùng làm ``bài kiểm tra sanity'' cho thuật toán. Dạng $d$-chiều:
+\[
+f(x) = \sum_{i=1}^d x_i^2,\quad x_i \in [a,b],
+\]
+với nghiệm tối ưu toàn cục tại $x^\star = 0$, $f(x^\star) = 0$. Miền thường dùng là $[-5.12, 5.12]^d$ hoặc $[-100,100]^d$.
+
+Hàm này unimodal (chỉ có một cực tiểu toàn cục), convex, và separable. Thuật toán hợp lý phải hội tụ rất nhanh trên Sphere; nếu không, gần như chắc rằng việc cài đặt hoặc tham số đang có vấn đề.
+
+\textbf{Những thuật toán áp dụng}
+
+Trong đồ án, Sphere được dùng để:
+\begin{itemize}
+    \item kiểm tra khả năng hội tụ cơ bản của Firefly Algorithm (FA) trên landscape lồi, trơn;
+    \item so sánh với các baseline như Hill Climbing (HC), Simulated Annealing (SA) và Genetic Algorithm (GA) với mã hoá thực.
+\end{itemize}
+
+
+\subsubsection{Rosenbrock function}
+
+\textbf{Giới thiệu chung}
+
+Rosenbrock (Rosenbrock's valley/banana function) là hàm chuẩn nổi tiếng vì có một ``thung lũng parabol hẹp'' chứa nghiệm tối ưu, khiến việc hội tụ trở nên khó dù hàm chỉ có một cực tiểu toàn cục. Dạng $d$-chiều:
+\[
+f(x) = \sum_{i=1}^{d-1} \big[ 100(x_{i+1} - x_i^2)^2 + (x_i - 1)^2 \big],
+\]
+với nghiệm tối ưu toàn cục tại $x^\star = (1,1,\dots,1)$, $f(x^\star) = 0$. Miền thường dùng là $x_i \in [-5, 10]$.
+
+Landscape của Rosenbrock có thung lũng dài, hẹp và cong; việc tìm được thung lũng khá dễ, nhưng ``bò'' dọc thung lũng đến điểm tối ưu thì khó, đặc biệt với thuật toán chỉ biết gradient cục bộ hoặc có bước nhảy cố định.
+
+\textbf{Những thuật toán áp dụng}
+
+
+
+\subsubsection{Rastrigin function}
+
+\textbf{Giới thiệu chung}
+
+Rastrigin là hàm chuẩn đa cực trị (multimodal) kinh điển, được dùng để kiểm tra khả năng thoát bẫy cục bộ. Dạng $d$-chiều:
+\[
+f(x) = 10d + \sum_{i=1}^d \big[x_i^2 - 10\cos(2\pi x_i)\big], \quad x_i \in [-5.12, 5.12].
+\]
+Nghiệm tối ưu toàn cục tại $x^\star = 0$, $f(x^\star) = 0$.
+
+Hàm có rất nhiều cực tiểu cục bộ phân bố đều đặn; landscape ``gợn sóng'' dày đặc khiến các thuật toán dễ bị kẹt nếu kiểm soát khám phá/khuếch tán không tốt.
+
+\textbf{Những thuật toán áp dụng}
+
+Trong đồ án, Rastrigin là bài toán liên tục trọng tâm để đánh giá FA:
+\begin{itemize}
+    \item \textbf{FA}: kiểm tra mức độ nhạy với tham số ($\alpha$, $\beta_0$, $\gamma$), khả năng tránh hội tụ sớm và hiệu quả khi tăng số chiều.
+    \item \textbf{HC \& SA}: cung cấp baseline cho local search; HC thường bị kẹt ngay khi chạm vào một cực tiểu cục bộ, SA có thể thoát bẫy nhưng đòi hỏi lịch nhiệt độ phù hợp.
+    \item \textbf{GA}: so sánh metaheuristic quần thể truyền thống với FA trên landscape đa cực trị.
+\end{itemize}
+
+
+\subsubsection{Ackley function}
+
+\textbf{Giới thiệu chung}
+
+Ackley là một hàm chuẩn đa cực trị khác, có vùng biên ngoài tương đối phẳng và một ``hố sâu'' ở trung tâm. Dạng $d$-chiều thường dùng:
+\[
+f(x) = -a \exp\!\Bigg(
+    -b \sqrt{\frac{1}{d}\sum_{i=1}^d x_i^2}
+\Bigg)
+- \exp\!\Bigg(
+    \frac{1}{d}\sum_{i=1}^d \cos(c x_i)
+\Bigg)
++ a + e,
+\]
+với các giá trị khuyến nghị $a = 20$, $b = 0.2$, $c = 2\pi$, và miền điển hình $x_i \in [-32.768, 32.768]$. Nghiệm tối ưu toàn cục tại $x^\star = 0$, $f(x^\star) = 0$.
+
+Ackley kết hợp một thành phần radial (phụ thuộc $\|x\|_2$) và một thành phần dao động cosine, tạo ra nhiều cực trị cục bộ nhưng có vùng biên khá ``êm''; vì vậy rất hữu ích để kiểm tra xem thuật toán có bị lạc trong vùng bằng phẳng hay không.
+
+\textbf{Những thuật toán áp dụng}
+
+\begin{itemize}
+    \item \textbf{FA}: dùng để đánh giá khả năng xử lý landscape có vùng phẳng lớn và nhiều bẫy cục bộ.
+    \item \textbf{HC \& SA}: kiểm tra mức độ dễ bị kẹt trên các local minima của Ackley, đặc biệt với cấu hình nhiệt độ/lân cận khác nhau.
+    \item \textbf{GA}: giúp so sánh hiệu năng giữa FA và một metaheuristic quần thể tiêu chuẩn trên một hàm đa cực trị khác với Rastrigin.
 \end{itemize}

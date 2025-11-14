@@ -1,15 +1,15 @@
 # Fdb version 4
-["bibtex main"] 1763038593.55535 "main.aux" "main.bbl" "main" 1763038610.56321 0
+["bibtex main"] 1763106969.88571 "main.aux" "main.bbl" "main" 1763107027.00831 0
   "./references.bib" 1763028739.88389 966 19020a1b99073f2a2b9acdf3dcbeaa1d ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/alpha.bst" 1292289607 23907 a5f93555796fb564b924339521f10a7c ""
-  "main.aux" 1763038610.40466 25374 6c9ff4bd1b2fd586b801a89ab3170208 "pdflatex"
+  "main.aux" 1763107026.3427 30294 126d3675a7af16bf7b160305185463e0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1763038593.58202 "/home/bui-anh-quan/swarm-report/main.tex" "main.pdf" "main" 1763038610.56349 0
+["pdflatex"] 1763106970.08833 "/home/bui-anh-quan/swarm-report/main.tex" "main.pdf" "main" 1763107027.00922 0
   "/etc/texmf/web2c/texmf.cnf" 1762963465.38547 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/bui-anh-quan/swarm-report/main.tex" 1763038578.95873 2512 88154f91dfee16ed09af48197a98c85c ""
+  "/home/bui-anh-quan/swarm-report/main.tex" 1763105102.44099 2541 0b4ce22fcbeaeb67bef6c9c5e8f41bba ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm" 1246382020 1120 200be8b775682cdf80acad4be5ef57e4 ""
@@ -150,11 +150,11 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1762965493.99455 198142 16d6a54cbe5ab31460400710ee1222d6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1762965559 6977291 9a117c000f73e90b328d020049db3216 ""
-  "main.aux" 1763038610.40466 25374 6c9ff4bd1b2fd586b801a89ab3170208 "pdflatex"
-  "main.bbl" 1763038593.57748 944 3faf046f71ceb542f5ec2354a0ba3498 "bibtex main"
-  "main.out" 1763038610.40766 14702 a5bcd47fdaf70f366433838a1f3cc369 "pdflatex"
-  "main.tex" 1763038578.95873 2512 88154f91dfee16ed09af48197a98c85c ""
-  "main.toc" 1763038610.40766 9846 5692aa6c02a281fc229a230668e3ff7f "pdflatex"
+  "main.aux" 1763107026.3427 30294 126d3675a7af16bf7b160305185463e0 "pdflatex"
+  "main.bbl" 1763106970.05535 944 3faf046f71ceb542f5ec2354a0ba3498 "bibtex main"
+  "main.out" 1763107026.3557 19794 06f8ae5ee73b1e7d0851dc653180fe1a "pdflatex"
+  "main.tex" 1763105102.44099 2541 0b4ce22fcbeaeb67bef6c9c5e8f41bba ""
+  "main.toc" 1763107026.3577 12755 f226a89f474a5c33428d452aa9c5bc96 "pdflatex"
   "picture/giraffe.png" 1763028739.88389 431816 b323e3489c851891268c661f538492dc ""
   "picture/knapsack_copeland_ranking.png" 1763037352.32876 90455 1a75cc1abcfac5cd6fb14732c03ad272 ""
   "picture/knapsack_data_profiles.png" 1763037352.40283 139614 4edc42433555345274c5931f71ce70be ""
@@ -186,13 +186,14 @@
   "picture/tsp.png" 1763028739.88389 55964 fdd6e2ea2eda1cc347bdbd052ee373ad ""
   "sections/ant_colony_optimization.tex" 1763036039.20373 11191 7b5462c587f3ee2cd87b962697f9c321 ""
   "sections/artificial_bee_colony.tex" 1763036039.20473 7068 aa61cfe09a8b5ef7f6448c63ecbded99 ""
+  "sections/conclusion.tex" 1763105102.591 28 21ec17d238b2ed12ecf2c60a82309757 ""
   "sections/cuckoo_search.tex" 1763036039.20587 4586 4f33651f876bfe4ddf83c36f463d119e ""
-  "sections/firefly_algorithm.tex" 1763038518.55551 63357 44bfb3729ce9332ea12b0768d94bfb39 ""
-  "sections/genetic_algorithm.tex" 1763037305.53577 6675 842c0d18c4257b7a656711063c7b15ce ""
+  "sections/firefly_algorithm.tex" 1763105018.70659 15604 751cf2b54c91006833619108de60a91d ""
+  "sections/genetic_algorithm.tex" 1763100128.36763 22431 0739516af657bf60ecd07c7feba3058e ""
   "sections/introduction.tex" 1763036039.20273 166 d73aa408881a279997236a71b93b4f37 ""
   "sections/particle_swarm_optimization.tex" 1763036619.66267 9027 825a2824b4b3e265a865b47a45f4ee02 ""
-  "sections/problems.tex" 1763036232.15438 6095 0dbde5963c9226ef1d7284d236f47810 ""
-  "sections/results.tex" 1763036232.15516 153 8665991248dbd2b9a770c04029b80f48 ""
+  "sections/problems.tex" 1763105018.70659 14188 783b1f0cf052b35d8b5250ac62b07dcd ""
+  "sections/results.tex" 1763106910.50722 46611 5fefe37bdc91bb8b75f7d16d0a49d475 ""
   (generated)
   "main.aux"
   "main.log"
