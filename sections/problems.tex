@@ -5,11 +5,11 @@
 \subsubsection{The travelling salesman problem}
 \textbf{Giới thiệu chung}
 
-The travelling saleman problem (TSP) là một bài toán kinh điển trong lý thuyết đồ thị và có rất nhiều ứng dụng trong thực tế và kĩ thuật.
+The travelling saleman problem (TSP) là một bài toán kinh điển trong lý thuyết đồ thị và có rất nhiều ứng dụng trong thực tế và kĩ thuật.\cite{lawler1985tsp,laporte1992tsp}
 
 Bài toán yêu cầu tìm ra tuyến đường ngắn nhất để một người đi qua tất cả các thành phố được cho, mỗi thành phố chỉ ghé thăm đúng một lần, và quay trở lại điểm xuất phát ban đầu.
 
-Nó có thể được phát biểu dưới dạng đồ thị như sau: Cho một đồ thị vô hướng có trọng số, tìm chu trình ngắn nhất xuất phát từ một đỉnh bất kì, đi qua tất cả các đỉnh đúng một lần và quay về điểm xuất phát (chu trình hamilton ngắn nhất). Đây là một bài toán NP-hard, có thể hiểu đơn giản là chúng ta chưa thể tìm ra lời giải đa thức chính xác cho bài toán này. Vì vậy, các phương pháp metaheuristic được đưa ra nhằm tìm ra lời giải chính xác gần đúng trong thời gian hợp lý.
+Nó có thể được phát biểu dưới dạng đồ thị như sau: Cho một đồ thị vô hướng có trọng số, tìm chu trình ngắn nhất xuất phát từ một đỉnh bất kì, đi qua tất cả các đỉnh đúng một lần và quay về điểm xuất phát (chu trình hamilton ngắn nhất). Đây là một bài toán NP-hard\cite{garey1979computers}, có thể hiểu đơn giản là chúng ta chưa thể tìm ra lời giải đa thức chính xác cho bài toán này. Vì vậy, các phương pháp metaheuristic được đưa ra nhằm tìm ra lời giải chính xác gần đúng trong thời gian hợp lý.
 
 Bài toán được ứng dụng rộng rãi trong các lĩnh vực của kĩ thuật và đời sống, đặc biệt là các bài toán tối ưu hóa như lập kế hoạch, lập lịch trình, hậu cần, đóng gói,...
 
@@ -87,7 +87,7 @@ Trong phạm vi đồ án, KP được dùng như một bài toán rời rạc �
 
 \textbf{Giới thiệu chung}
 
-Graph Coloring (GC) là bài toán tô màu đồ thị: cho một đồ thị vô hướng $G = (V,E)$, mục tiêu là gán màu (số nguyên) cho mỗi đỉnh sao cho hai đỉnh kề nhau không trùng màu. Bài toán tối ưu kinh điển là tìm \emph{chromatic number} $\chi(G)$ — số màu ít nhất cần dùng.
+Graph Coloring (GC) là bài toán tô màu đồ thị: cho một đồ thị vô hướng $G = (V,E)$, mục tiêu là gán màu (số nguyên) cho mỗi đỉnh sao cho hai đỉnh kề nhau không trùng màu. Bài toán tối ưu kinh điển là tìm \emph{chromatic number} $\chi(G)$ — số màu ít nhất cần dùng.\cite{jensen1995graphcoloring,garey1979computers}
 
 Có thể phát biểu dạng tối ưu:
 \[
@@ -118,7 +118,7 @@ Sphere là hàm chuẩn đơn giản nhất, lồi, trơn, tách biến, thườ
 \[
 f(x) = \sum_{i=1}^d x_i^2,\quad x_i \in [a,b],
 \]
-với nghiệm tối ưu toàn cục tại $x^\star = 0$, $f(x^\star) = 0$. Miền thường dùng là $[-5.12, 5.12]^d$ hoặc $[-100,100]^d$.
+với nghiệm tối ưu toàn cục tại $x^\star = 0$, $f(x^\star) = 0$. Miền thường dùng là $[-5.12, 5.12]^d$ hoặc $[-100,100]^d$.\cite{dejong1975analysis}
 
 Hàm này unimodal (chỉ có một cực tiểu toàn cục), convex, và separable. Thuật toán hợp lý phải hội tụ rất nhanh trên Sphere; nếu không, gần như chắc rằng việc cài đặt hoặc tham số đang có vấn đề.
 
@@ -139,7 +139,7 @@ Rosenbrock (Rosenbrock's valley/banana function) là hàm chuẩn nổi tiếng 
 \[
 f(x) = \sum_{i=1}^{d-1} \big[ 100(x_{i+1} - x_i^2)^2 + (x_i - 1)^2 \big],
 \]
-với nghiệm tối ưu toàn cục tại $x^\star = (1,1,\dots,1)$, $f(x^\star) = 0$. Miền thường dùng là $x_i \in [-5, 10]$.
+với nghiệm tối ưu toàn cục tại $x^\star = (1,1,\dots,1)$, $f(x^\star) = 0$. Miền thường dùng là $x_i \in [-5, 10]$.\cite{rosenbrock1960automatic}
 
 Landscape của Rosenbrock có thung lũng dài, hẹp và cong; việc tìm được thung lũng khá dễ, nhưng ``bò'' dọc thung lũng đến điểm tối ưu thì khó, đặc biệt với thuật toán chỉ biết gradient cục bộ hoặc có bước nhảy cố định.
 
@@ -147,7 +147,7 @@ Landscape của Rosenbrock có thung lũng dài, hẹp và cong; việc tìm đ�
 
 
 
-\subsubsection{Rastrigin function}
+\subsubsection{Rastrigin function}\cite{rastrigin1974systems}
 
 \textbf{Giới thiệu chung}
 
@@ -183,7 +183,7 @@ f(x) = -a \exp\!\Bigg(
 \Bigg)
 + a + e,
 \]
-với các giá trị khuyến nghị $a = 20$, $b = 0.2$, $c = 2\pi$, và miền điển hình $x_i \in [-32.768, 32.768]$. Nghiệm tối ưu toàn cục tại $x^\star = 0$, $f(x^\star) = 0$.
+với các giá trị khuyến nghị $a = 20$, $b = 0.2$, $c = 2\pi$, và miền điển hình $x_i \in [-32.768, 32.768]$. Nghiệm tối ưu toàn cục tại $x^\star = 0$, $f(x^\star) = 0$.\cite{ackley1987connectionist}
 
 Ackley kết hợp một thành phần radial (phụ thuộc $\|x\|_2$) và một thành phần dao động cosine, tạo ra nhiều cực trị cục bộ nhưng có vùng biên khá ``êm''; vì vậy rất hữu ích để kiểm tra xem thuật toán có bị lạc trong vùng bằng phẳng hay không.
 

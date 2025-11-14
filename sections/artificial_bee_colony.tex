@@ -1,9 +1,11 @@
 % sections/artificial_bee_colony.tex – Artificial Bee Colony section
 
 \section{Artificial Bee Colony}
-\subsection{Giới thiệu thuật toán} \cite{karaboga2009comparative}
+\subsection{Giới thiệu thuật toán}
 
-Thuật toán đàn ong nhân tạo (Artificial Bee Colony - ABC) được đề xuất bởi Derviş Karaboğa (2005), mô phỏng hành vi tìm kiếm và chia sẻ thông tin về nguồn mật hoa của đàn ong mật trong tự nhiên. Mục tiêu là tìm lời giải tốt nhất cho bài toán tối ưu hóa bằng cách mô phỏng quá trình ong tìm mật. Trong đồ án này, bài toán được sử dụng là tìm giá trị nhỏ nhất của hàm số 2 biến.
+Thuật toán đàn ong nhân tạo (Artificial Bee Colony - ABC) được đề xuất bởi Derviş Karaboğa (2005), mô phỏng hành vi tìm kiếm và chia sẻ thông tin về nguồn mật hoa của đàn ong mật trong tự nhiên.\cite{Karaboga2005TR}
+Các nghiên cứu tiếp theo đã phân tích và so sánh hiệu năng của ABC với nhiều thuật toán quần thể khác trên các bộ bài toán chuẩn, cho thấy ABC có hiệu quả cạnh tranh với số tham số điều khiển tương đối ít.\cite{Karaboga2009Comparative}
+Mục tiêu của ABC là tìm lời giải tốt nhất cho bài toán tối ưu hóa bằng cách mô phỏng quá trình ong tìm mật. Trong đồ án này, bài toán được sử dụng là tìm giá trị nhỏ nhất của hàm số 2 biến.
 
 \subsection{Ý tưởng thuật toán và nguyên lý hoạt động}
 Trong tự nhiên, ong mật chia thành 3 nhóm: ong thợ, ong quan sát và ong trinh sát. Nhiệm vụ của mỗi nhóm như sau:
@@ -31,7 +33,7 @@ Ong thợ và ong quan sát tìm kiếm các nguồn mật xung quanh tổ. Nh�
 
 \subsubsection{Nguyên lý}
 
-Thuật toán ABC gồm 4 giai đoạn chính như sau: \cite{kumar2013review}
+Thuật toán ABC gồm 4 giai đoạn chính như sau:\cite{kumar2013review}
 
 \begin{enumerate}
     \item \textbf{Khởi tạo quần thể}
@@ -62,21 +64,23 @@ Thuật toán ABC gồm 4 giai đoạn chính như sau: \cite{kumar2013review}
     fit_i =
     \begin{cases}
         \frac{1}{1 + f(x_i)}, & f(x_i) \ge 0 \\
-        1 + |f(x_i)|, & f_(x_i) < 0
+        1 + |f(x_i)|, & f(x_i) < 0
     \end{cases}
     $$
 
     Sau khi chọn, ong quan sát cũng tạo nguồn mật mới theo công thức tương tự như ở pha ong thợ. Nếu tốt hơn, cập nhật nguồn mật tương ứng.
     
     \item \textbf{Pha ong do thám}
-    Nếu một nguồn mật không được cải thiện sau $limit$ lần, ong thợ sẽ bỏ nguồn mật này đi và trở thành ong do thám. Sau đó, chúng sẽ tạo nguồn mật mới ngẫu nhiên bằng công thức như ở pha khởi tạo quần thể:
+    Nếu một nguồn mật không được cải thiện sau $limit$ lần, ong thợ sẽ bỏ nguồn mật này đi và trở thành ong do thám. Sau đó, chúng sẽ tạo nguồn mật mới ngẫu nhiên bằng công thức như ở pha khởi tạo quần thể.
 
     \item \textbf{Lặp lại}
 
-    Lặp lại các pha 2 đến 4 cho đến khi đạt số vòng lặp $maxCycle$ hoặc đạt tiêu chí hội tụ (không còn cải thiện) 
+    Lặp lại các pha 2 đến 4 cho đến khi đạt số vòng lặp $maxCycle$ hoặc đạt tiêu chí hội tụ (không còn cải thiện). 
 \end{enumerate}
 
-\subsubsection{Mã giả (Pseudo-code) thuật toán ABC} \cite{ibrahim2025artificial}
+\subsubsection{Mã giả (Pseudo-code) thuật toán ABC}
+
+Mã giả dưới đây tóm tắt một phiên bản ABC chuẩn hoá, tham khảo từ các survey gần đây về ABC.\cite{ibrahim2025artificial}
 
 \begin{algorithm} [H]
 \begin{algorithmic}[1]

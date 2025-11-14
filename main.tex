@@ -5,6 +5,7 @@
 \usepackage{amssymb} % Gói ký hiệu toán học
 \usepackage{algorithm}
 \usepackage{algorithmic}
+\usepackage{tabularx}  % THÊM DÒNG NÀY
 % --- Cấu hình tiếng Việt cho pdfLaTeX ---
 \usepackage[utf8]{inputenc} % Cho phép file .tex lưu ở dạng UTF-8
 \usepackage[T5]{fontenc}    % Sử dụng bộ mã T5 cho tiếng Việt
@@ -35,44 +36,117 @@
     linkcolor=blue,
     filecolor=magenta,      
     urlcolor=cyan,
-    pdftitle={Bao Cao Ant Colony Optimization},
-    pdfauthor={Tac Gia},
-    pdfsubject={ACO},
-    pdfkeywords={ACO, AI, Optimization},
-    bookmarks=true,
-    breaklinks=true
 }
 
 % --- Tiêu đề tài liệu ---
-\title{Báo cáo Đồ án: Tối ưu hóa Đàn kiến \\ (Ant Colony Optimization)}
-\author{Tên Của Bạn}
-\date{\today}
-
-% --- Bắt đầu tài liệu ---
 \begin{document}
 
-\maketitle
+\begin{titlepage}
+    \begin{center}
+        % Logo trường
+        \includegraphics[width=0.2\textwidth]{picture/hcmus-logo.png}\\[0.8cm]
+
+        % Tên trường / khoa
+        \textsc{\LARGE Đại học Quốc gia TP.HCM}\\[0.4cm]
+        \textsc{\Large Trường Đại học Khoa học Tự nhiên}\\[0.4cm]
+        \textsc{\large Khoa Công nghệ Thông tin}\\[1.2cm]
+
+        % Tiêu đề báo cáo
+        {\Large Báo cáo Đồ án 1}\\[0.3cm]
+        {\LARGE \textbf{Thuật toán tìm kiếm bầy đàn}}\\[1.5cm]
+
+        % Khối hai cột: Sinh viên / Giáo viên
+        \begin{minipage}{0.45\textwidth}
+            \centering
+            \textbf{Sinh viên thực hiện}\\[4pt]
+            Lê Hải Đăng (23122006)\\
+            Nguyễn Nhật Minh (23122010)\\
+            Nguyễn Văn Khoa (23122016)\\
+            Bùi Anh Quân (23122017)
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.45\textwidth}
+            \centering
+            \textbf{Giáo viên hướng dẫn}\\[4pt]
+            Thầy Lê Hoài Bắc\\
+            Thầy Lê Nhựt Nam
+        \end{minipage}
+
+        \vfill
+
+        % Ngày tháng
+        {\large \today}
+    \end{center}
+\end{titlepage}
+
 \tableofcontents
 \newpage
 
-\section*{Lời mở đầu}
-\addcontentsline{toc}{section}{\protect\numberline{}Lời mở đầu}
 
 % Include section files
 \input{sections/introduction}
-\input{sections/genetic_algorithm}
-\input{sections/problems}
 \input{sections/ant_colony_optimization}
 \input{sections/particle_swarm_optimization}
 \input{sections/artificial_bee_colony}
 \input{sections/firefly_algorithm}
 \input{sections/cuckoo_search}
-
+\input{sections/genetic_algorithm}
+\input{sections/problems}
 \input{sections/results}
 
-\input{sections/conclusion}
 \section*{Phân công công việc}
 \addcontentsline{toc}{section}{\protect\numberline{}Phân công công việc}
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\textwidth}{|l|c|X|}
+\hline
+\textbf{Họ và Tên} & \textbf{MSSV} & \textbf{Công việc phụ trách} \\ \hline
+
+Lê Hải Đăng        & 23122006      
+& \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[leftmargin=1.2em]
+        \item Tìm hiểu và triển khai ABC
+        \item Tham gia quay video demo
+        \item Viết báo cáo
+    \end{itemize}
+    \vspace{0.5em} 
+  \end{minipage} \\ \hline
+
+Nguyễn Nhật Minh   & 23122010      
+& \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[leftmargin=1.2em]
+        \item Tìm hiểu và triển khai ACO, PSO
+        \item Tham gia quay và chỉnh sửa video demo
+        \item Viết báo cáo
+    \end{itemize}
+    \vspace{0.5em} 
+  \end{minipage} \\ \hline
+
+Nguyễn Văn Khoa    & 23122016      
+& \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[leftmargin=1.2em]
+        \item Tìm hiểu và triển khai Cuckoo Search
+        \item Tham gia quay video demo
+        \item Viết báo cáo
+    \end{itemize}
+    \vspace{0.5em} 
+  \end{minipage} \\ \hline
+
+Bùi Anh Quân       & 23122017      
+& \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[leftmargin=1.2em]
+        \item Tìm hiểu và triển khai FA
+        \item Tham gia quay video demo
+        \item Viết và hiệu chỉnh báo cáo
+    \end{itemize}
+    \vspace{0.5em} 
+  \end{minipage} \\ \hline
+
+\end{tabularx}
+\end{table}
+
 
 \section*{Phụ lục}
 \addcontentsline{toc}{section}{\protect\numberline{}Phụ lục}
@@ -80,6 +154,5 @@
 \bibliographystyle{alpha}
 \bibliography{references}
 
-\subsection*{Source code}
 
 \end{document}

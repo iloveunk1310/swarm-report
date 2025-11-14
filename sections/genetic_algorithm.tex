@@ -1,16 +1,16 @@
 % sections/genetic_algorithm.tex – Genetic Algorithm section
 
-\section{Các thuật toán truyền thống để so sánh}
+\section{Các thuật toán truyền thống để so sánh}    
 \subsection{Genetic Algorithm}
 \subsubsection{Giới thiệu chung}
 
-Genetic Algorithm (GA - Giải thuật di truyền) là một kĩ thuật tìm kiếm nhằm tìm ra đáp án gần đúng trong các bài toán tối ưu hóa mô hình và bài toán tìm kiếm. GA được xem là một trong những metaheuristic phổ biến và được ứng dụng nhiều nhất.
+Genetic Algorithm (GA - Giải thuật di truyền) là một kĩ thuật tìm kiếm nhằm tìm ra đáp án gần đúng trong các bài toán tối ưu hóa mô hình và bài toán tìm kiếm. GA được xem là một trong những metaheuristic phổ biến và được ứng dụng nhiều nhất.\cite{holland1975adaptation,goldberg1989ga}
 
 Trong một quần thể trong tự nhiên, các loài sinh vật phải thích nghi và thay đổi qua từng thế hệ để có thể sinh tồn, đó gọi là sự tiến hóa (theo học thuyết tiến hóa của Darwin). Ở hình trên, các con hươu cao cổ thông qua một cơ chế tiến hóa gọi là chọn lọc tự nhiên, những con thấp sẽ không thể ăn lá và chết dần, qua thời gian dài chỉ còn lại những con cao hơn tiếp tục sinh sản và phát triển quần thể. Như vậy, các loài sinh vật luôn phải tiến hóa để tránh bị đào thải trong môi trường tự nhiên khắc nghiệt.
 
-GA được phát minh bởi John Holland và các cộng sự tại đại học Michigan vào những năm 1960, dựa trên các nguyên tắc của tiến hóa, bao gồm các quá trình lai tạo (crossover), đột biến (mutation) và chọn lọc (selection). Nó bắt đầu phổ biến vào những năm 1990, khi người ta bắt đầu tìm kiếm những công cụ heuristic để giải quyết những bài toán mà giải thuật chính xác không khả thi.
+GA được phát minh bởi John Holland và các cộng sự tại đại học Michigan vào những năm 1960,\cite{holland1975adaptation} và được phổ biến rộng rãi trong cộng đồng tối ưu hóa thông qua cuốn sách kinh điển của Goldberg vào cuối thập niên 1980.\cite{goldberg1989ga}
+Thuật toán dựa trên các nguyên tắc của tiến hóa, bao gồm các quá trình lai tạo (crossover), đột biến (mutation) và chọn lọc (selection), và đã trở thành một công cụ tiêu chuẩn trong nhiều ứng dụng tối ưu hóa và học máy.
 
-Thuật giải GA đã và đang được ứng dụng để giải quyết các bài toán trong rất nhiều lĩnh vực của cuộc sống cũng như trong kỹ thuật, ví dụ như tối ưu hóa, học máy, ….
 
 \begin{figure}[h]
 \centering
@@ -91,9 +91,10 @@ Schema Theorem (dạng bất đẳng thức cho kì vọng):
 \subsection{Hill Climbing (Steepest Ascent)}
 \subsubsection{Giới thiệu chung}
 
-Hill Climbing (leo đồi, \emph{steepest-ascent hill climbing}) là một giải thuật tìm kiếm cục bộ (local search) đơn giản, hoạt động bằng cách lặp lại hai bước: sinh lân cận và di chuyển sang nghiệm lân cận ``tốt nhất'' nếu nó cải thiện hàm mục tiêu. Thuật toán mang tính tham lam (greedy): luôn ưu tiên cải thiện tức thời, nên dễ rơi vào cực trị địa phương, plateau (vùng bằng phẳng) hoặc ridge (sườn hẹp).
+Hill Climbing (leo đồi, \emph{steepest-ascent hill climbing}) là một giải thuật tìm kiếm cục bộ (local search) đơn giản, hoạt động bằng cách lặp lại hai bước: sinh lân cận và di chuyển sang nghiệm lân cận ``tốt nhất'' nếu nó cải thiện hàm mục tiêu. Thuật toán mang tính tham lam (greedy): luôn ưu tiên cải thiện tức thời, nên dễ rơi vào cực trị địa phương, plateau (vùng bằng phẳng) hoặc ridge (sườn hẹp).\cite{russell2020aima}
 
 Trong bối cảnh tối ưu hóa, Hill Climbing có thể áp dụng cho cả không gian nghiệm rời rạc (ví dụ: Knapsack) và liên tục (ví dụ: Rastrigin, nếu ta định nghĩa được phép biến đổi lân cận). Trong đồ án này, Hill Climbing được dùng như một baseline truyền thống để so sánh với các metaheuristic bầy đàn.
+
 
 \subsubsection{Cơ sở toán học}
 
@@ -144,9 +145,10 @@ trong đó \text{cost\_eval} là chi phí tính $f(x)$. Tổng chi phí xấp x�
 \subsection{Simulated Annealing}
 \subsubsection{Giới thiệu chung}
 
-Simulated Annealing (SA - tôi luyện mô phỏng) là một metaheuristic tìm kiếm cục bộ có yếu tố ngẫu nhiên, lấy cảm hứng từ quá trình tôi luyện vật liệu trong vật lý. Khác với Hill Climbing, SA cho phép chấp nhận tạm thời các nghiệm \emph{xấu hơn} với một xác suất phụ thuộc vào nhiệt độ $T$, giúp thuật toán có khả năng thoát khỏi cực trị địa phương.
+Simulated Annealing (SA - tôi luyện mô phỏng) là một metaheuristic tìm kiếm cục bộ có yếu tố ngẫu nhiên, lấy cảm hứng từ quá trình tôi luyện vật liệu trong vật lý. Khác với Hill Climbing, SA cho phép chấp nhận tạm thời các nghiệm \emph{xấu hơn} với một xác suất phụ thuộc vào nhiệt độ $T$, giúp thuật toán có khả năng thoát khỏi cực trị địa phương.\cite{kirkpatrick1983optimization}
 
-SA được đề xuất bởi Kirkpatrick và cộng sự (1983) như một mở rộng của thuật toán Metropolis. Với lịch trình làm nguội (cooling schedule) đủ chậm, SA có bảo đảm hội tụ về nghiệm tối ưu toàn cục trong giới hạn lý thuyết, dù trong thực tế thường sử dụng lịch trình nhanh hơn để đạt hiệu quả tính toán.
+SA được đề xuất bởi Kirkpatrick và cộng sự (1983) như một mở rộng của thuật toán Metropolis.\cite{kirkpatrick1983optimization} Với lịch trình làm nguội (cooling schedule) đủ chậm, SA có bảo đảm hội tụ về nghiệm tối ưu toàn cục trong giới hạn lý thuyết, dù trong thực tế thường sử dụng lịch trình nhanh hơn để đạt hiệu quả tính toán.
+
 
 \subsubsection{Cơ sở toán học}
 
@@ -209,9 +211,10 @@ với $T_0$ là nhiệt độ ban đầu và $\beta>0$ là hệ số làm nguộ
 \subsection{Breadth-First Search (BFS)}
 \subsubsection{Giới thiệu chung}
 
-Breadth-First Search (BFS - tìm kiếm theo bề rộng) là một thuật toán tìm kiếm trên đồ thị/ cây trạng thái, khám phá các đỉnh (trạng thái) theo từng ``lớp độ sâu'' tăng dần. BFS là thuật toán \emph{uninformed search} kinh điển, đảm bảo tìm được lời giải tối ưu về số bước (nếu mỗi cạnh có cùng chi phí) và luôn hoàn chỉnh (complete) nếu không gian trạng thái hữu hạn.
+Breadth-First Search (BFS - tìm kiếm theo bề rộng) là một thuật toán tìm kiếm trên đồ thị/ cây trạng thái, khám phá các đỉnh (trạng thái) theo từng ``lớp độ sâu'' tăng dần. BFS là thuật toán \emph{uninformed search} kinh điển, đảm bảo tìm được lời giải tối ưu về số bước (nếu mỗi cạnh có cùng chi phí) và luôn hoàn chỉnh (complete) nếu không gian trạng thái hữu hạn.\cite{russell2020aima,cormen2009introduction}
 
 Trong đồ án, BFS được sử dụng như một baseline truyền thống cho các bài toán rời rạc có không gian trạng thái nhỏ, nơi có thể duyệt gần như toàn bộ không gian (ví dụ: phiên bản nhỏ của Knapsack, bài toán đường đi trên lưới, ...).
+
 
 \subsubsection{Cơ sở toán học}
 
@@ -259,9 +262,10 @@ do phải lưu toàn bộ ``vòng biên'' (frontier) ở mỗi lớp độ sâu.
 \subsection{Depth-First Search (DFS)}
 \subsubsection{Giới thiệu chung}
 
-Depth-First Search (DFS - tìm kiếm theo chiều sâu) là một thuật toán tìm kiếm trên đồ thị/cây, luôn ưu tiên đi sâu theo một nhánh cho tới khi không đi tiếp được nữa, rồi quay lui (backtracking). DFS cũng là một thuật toán \emph{uninformed search}, không đảm bảo tối ưu và trong không gian vô hạn có thể không dừng nếu không có cơ chế cắt tỉa.
+Depth-First Search (DFS - tìm kiếm theo chiều sâu) là một thuật toán tìm kiếm trên đồ thị/cây, luôn ưu tiên đi sâu theo một nhánh cho tới khi không đi tiếp được nữa, rồi quay lui (backtracking). DFS cũng là một thuật toán \emph{uninformed search}, không đảm bảo tối ưu và trong không gian vô hạn có thể không dừng nếu không có cơ chế cắt tỉa.\cite{russell2020aima,cormen2009introduction}
 
 Ưu điểm chính của DFS là chi phí bộ nhớ thấp hơn BFS, nên được dùng như baseline cho các bài toán rời rạc với không gian trạng thái lớn nhưng độ sâu hữu hạn.
+
 
 \subsubsection{Cơ sở toán học}
 
@@ -306,13 +310,14 @@ do chỉ lưu một đường đi hiện tại và các nhánh chưa mở ở m�
 \subsection{A* Search}
 \subsubsection{Giới thiệu chung}
 
-A* Search là một thuật toán tìm kiếm có định hướng (informed search) sử dụng hàm heuristic để dẫn hướng tìm kiếm tới đích. A* đặc biệt phổ biến trong các bài toán tìm đường (path-finding) trên lưới, đồ thị, hoặc bản đồ, nhờ khả năng tìm được đường đi tối ưu với chi phí trung bình thấp hơn nhiều so với các thuật toán uninformed như BFS.
+A* Search là một thuật toán tìm kiếm có định hướng (informed search) sử dụng hàm heuristic để dẫn hướng tìm kiếm tới đích. A* đặc biệt phổ biến trong các bài toán tìm đường (path-finding) trên lưới, đồ thị, hoặc bản đồ, nhờ khả năng tìm được đường đi tối ưu với chi phí trung bình thấp hơn nhiều so với các thuật toán uninformed như BFS.\cite{hart1968astar,russell2020aima}
 
 Ý tưởng cốt lõi của A* là đánh giá mỗi trạng thái $n$ bằng một hàm:
 \[
 f(n) = g(n) + h(n),
 \]
 trong đó $g(n)$ là chi phí thực tế từ trạng thái bắt đầu đến $n$, còn $h(n)$ là ước lượng chi phí còn lại từ $n$ đến đích. Nếu $h(n)$ được chọn ``tốt'', A* sẽ tập trung mở rộng các trạng thái tiềm năng, giảm đáng kể số lượng trạng thái phải duyệt.
+
 
 \subsubsection{Cơ sở toán học}
 

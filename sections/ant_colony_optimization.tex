@@ -1,11 +1,11 @@
 % sections/ant_colony_optimization.tex – Ant Colony Optimization section
 
 \section{Ant Colony Optimization}
-\subsection{Giới thiệu thuật toán}
+\subsection{Giới thiệu thuật toán}\cite{dorigo1996antsystem,dorigo2006aco}
 Ant colony optimization (tối ưu hóa đàn kiến) là một thuật toán heuristic dựa trên ý tưởng về cách kiếm ăn của loài kiến, một loài sinh vật có ý thức bầy đàn rất cao và có khả năng phối hợp theo bầy rất hiệu quả cho các công việc như kiếm ăn, xây tổ,...
 
 \subsubsection{Ý tưởng thuật toán}
-Các nhà sinh vật học đã chỉ ra rằng một số loài kiến có khả năng tìm ra đường đi ngắn nhất giữa tổ và nguồn thức ăn. Chúng làm điều này dựa trên một cơ chế là stigmergy (liên lạc qua môi trường):
+Các nhà sinh vật học đã chỉ ra rằng một số loài kiến có khả năng tìm ra đường đi ngắn nhất giữa tổ và nguồn thức ăn.\cite{deneubourg1989collective} Chúng làm điều này dựa trên một cơ chế là stigmergy (liên lạc qua môi trường):
 \begin{itemize}
     \item \textbf{Pheromone:} một tín hiệu hóa học do con đi trước thải ra, giúp con đi sau chọn đường có nồng độ cao hơn (con đường tốt hơn).
     \item Những con đi trên đường càng ngắn thì quay về tổ nhanh hơn. Con nào hoàn thành con đường nhanh hơn thì pheromone lưu lại càng nhiều trên con đường đó.
@@ -13,13 +13,13 @@ Các nhà sinh vật học đã chỉ ra rằng một số loài kiến có kh�
 \end{itemize}
 
 \subsubsection{Lịch sử thuật toán}
-Nguồn gốc của ACO bắt nguồn từ các nghiên cứu về hành vi của côn trùng xã hội, đặc biệt là công trình của các nhà sinh vật học như Jean-Louis Deneubourg, người đã cung cấp cảm hứng cho công việc này.
+Nguồn gốc của ACO bắt nguồn từ các nghiên cứu về hành vi của côn trùng xã hội, đặc biệt là công trình của các nhà sinh vật học như Jean-Louis Deneubourg, người đã cung cấp cảm hứng cho công việc này.\cite{deneubourg1989collective}
 \begin{itemize}
-    \item \textbf{Những năm 1990:} Những nỗ lực đầu tiên nhằm chuyển hóa hành vi của kiến thành thuật toán máy tính xuất hiện vào đầu những năm 1990.
-    \item \textbf{Ant System (AS):} Thuật toán ACO đầu tiên có tên là Ant System (AS). Nó được định nghĩa bởi Marco Dorigo trong luận án tiến sĩ của ông tại Politecnico di Milano (Ý), với sự hợp tác của Alberto Colorni và Vittorio Maniezzo.
-    \item \textbf{1991-1996:} Bài báo chuyên san đầu tiên về Ant System được nộp vào năm 1991, nhưng phải đến năm 1996 mới được xuất bản. Nghiên cứu về ACO bắt đầu phổ biến và thu hút sự quan tâm nhanh chóng sau khi bài báo này ra đời.
-    \item \textbf{Phát triển các biến thể:} Sau AS, một số biến thể thuật toán đã được phát triển để cải thiện hiệu suất, chẳng hạn như Ant-Q, Ant Colony System (ACS) và MAX-MIN AS.
-    \item \textbf{Hình thành "Siêu heuristic ACO":} Thuật ngữ "ACO metaheuristic" (siêu heuristic ACO) đã được đề xuất (bởi Dorigo và Di Caro vào năm 1999) như một khung sườn chung (common framework) để bao quát các thuật toán và ứng dụng dựa trên cùng ý tưởng này.
+    \item \textbf{Những năm 1990:} Những nỗ lực đầu tiên nhằm chuyển hóa hành vi của kiến thành thuật toán máy tính xuất hiện vào đầu những năm 1990, khởi đầu trong luận án tiến sĩ của Marco Dorigo về tối ưu hóa và học dựa trên đàn kiến.\cite{dorigo1992thesis}
+    \item \textbf{Ant System (AS):} Thuật toán ACO đầu tiên có tên là Ant System (AS). Nó được định nghĩa bởi Marco Dorigo trong luận án tiến sĩ của ông tại Politecnico di Milano (Ý), với sự hợp tác của Alberto Colorni và Vittorio Maniezzo.\cite{dorigo1996antsystem}
+    \item \textbf{1991-1996:} Bài báo chuyên san đầu tiên về Ant System được nộp vào năm 1991, nhưng phải đến năm 1996 mới được xuất bản. Nghiên cứu về ACO bắt đầu phổ biến và thu hút sự quan tâm nhanh chóng sau khi bài báo này ra đời.\cite{dorigo1996antsystem}
+    \item \textbf{Phát triển các biến thể:} Sau AS, một số biến thể thuật toán đã được phát triển để cải thiện hiệu suất, chẳng hạn như Ant-Q, Ant Colony System (ACS) và MAX-MIN AS.\cite{dorigo1997acs}
+    \item \textbf{Hình thành ``Siêu heuristic ACO'':} Thuật ngữ ``ACO metaheuristic'' (siêu heuristic ACO) đã được đề xuất (bởi Dorigo và Di Caro vào năm 1999) như một khung sườn chung (common framework) để bao quát các thuật toán và ứng dụng dựa trên cùng ý tưởng này.\cite{dorigo1999acometa,dorigo2004book}
 \end{itemize}
 
 \subsubsection{Những ứng dụng}
@@ -32,9 +32,9 @@ Thuật toán ACO là một thuật toán phổ biến và được ứng dụng
 \end{itemize}
 
 \subsection{Cơ sở toán học}
-Cơ sở toán học của bài toán này có nhiều biến thể trên nhiều bài toán tối ưu hóa khác nhau, tuy nhiên chúng có điểm chung là cần được chuyển thành bài toán tìm đường đi ngắn nhất trong đồ thị có trọng số.
+Cơ sở toán học của bài toán này có nhiều biến thể trên nhiều bài toán tối ưu hóa khác nhau, tuy nhiên chúng có điểm chung là cần được chuyển thành bài toán tìm đường đi ngắn nhất trong đồ thị có trọng số. Cấu trúc chuẩn của ACO cho các bài toán tổ hợp như TSP đã được hệ thống hóa trong các công trình tổng quan và sách chuyên khảo.\cite{dorigo2004book,dorigo2006aco}
 
-Cơ sở toán học của thuật toán Tối ưu hóa Đàn kiến (ACO) chủ yếu xoay quanh hai cơ chế: (1) quy tắc xác suất để kiến nhân tạo "xây dựng" giải pháp và (2) quy tắc cập nhật pheromone để "học hỏi" từ kinh nghiệm.
+Cơ sở toán học của thuật toán Tối ưu hóa Đàn kiến (ACO) chủ yếu xoay quanh hai cơ chế: (1) quy tắc xác suất để kiến nhân tạo "xây dựng" giải pháp và (2) quy tắc cập nhật pheromone để "học hỏi" từ kinh nghiệm.\cite{dorigo1996antsystem}
 
 \subsubsection{Quy tắc Lựa chọn Đường đi (Xây dựng Giải pháp)}
 Đây là công thức cốt lõi quyết định cách một con kiến nhân tạo $k$ chọn đỉnh tiếp theo khi nó đang ở đỉnh $i$. Xác suất $p_{ij}^k$ để kiến $k$ di chuyển từ đỉnh $i$ đến đỉnh $j$ là:
@@ -50,7 +50,7 @@ Trong đó:
 \end{itemize}
 
 \subsubsection{Quy tắc Cập nhật Pheromone (Học tập)}
-Sau khi tất cả $m$ con kiến đã hoàn thành việc xây dựng các đường đi, hệ thống sẽ cập nhật lượng pheromone. Quá trình này có hai phần: bay hơi và lắng đọng.
+Sau khi tất cả $m$ con kiến đã hoàn thành việc xây dựng các đường đi, hệ thống sẽ cập nhật lượng pheromone. Quá trình này có hai phần: bay hơi và lắng đọng.\cite{dorigo1996antsystem}
 
 \textbf{Bay hơi Pheromone (Evaporation)}
 
@@ -76,7 +76,7 @@ $$ \Delta\tau_{ij}^k = \begin{cases} 1/C^k & \text{nếu cạnh } (i, j) \text{ 
 
 \begin{itemize}
     \item \textbf{$C^k$ (Chất lượng giải pháp):} Là tổng chi phí của đường đi $T^k$ mà kiến $k$ đã thực hiện.
-    \item \textbf{Ý nghĩa:} Một đường đi càng tốt (chi phí $C^k$ càng nhỏ) thì lượng pheromone $1/C^k$ lắng đọng trên các cạnh của nó càng lớn. Điều này làm tăng xác suất để các con kiến trong tương lai chọn lại những cạnh này.
+    \item \textbf{Ý nghĩa:} Một đường đi càng tốt (chi phí $C^k$ càng nhỏ) thì lượng pheromone $1/C^k$ lắng đọng trên các cạnh của nó càng lớn. Điều này làm tăng xác suất để các con kiến trong tương lai chọn lại những cạnh này.\cite{dorigo1996antsystem,dorigo2004book}
 \end{itemize}
 
 \subsection{Triển khai thuật toán}
@@ -96,7 +96,7 @@ $$ \Delta\tau_{ij}^k = \begin{cases} 1/C^k & \text{nếu cạnh } (i, j) \text{ 
 \end{algorithmic}
 \end{algorithm}
 
-Chi tiết quá trình:
+Chi tiết quá trình:\cite{dorigo1999acometa}
 \begin{enumerate}
     \item Ở bước đầu tiên, mỗi "con kiến" sẽ chọn đường đi cho mình sao cho thỏa mãn đề bài. Để chọn được cạnh để đi trong mỗi bước, con kiến đó sẽ dựa vào mức độ pheromone của mỗi cạnh mà nó có thể đi và chọn ngẫu nhiên có trọng số trong các cạnh khả dĩ đó (theo công thức trong 2.1).
     \item Ở bước thứ 2, các giải pháp sẽ được so sánh với nhau, và giải pháp tốt nhất (tất nhiên so với cả các giải pháp ở vòng lặp trước) sẽ được chọn. Nếu đó là vòng lặp cuối cùng, giải pháp đó sẽ là kết quả của thuật toán.
@@ -107,7 +107,7 @@ Quá trình trên được lặp lại với số vòng lặp nhất định (t�
 
 Một cách trực quan, quá trình này hội tụ về các chu trình ngắn bởi vì mỗi con kiến để lại càng nhiều pheromone trên các cạnh thuộc chu trình của nó nếu chu trình đó càng ngắn. Và, khi pheromone cũ mờ dần theo thời gian, đồng thời các con kiến mới ưu tiên những cạnh có nhiều pheromone hơn, thì các chu trình mới sẽ có xu hướng ngày càng ngắn hơn.
 
-Điều quan trọng là, vì mỗi con kiến chọn bước đi tiếp theo một cách ngẫu nhiên, nên mặc dù chúng sẽ luôn có xu hướng chọn các ứng cử viên có nhiều pheromone nhất, chúng cũng sẽ có một xác suất đáng kể (không thể bỏ qua) để chọn một cạnh khác và đi khám phá. Nếu việc khám phá đó dẫn đến một chu trình tổng thể tốt hơn, con kiến đó sẽ "báo" cho các con kiến tương lai về chu trình này bằng cách để lại nhiều pheromone hơn nữa.
+Điều quan trọng là, vì mỗi con kiến chọn bước đi tiếp theo một cách ngẫu nhiên, nên mặc dù chúng sẽ luôn có xu hướng chọn các ứng cử viên có nhiều pheromone nhất, chúng cũng sẽ có một xác suất đáng kể (không thể bỏ qua) để chọn một cạnh khác và đi khám phá. Nếu việc khám phá đó dẫn đến một chu trình tổng thể tốt hơn, con kiến đó sẽ "báo" cho các con kiến tương lai về chu trình này bằng cách để lại nhiều pheromone hơn nữa.\cite{dorigo2004book}
 
 \subsubsection{Triển khai kỹ thuật}
 \begin{itemize}
@@ -117,6 +117,6 @@ Một cách trực quan, quá trình này hội tụ về các chu trình ngắn
     \begin{itemize}
         \item Class ACO\_Solver: chứa các hàm chính để giải bài toán và kiểm thử trên tập dữ liệu cho trước.
         \item Class Graph: cấu trúc đồ thị dưới dạng ma trận khoảng cách.
-    \end{itemize}
     \item Chi tiết triển khai ở \texttt{github repository} (nằm trong phần phụ lục).
+    \end{itemize}
 \end{itemize}

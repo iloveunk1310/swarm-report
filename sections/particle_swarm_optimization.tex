@@ -3,13 +3,13 @@
 \section{Particle swarm optimization}
 \subsection{Giới thiệu thuật toán}
 
-Particle swarm optimization (tối ưu hóa bầy đàn) là một thuật toán heuristic mạnh mẽ được lấy cảm hứng bởi hành vi bầy đàn được quan sát trong tự nhiên như đàn cá và chim. PSO là một mô phỏng của một hệ thống xã hội được đơn giản hóa.
+Particle swarm optimization (tối ưu hóa bầy đàn) là một thuật toán heuristic mạnh mẽ được lấy cảm hứng bởi hành vi bầy đàn được quan sát trong tự nhiên như đàn cá và chim.\cite{kennedy1995particle,poli2007pso_overview} PSO là một mô phỏng của một hệ thống xã hội được đơn giản hóa.
 
 \subsubsection{Ý tưởng thuật toán}
 Ý đồ của thuật toán PSO là mô phỏng lại cách di chuyển phức tạp của đàn chim. Trong tự nhiên, tầm nhìn của một con chim đơn lẻ là bị giới hạn. Tuy nhiên, có nhiều hơn một con chim cho phép đàn chim ý thức được vị trí của chúng trên một không gian rộng lớn hơn.
 
 Không gian tìm kiếm thức ăn lúc này là toàn bộ không gian ba chiều.
-Tại thời điểm bắt đầu tìm kiếm cả đàn bay theo một hướng thường là ngẫu nhiên.. Tuy nhiên sau một thời gian tìm kiếm một số cá thể trong đàn bắt đầu tìm ra được nơi có chứa thức ăn. 
+Tại thời điểm bắt đầu tìm kiếm cả đàn bay theo một hướng thường là ngẫu nhiên. Tuy nhiên sau một thời gian tìm kiếm một số cá thể trong đàn bắt đầu tìm ra được nơi có chứa thức ăn. 
 
 Tùy theo số lượng thức ăn vừa tìm kiếm, mà cá thể gửi tín hiệu đến các các cá thể khác đang tìm kiếm ở vùng lân cận. Tín hiệu này lan truyền trên toàn quần thể. 
 
@@ -18,9 +18,9 @@ Dựa vào thông tin nhận được mỗi cá thể sẽ điều chỉnh hư�
 Cơ chế truyền tin như vậy thường được xem như là một kiểu hình của trí tuệ bầy đàn. Cơ chế này giúp cả đàn chim tìm ra nơi có nhiều thức ăn nhất trên không gian tìm kiếm vô cùng rộng lớn.
 
 \subsubsection{Lịch sử thuật toán}
-Nghiên cứu sớm về ứng dụng tập tính bầy đàn trong thuật toán là mô hình "Boids" của Craig Reynolds. Reynolds đã chỉ ra rằng hành vi bầy đàn phức tạp có thể được mô phỏng chỉ bằng ba quy tắc đơn giản mà mỗi cá thể tuân theo (tách biệt, thẳng hàng, và gắn kết).
+Nghiên cứu sớm về ứng dụng tập tính bầy đàn trong thuật toán là mô hình ``Boids'' của Craig Reynolds.\cite{reynolds1987boids} Reynolds đã chỉ ra rằng hành vi bầy đàn phức tạp có thể được mô phỏng chỉ bằng ba quy tắc đơn giản mà mỗi cá thể tuân theo (tách biệt, thẳng hàng, và gắn kết).
 
-Thuật toán PSO được giới thiệu lần đầu tiên vào năm 1995 bởi hai nhà nghiên cứu: James Kennedy và Russell Eberhart, dựa trên công trình của Reynolds. PSO nhanh chóng trở nên phổ biến vì nó đơn giản hơn đáng kể so với các thuật toán tiến hóa khác như Giải thuật Di truyền (Genetic Algorithms - GA).
+Thuật toán PSO được giới thiệu lần đầu tiên vào năm 1995 bởi James Kennedy và Russell Eberhart, dựa trên công trình của Reynolds về bầy đàn nhân tạo.\cite{kennedy1995particle} PSO nhanh chóng trở nên phổ biến vì nó đơn giản hơn đáng kể so với các thuật toán tiến hóa khác như Giải thuật Di truyền (Genetic Algorithms - GA), và sau đó được hệ thống hóa trong nhiều bài tổng quan.\cite{poli2007pso_overview,wang2018pso_overview}
 
 \subsubsection{Những ứng dụng}
 Thuật toán PSO được ứng dụng rộng rãi trong nhiều lĩnh vực nhờ độ hiệu quả, tính đơn giản và linh hoạt của nó. Nó được ứng dụng trong nhiều lĩnh vực khác nhau:
@@ -30,9 +30,10 @@ Thuật toán PSO được ứng dụng rộng rãi trong nhiều lĩnh vực nh
     \item Công nghiệp: Điều phối sản lượng điện (economic dispatch), Lập lịch tải điện, Tối ưu hóa Lưới điện thông minh,...
     \item Thương mại: Dự đoán chi phí và giá cả, đánh giá rủi ro,...
 \end{itemize}
+Các khảo sát gần đây cho thấy PSO đã được mở rộng với rất nhiều biến thể và ứng dụng thực tế ở quy mô lớn.\cite{poli2007pso_overview,wang2018pso_overview}
 
 \subsection{Cơ sở toán học của thuật toán}
-Cơ sở toán học của thuật toán PSO được thể hiện qua hai phương trình cốt lõi: Cập nhật Vận tốc và Cập nhật Vị trí. Cơ sở toán học này mô tả cách mỗi "hạt" (tương ứng với mỗi cá thể chim trong đàn) trong bầy đàn điều chỉnh chuyển động của nó qua không gian tìm kiếm.
+Cơ sở toán học của thuật toán PSO được thể hiện qua hai phương trình cốt lõi: Cập nhật Vận tốc và Cập nhật Vị trí. Cơ sở toán học này mô tả cách mỗi ``hạt'' (tương ứng với mỗi cá thể chim trong đàn) trong bầy đàn điều chỉnh chuyển động của nó qua không gian tìm kiếm.
 
 \subsubsection{Phương trình Cập nhật Vận tốc (Velocity Update)}
 Phương trình này tính toán vận tốc mới (véc-tơ di chuyển) cho một hạt ở vòng lặp (thế hệ) tiếp theo. Vận tốc mới được quyết định bởi ba thành phần:
@@ -42,7 +43,7 @@ Phương trình này tính toán vận tốc mới (véc-tơ di chuyển) cho m�
     \item \textbf{Thành phần Xã hội (Social Component):} Hướng di chuyển về phía vị trí tốt nhất toàn bầy (gbest) mà bất kỳ hạt nào trong bầy đã từng đạt được.
 \end{itemize}
 
-Công thức toán học như sau:
+Công thức toán học như sau:\cite{kennedy1995particle,poli2007pso_overview}
 \begin{equation}
     \mathbf{v}_{i}(t+1) = w \cdot \mathbf{v}_{i}(t) + c_1 \cdot r_1 \cdot (\mathbf{pbest}_{i} - \mathbf{x}_{i}(t)) + c_2 \cdot r_2 \cdot (\mathbf{gbest} - \mathbf{x}_{i}(t))
 \end{equation}
@@ -62,7 +63,7 @@ Trong đó:
 \subsubsection{Phương trình Cập nhật Vị trí (Position Update)}
 Sau khi tính toán vận tốc mới, hạt sẽ sử dụng vận tốc đó để di chuyển đến một vị trí mới trong không gian tìm kiếm.
 
-Công thức toán học như sau:
+Công thức toán học như sau:\cite{poli2007pso_overview,wang2018pso_overview}
 \begin{equation}
     \mathbf{x}_{i}(t+1) = \mathbf{x}_{i}(t) + \mathbf{v}_{i}(t+1)
 \end{equation}
@@ -74,10 +75,12 @@ Trong đó:
     \item $ \mathbf{v}_{i}(t+1) $: Vận tốc mới vừa được tính toán từ phương trình (1).
 \end{itemize}
 
+Các phương trình (1)–(2) là dạng PSO chuẩn được giới thiệu trong công trình gốc và được tổng hợp, phân tích chi tiết trong các bài tổng quan hiện đại.\cite{kennedy1995particle,poli2007pso_overview,wang2018pso_overview}
+
 \subsection{Triển khai thuật toán}
 
 \subsubsection{Cách hoạt động của thuật toán}
-Thuật toán PSO mô phỏng một bầy đàn "bay"  qua không gian tìm kiếm để tìm giải pháp tối ưu.
+Thuật toán PSO mô phỏng một bầy đàn ``bay''  qua không gian tìm kiếm để tìm giải pháp tối ưu.
 
 \begin{algorithm}[H]
 \caption{Thuật toán Tối ưu hóa Bầy đàn Hạt (PSO)}

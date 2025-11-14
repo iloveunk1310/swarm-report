@@ -1,19 +1,184 @@
 \newcommand{\etalchar}[1]{$^{#1}$}
-\begin{thebibliography}{IEH{\etalchar{+}}25}
+\begin{thebibliography}{LLRKS85}
+
+\bibitem[Ack87]{ackley1987connectionist}
+David~H. Ackley.
+\newblock {\em A Connectionist Machine for Genetic Hillclimbing}.
+\newblock Kluwer Academic Publishers, Boston, MA, 1987.
+
+\bibitem[CLRS09]{cormen2009introduction}
+Thomas~H. Cormen, Charles~E. Leiserson, Ronald~L. Rivest, and Clifford Stein.
+\newblock {\em Introduction to Algorithms}.
+\newblock MIT Press, Cambridge, MA, 3 edition, 2009.
+
+\bibitem[DBS06]{dorigo2006aco}
+Marco Dorigo, Mauro Birattari, and Thomas St{\"u}tzle.
+\newblock Ant colony optimization: Artificial ants as a computational intelligence technique.
+\newblock {\em IEEE Computational Intelligence Magazine}, 1(4):28--39, 2006.
+
+\bibitem[DDC99]{dorigo1999acometa}
+Marco Dorigo and Gianni Di~Caro.
+\newblock The ant colony optimization meta-heuristic.
+\newblock In David Corne, Marco Dorigo, and Fred Glover, editors, {\em New Ideas in Optimization}, pages 11--32. McGraw-Hill, London, 1999.
+
+\bibitem[DG89]{deneubourg1989collective}
+Jean-Louis Deneubourg and Simon Goss.
+\newblock Collective patterns and decision-making.
+\newblock {\em Ethology Ecology \& Evolution}, 1:295--311, 1989.
+
+\bibitem[DG97]{dorigo1997acs}
+Marco Dorigo and Luca~Maria Gambardella.
+\newblock Ant colony system: A cooperative learning approach to the traveling salesman problem.
+\newblock {\em IEEE Transactions on Evolutionary Computation}, 1(1):53--66, 1997.
+
+\bibitem[DJ75]{dejong1975analysis}
+Kenneth~A. De~Jong.
+\newblock {\em An Analysis of the Behavior of a Class of Genetic Adaptive Systems}.
+\newblock PhD thesis, University of Michigan, Ann Arbor, MI, 1975.
+
+\bibitem[DM02]{dolan2002benchmarking}
+Elizabeth~D. Dolan and Jorge~J. Mor{\'e}.
+\newblock Benchmarking optimization software with performance profiles.
+\newblock {\em Mathematical Programming}, 91(2):201--213, 2002.
+
+\bibitem[DMC96]{dorigo1996antsystem}
+Marco Dorigo, Vittorio Maniezzo, and Alberto Colorni.
+\newblock The ant system: Optimization by a colony of cooperating agents.
+\newblock {\em IEEE Transactions on Systems, Man, and Cybernetics, Part B}, 26(1):29--41, 1996.
+
+\bibitem[Dor92]{dorigo1992thesis}
+Marco Dorigo.
+\newblock {\em Optimization, Learning and Natural Algorithms}.
+\newblock PhD thesis, Politecnico di Milano, Milan, Italy, 1992.
+
+\bibitem[DS04]{dorigo2004book}
+Marco Dorigo and Thomas St{\"u}tzle.
+\newblock {\em Ant Colony Optimization}.
+\newblock MIT Press, Cambridge, MA, 2004.
+
+\bibitem[GJ79]{garey1979computers}
+Michael~R. Garey and David~S. Johnson.
+\newblock {\em Computers and Intractability: A Guide to the Theory of {NP}-Completeness}.
+\newblock W. H. Freeman, San Francisco, 1979.
+
+\bibitem[Gol89]{goldberg1989ga}
+David~E. Goldberg.
+\newblock {\em Genetic Algorithms in Search, Optimization, and Machine Learning}.
+\newblock Addison-Wesley, Reading, MA, 1989.
+
+\bibitem[HNR68]{hart1968astar}
+Peter~E. Hart, Nils~J. Nilsson, and Bertram Raphael.
+\newblock A formal basis for the heuristic determination of minimum cost paths.
+\newblock {\em IEEE Transactions on Systems Science and Cybernetics}, 4(2):100--107, 1968.
+
+\bibitem[Hol75]{holland1975adaptation}
+John~H. Holland.
+\newblock {\em Adaptation in Natural and Artificial Systems: An Introductory Analysis with Applications to Biology, Control, and Artificial Intelligence}.
+\newblock University of Michigan Press, Ann Arbor, MI, 1975.
 
 \bibitem[IEH{\etalchar{+}}25]{ibrahim2025artificial}
 Ashraf~Osman Ibrahim, Elsadig Mohammed~Elbushra Elfadel, Ibrahim Abaker~Targio Hashem, Hassan~Jamil Syed, Moh~Arfian Ismail, Ahmed~Hamza Osman, and Ali Ahmed.
-\newblock The artificial bee colony algorithm: A comprehensive survey of variants, modifications, applications, developments, and opportunities.
-\newblock {\em Archives of Computational Methods in Engineering}, pages 1--35, 2025.
+\newblock The {Artificial Bee Colony} algorithm: A comprehensive survey of variants, modifications, applications, developments, and opportunities.
+\newblock {\em Archives of Computational Methods in Engineering}, 32:3499--3533, 2025.
 
-\bibitem[KA09]{karaboga2009comparative}
+\bibitem[JT95]{jensen1995graphcoloring}
+Tommy~R. Jensen and Bjarne Toft.
+\newblock {\em Graph Coloring Problems}.
+\newblock John Wiley \& Sons, New York, 1995.
+
+\bibitem[KA09]{Karaboga2009Comparative}
 Dervis Karaboga and Bahriye Akay.
 \newblock A comparative study of artificial bee colony algorithm.
-\newblock {\em Applied mathematics and computation}, 214(1):108--132, 2009.
+\newblock {\em Applied Mathematics and Computation}, 214(1):108--132, 2009.
 
-\bibitem[Kum13]{kumar2013review}
-Dharmender Kumar.
-\newblock A review on artificial bee colony algorithm.
-\newblock {\em International Journal of Engineering \& Technology}, 2013.
+\bibitem[Kar05]{Karaboga2005TR}
+Dervis Karaboga.
+\newblock An idea based on honey bee swarm for numerical optimization.
+\newblock Technical Report Technical Report TR06, Erciyes University, Engineering Faculty, Computer Engineering Department, Kayseri, Turkey, 2005.
+
+\bibitem[KE95]{kennedy1995particle}
+James Kennedy and Russell~C. Eberhart.
+\newblock Particle swarm optimization.
+\newblock In {\em Proceedings of the IEEE International Conference on Neural Networks}, pages 1942--1948. IEEE, 1995.
+
+\bibitem[KGV83]{kirkpatrick1983optimization}
+Scott Kirkpatrick, C.~Daniel Gelatt, and Mario~P. Vecchi.
+\newblock Optimization by simulated annealing.
+\newblock {\em Science}, 220(4598):671--680, 1983.
+
+\bibitem[Lap92]{laporte1992tsp}
+Gilbert Laporte.
+\newblock The traveling salesman problem: An overview of exact and approximate algorithms.
+\newblock {\em European Journal of Operational Research}, 59(2):231--247, 1992.
+
+\bibitem[LLRKS85]{lawler1985tsp}
+Eugene~L. Lawler, Jan~Karel Lenstra, A.~H.~G. Rinnooy~Kan, and David~B. Shmoys, editors.
+\newblock {\em The Traveling Salesman Problem: A Guided Tour of Combinatorial Optimization}.
+\newblock Wiley, Chichester, 1985.
+
+\bibitem[MW09]{more2009benchmarking}
+Jorge~J. Mor{\'e} and Stefan~M. Wild.
+\newblock Benchmarking derivative-free optimization algorithms.
+\newblock {\em SIAM Journal on Optimization}, 20(1):172--191, 2009.
+
+\bibitem[Pis05]{pisinger2005hard}
+David Pisinger.
+\newblock Where are the hard knapsack problems?
+\newblock {\em Computers \& Operations Research}, 32(9):2271--2284, 2005.
+
+\bibitem[PKB07]{poli2007pso_overview}
+Riccardo Poli, James Kennedy, and Tim Blackwell.
+\newblock Particle swarm optimization: An overview.
+\newblock {\em Swarm Intelligence}, 1(1):33--57, 2007.
+
+\bibitem[Ras74]{rastrigin1974systems}
+Leonid~A. Rastrigin.
+\newblock {\em Systems of Extremal Control}.
+\newblock Nauka, Moscow, 1974.
+
+\bibitem[Rey87]{reynolds1987boids}
+Craig~W. Reynolds.
+\newblock Flocks, herds, and schools: A distributed behavioral model.
+\newblock {\em SIGGRAPH Computer Graphics}, 21(4):25--34, 1987.
+
+\bibitem[RN20]{russell2020aima}
+Stuart~J. Russell and Peter Norvig.
+\newblock {\em Artificial Intelligence: A Modern Approach}.
+\newblock Pearson, 4 edition, 2020.
+
+\bibitem[Ros60]{rosenbrock1960automatic}
+Howard~H. Rosenbrock.
+\newblock An automatic method for finding the greatest or least value of a function.
+\newblock {\em The Computer Journal}, 3(3):175--184, 1960.
+
+\bibitem[SMCM21]{smithmiles2021revisiting}
+Kate Smith-Miles, Jeffrey Christiansen, and Mario~Andr{\'e}s Mu{\~n}oz.
+\newblock Revisiting ``where are the hard knapsack problems?'' via instance space analysis.
+\newblock {\em Computers \& Operations Research}, 128:105184, 2021.
+
+\bibitem[TN17]{tilahun2017fireflyDiscrete}
+Surafel~Luleseged Tilahun and Jean Medard~Tchuenche Ngnotchouye.
+\newblock Firefly algorithm for discrete optimization problems: a survey.
+\newblock {\em KSCE Journal of Civil Engineering}, 21(2):535--545, 2017.
+
+\bibitem[TN19]{tilahun2019continuous}
+Surafel~Luleseged Tilahun and Jean Medard~Tchuenche Ngnotchouye.
+\newblock Continuous versions of firefly algorithm: a review.
+\newblock {\em Artificial Intelligence Review}, 51(3):445--492, 2019.
+
+\bibitem[VK13]{kumar2013review}
+B.~K. Verma and Dharmender Kumar.
+\newblock A review on {Artificial Bee Colony} algorithm.
+\newblock {\em International Journal of Engineering and Technology}, 2(3):175--186, 2013.
+
+\bibitem[WTL18]{wang2018pso_overview}
+Dingwei Wang, Dejun Tan, and Li~Liu.
+\newblock Particle swarm optimization algorithm: An overview.
+\newblock {\em Soft Computing}, 22(2):387--408, 2018.
+
+\bibitem[Yan10]{yang2010firefly}
+Xin-She Yang.
+\newblock Firefly algorithm, stochastic test functions and design optimisation.
+\newblock {\em International Journal of Bio-Inspired Computation}, 2(2):78--84, 2010.
 
 \end{thebibliography}

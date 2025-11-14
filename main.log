@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.12)  14 NOV 2025 14:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.12)  14 NOV 2025 21:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -140,10 +140,29 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \c@ALC@depth=\count281
 \ALC@tlm=\skip53
 \algorithmicindent=\skip54
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
+ (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen158
+\ar@mcellbox=\box55
+\extrarowheight=\dimen159
+\NC@list=\toks27
+\extratabsurround=\skip55
+\backup@length=\skip56
+\ar@cellbox=\box56
+)
+\TX@col@width=\dimen160
+\TX@old@table=\dimen161
+\TX@old@col=\dimen162
+\TX@target=\dimen163
+\TX@delta=\dimen164
+\TX@cols=\count282
+\TX@ftn=\toks28
 ) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
-\inpenc@prehook=\toks27
-\inpenc@posthook=\toks28
+\inpenc@prehook=\toks29
+\inpenc@posthook=\toks30
 ) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
  (/usr/share/texlive/texmf-dist/tex/latex/vntex/t5enc.def
@@ -309,12 +328,12 @@ LaTeX Font Info:    Trying to load font information for T5+cmr on input line 112
 File: t5cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2024/01/07 v24.1 The Babel package
-\babel@savecnt=\count282
-\U@D=\dimen158
+\babel@savecnt=\count283
+\U@D=\dimen165
 \l@unhyphenated=\language34
  (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count283
+\bbl@dirlevel=\count284
  (/usr/share/texlive/texmf-dist/tex/generic/babel-vietnamese/vietnamese.ldf
 Language: vietnamese 
  Loading definitions for the Vietnamese font encoding (/usr/share/texlive/texmf-dist/tex/latex/vntex/t5enc.def
@@ -327,28 +346,28 @@ Package babel Info: Importing font and identification data for vietnamese
 (babel)             from babel-vi.ini. Reported on input line 11.
 ) (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2023/10/27 v2.16 Sectioning titles
-\ttl@box=\box55
-\beforetitleunit=\skip55
-\aftertitleunit=\skip56
-\ttl@plus=\dimen159
-\ttl@minus=\dimen160
-\ttl@toksa=\toks29
-\titlewidth=\dimen161
-\titlewidthlast=\dimen162
-\titlewidthfirst=\dimen163
+\ttl@box=\box57
+\beforetitleunit=\skip57
+\aftertitleunit=\skip58
+\ttl@plus=\dimen166
+\ttl@minus=\dimen167
+\ttl@toksa=\toks31
+\titlewidth=\dimen168
+\titlewidthlast=\dimen169
+\titlewidthfirst=\dimen170
 )
-\c@subsubsubsection=\count284
+\c@subsubsubsection=\count285
  (/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks30
-\thm@bodyfont=\toks31
-\thm@headfont=\toks32
-\thm@notefont=\toks33
-\thm@headpunct=\toks34
-\thm@preskip=\skip57
-\thm@postskip=\skip58
-\thm@headsep=\skip59
-\dth@everypar=\toks35
+\thm@style=\toks32
+\thm@bodyfont=\toks33
+\thm@headfont=\toks34
+\thm@notefont=\toks35
+\thm@headpunct=\toks36
+\thm@preskip=\skip59
+\thm@postskip=\skip60
+\thm@headsep=\skip61
+\dth@everypar=\toks37
 ) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
  (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
@@ -362,24 +381,24 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
  (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen164
-\Gin@req@width=\dimen165
+\Gin@req@height=\dimen171
+\Gin@req@width=\dimen172
 ) (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
  (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen166
-\captionmargin=\dimen167
-\caption@leftmargin=\dimen168
-\caption@rightmargin=\dimen169
-\caption@width=\dimen170
-\caption@indent=\dimen171
-\caption@parindent=\dimen172
-\caption@hangindent=\dimen173
+\caption@tempdima=\dimen173
+\captionmargin=\dimen174
+\caption@leftmargin=\dimen175
+\caption@rightmargin=\dimen176
+\caption@width=\dimen177
+\caption@indent=\dimen178
+\caption@parindent=\dimen179
+\caption@hangindent=\dimen180
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count285
-\c@continuedfloat=\count286
+\c@caption@flags=\count286
+\c@continuedfloat=\count287
 Package caption Info: float package is loaded.
 ) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
@@ -412,14 +431,14 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
  (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count287
+\c@section@level=\count288
 ) (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count288
+\etb@tempcnta=\count289
 )
-\@linkdim=\dimen174
-\Hy@linkcounter=\count289
-\Hy@pagecounter=\count290
+\@linkdim=\dimen181
+\Hy@linkcounter=\count290
+\Hy@pagecounter=\count291
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -427,7 +446,7 @@ Now handling font encoding PD1 ...
 ) (/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count291
+\Hy@SavedSpaceFactor=\count292
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -440,21 +459,21 @@ Package hyperref Info: Plain pages OFF on input line 4194.
 Package hyperref Info: Backreferencing OFF on input line 4199.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4446.
-\c@Hy@tempcnt=\count292
+\c@Hy@tempcnt=\count293
  (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4784.
-\XeTeXLinkMargin=\dimen175
+\XeTeXLinkMargin=\dimen182
  (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count293
-\Field@Width=\dimen176
-\Fld@charsize=\dimen177
+\Fld@menulength=\count294
+\Field@Width=\dimen183
+\Fld@charsize=\dimen184
 Package hyperref Info: Hyper figures OFF on input line 6063.
 Package hyperref Info: Link nesting OFF on input line 6068.
 Package hyperref Info: Hyper index ON on input line 6071.
@@ -466,9 +485,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6093.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count294
-\c@Item=\count295
-\c@Hfootnote=\count296
+\Hy@abspage=\count295
+\c@Item=\count296
+\c@Hfootnote=\count297
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
@@ -477,8 +496,8 @@ File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
-\Fld@listcount=\count297
-\c@bookmark@seq@number=\count298
+\Fld@listcount=\count298
+\c@bookmark@seq@number=\count299
  (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
  (/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
@@ -486,50 +505,44 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
-\Hy@SectionHShift=\skip60
+\Hy@SectionHShift=\skip62
 ) (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip61
-\enit@outerparindent=\dimen178
-\enit@toks=\toks36
-\enit@inbox=\box56
-\enit@count@id=\count299
-\enitdp@description=\count300
+\labelindent=\skip63
+\enit@outerparindent=\dimen185
+\enit@toks=\toks38
+\enit@inbox=\box58
+\enit@count@id=\count300
+\enitdp@description=\count301
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 44.
-
-
-Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 44.
-
-Package hyperref Info: Option `breaklinks' set `true' on input line 44.
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+Package hyperref Info: Option `colorlinks' set `true' on input line 39.
+ (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count301
-\l__pdf_internal_box=\box57
+\l__color_backend_stack_int=\count302
+\l__pdf_internal_box=\box59
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -567,17 +580,17 @@ LaTeX Font Info:    ... okay on input line 52.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count302
-\scratchdimen=\dimen179
-\scratchbox=\box58
-\nofMPsegments=\count303
-\nofMParguments=\count304
-\everyMPshowfont=\toks37
-\MPscratchCnt=\count305
-\MPscratchDim=\dimen180
-\MPnumerator=\count306
-\makeMPintoPDFobject=\count307
-\everyMPtoPDFconversion=\toks38
+\scratchcounter=\count303
+\scratchdimen=\dimen186
+\scratchbox=\box60
+\nofMPsegments=\count304
+\nofMParguments=\count305
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count306
+\MPscratchDim=\dimen187
+\MPnumerator=\count307
+\makeMPintoPDFobject=\count308
+\everyMPtoPDFconversion=\toks40
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -594,26 +607,60 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 149.
  (/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx))
-Package hyperref Info: Link coloring ON on input line 52.
+Package hyperref Info: Link coloring ON on input line 42.
  (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
+<picture/hcmus-logo.png, id=392, 597.9138pt x 597.9138pt>
+File: picture/hcmus-logo.png Graphic file (type png)
+<use picture/hcmus-logo.png>
+Package pdftex.def Info: picture/hcmus-logo.png  used on input line 47.
+(pdftex.def)             Requested size: 90.5922pt x 90.58641pt.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 66.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 66.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./main.toc [1
+) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2])
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./picture/hcmus-logo.png>] (./main.toc
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.52 ...6.4.2}MÃ£ giáº£ }{18}{subsubsection.6.4.2}
+                                                  % [1] [2])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [3] (./sections/introduction.tex) (./sections/genetic_algorithm.tex
-<picture/giraffe.png, id=522, 641.39626pt x 639.89063pt>
+ [3] (./sections/introduction.tex) (./sections/ant_colony_optimization.tex [4] [5]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 85.
+ [6]
+LaTeX Font Info:    Trying to load font information for T5+cmtt on input line 120.
+ (/usr/share/texlive/texmf-dist/tex/latex/vntex/t5cmtt.fd
+File: t5cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)) (./sections/particle_swarm_optimization.tex [7] [8] [9]) (./sections/artificial_bee_colony.tex [10] [11]) (./sections/firefly_algorithm.tex [12]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 7.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 17.
+
+[13]
+Overfull \hbox (18.87987pt too wide) in paragraph at lines 54--56
+[] []\T5/cmr/bx/n/10.95 Xû lþ bi¶n.[] \T5/cmr/m/n/10.95 Sau cªp nhªt, sû döng \T5/cmr/bx/n/10.95 chi¸u (clipping) \T5/cmr/m/n/10.95 v· mi·n hñp l» $\OT1/cmr/m/n/10.95 [[]\OML/cmm/m/it/10.95 ; []\OT1/cmr/m/n/10.95 ]$
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 57.
+
+[14] [15]) (./sections/cuckoo_search.tex [16]) (./sections/genetic_algorithm.tex [17]
+<picture/giraffe.png, id=783, 641.39626pt x 639.89063pt>
 File: picture/giraffe.png Graphic file (type png)
 <use picture/giraffe.png>
 Package pdftex.def Info: picture/giraffe.png  used on input line 17.
@@ -622,231 +669,250 @@ Package pdftex.def Info: picture/giraffe.png  used on input line 17.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[4] [5 <./picture/giraffe.png>]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 73.
- [6] [7] [8] [9] [10]) (./sections/problems.tex [11]
-<picture/tsp.png, id=669, 397.485pt x 258.9675pt>
+[18] [19 <./picture/giraffe.png>] [20] [21] [22] [23] [24] [25]) (./sections/problems.tex [26]
+<picture/tsp.png, id=986, 397.485pt x 258.9675pt>
 File: picture/tsp.png Graphic file (type png)
 <use picture/tsp.png>
 Package pdftex.def Info: picture/tsp.png  used on input line 18.
 (pdftex.def)             Requested size: 271.7835pt x 177.07553pt.
- [12]
-LaTeX Font Info:    Trying to load font information for T5+cmtt on input line 34.
- (/usr/share/texlive/texmf-dist/tex/latex/vntex/t5cmtt.fd
-File: t5cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-) [13 <./picture/tsp.png>] [14] [15] [16]) (./sections/ant_colony_optimization.tex [17] [18] [19]) (./sections/particle_swarm_optimization.tex [20] [21] [22]) (./sections/artificial_bee_colony.tex [23] [24]) (./sections/firefly_algorithm.tex [25] [26] [27] [28] [29]
-Overfull \hbox (5.86777pt too wide) in paragraph at lines 182--183
-[]\T5/cmr/m/it/10.95 Mutation\T5/cmr/m/n/10.95 : perturbation tøng chi·u vîi x¡c su§t mutation_rate; c¡c gi¡ trà mutation_rate
+ [27 <./picture/tsp.png>] [28] [29] [30]) (./sections/results.tex
+<picture/ras_1.png, id=1028, 1126.96031pt x 532.23843pt>
+File: picture/ras_1.png Graphic file (type png)
+<use picture/ras_1.png>
+Package pdftex.def Info: picture/ras_1.png  used on input line 12.
+(pdftex.def)             Requested size: 144.95303pt x 68.45438pt.
+<picture/ras_2.png, id=1029, 1123.19624pt x 528.47438pt>
+File: picture/ras_2.png Graphic file (type png)
+<use picture/ras_2.png>
+Package pdftex.def Info: picture/ras_2.png  used on input line 17.
+(pdftex.def)             Requested size: 144.95303pt x 68.19604pt.
+<picture/ras_3.png, id=1030, 1130.72438pt x 533.74406pt>
+File: picture/ras_3.png Graphic file (type png)
+<use picture/ras_3.png>
+Package pdftex.def Info: picture/ras_3.png  used on input line 22.
+(pdftex.def)             Requested size: 144.95303pt x 68.41998pt.
+<picture/ras_compare.png, id=1031, 838.63312pt x 368.87813pt>
+File: picture/ras_compare.png Graphic file (type png)
+<use picture/ras_compare.png>
+Package pdftex.def Info: picture/ras_compare.png  used on input line 30.
+(pdftex.def)             Requested size: 452.9679pt x 199.24187pt.
+ [31 <./picture/ras_1.png> <./picture/ras_2.png> <./picture/ras_3.png> <./picture/ras_compare.png>]
+<picture/cir_compare.png, id=1043, 224.33812pt x 271.0125pt>
+File: picture/cir_compare.png Graphic file (type png)
+<use picture/cir_compare.png>
+Package pdftex.def Info: picture/cir_compare.png  used on input line 38.
+(pdftex.def)             Requested size: 113.24197pt x 136.80026pt.
+ [32 <./picture/cir_compare.png>]
+Overfull \hbox (2.94772pt too wide) in paragraph at lines 88--89
+[]\T5/cmr/m/n/10.95 Ba c§u h¼nh Rastrigin trong \T5/cmtt/m/n/10.95 config.py\T5/cmr/m/n/10.95 ^^V\T5/cmtt/m/n/10.95 quick_convergence \T5/cmr/m/n/10.95 ($\OML/cmm/m/it/10.95 d \OT1/cmr/m/n/10.95 = 10$\T5/cmr/m/n/10.95 ), \T5/cmtt/m/n/10.95 multimodal_escape
  []
 
-
-Overfull \hbox (23.42209pt too wide) in paragraph at lines 207--208
-[]\T5/cmr/m/n/10.95 Di chuyºn câ h÷îng (directed movement) lªt tèi ^^_a mët sè bit méi b÷îc (\T5/cmtt/m/n/10.95 max_flips_per_move\T5/cmr/m/n/10.95 =3)
+[33]
+Overfull \hbox (14.10689pt too wide) in paragraph at lines 109--110
+[]\T5/cmr/bx/n/10.95 Rastrigin: \T5/cmr/m/n/10.95 méi c§u h¼nh \T5/cmtt/m/n/10.95 quick_convergence \T5/cmr/m/n/10.95 (10D), \T5/cmtt/m/n/10.95 multimodal_escape \T5/cmr/m/n/10.95 (30D), \T5/cmtt/m/n/10.95 scalability
  []
 
+LaTeX Font Info:    Font shape `T5/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T5/cmtt/m/n' tried instead on input line 124.
 
-Overfull \hbox (25.03738pt too wide) in paragraph at lines 218--219
-[]\T5/cmr/m/n/10.95 Vîi Rastrigin: méi c§u h¼nh \T5/cmtt/m/n/10.95 quick_convergence \T5/cmr/m/n/10.95 (10D), \T5/cmtt/m/n/10.95 multimodal_escape \T5/cmr/m/n/10.95 (30D), \T5/cmtt/m/n/10.95 scalability
+Overfull \hbox (11.22913pt too wide) in paragraph at lines 133--134
+[]\T5/cmr/m/n/10.95 C¡c instance ^^_÷ñc sinh b¬ng \T5/cmtt/m/n/10.95 generate_knapsack_instance() \T5/cmr/m/n/10.95 trong \T5/cmtt/m/n/10.95 instance_generator.py
  []
 
-[30]) (./sections/cuckoo_search.tex [31]) (./sections/results.tex
-Overfull \hbox (13.06409pt too wide) in paragraph at lines 10--11
-\T5/cmr/m/n/10.95 cüc tiºu ^^_àa ph÷ìng v  mët cüc tiºu to n cöc t¤i $\OT1/cmr/bx/n/10.95 0$ \T5/cmr/m/n/10.95 vîi $\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OT1/cmr/bx/n/10.95 0\OT1/cmr/m/n/10.95 ) = 0$ \T5/cmr/m/n/10.95 :contentReference[oaicite:2]index=2. 
- []
-
-[32] [33]
-<picture/rastrigin_ecdf_quick_convergence.png, id=966, 859.7721pt x 354.123pt>
+[34] [35]
+<picture/rastrigin_ecdf_quick_convergence.png, id=1078, 859.7721pt x 354.123pt>
 File: picture/rastrigin_ecdf_quick_convergence.png Graphic file (type png)
 <use picture/rastrigin_ecdf_quick_convergence.png>
-Package pdftex.def Info: picture/rastrigin_ecdf_quick_convergence.png  used on input line 68.
+Package pdftex.def Info: picture/rastrigin_ecdf_quick_convergence.png  used on input line 194.
 (pdftex.def)             Requested size: 430.31812pt x 177.23936pt.
-<picture/rastrigin_ecdf_multimodal_escape.png, id=967, 856.3995pt x 354.123pt>
+ [36 <./picture/rastrigin_ecdf_quick_convergence.png>]
+<picture/rastrigin_ecdf_multimodal_escape.png, id=1088, 856.3995pt x 354.123pt>
 File: picture/rastrigin_ecdf_multimodal_escape.png Graphic file (type png)
 <use picture/rastrigin_ecdf_multimodal_escape.png>
-Package pdftex.def Info: picture/rastrigin_ecdf_multimodal_escape.png  used on input line 83.
+Package pdftex.def Info: picture/rastrigin_ecdf_multimodal_escape.png  used on input line 209.
 (pdftex.def)             Requested size: 430.31812pt x 177.94182pt.
- [34 <./picture/rastrigin_ecdf_quick_convergence.png>]
-<picture/rastrigin_ecdf_scalability.png, id=975, 859.7721pt x 353.8821pt>
+<picture/rastrigin_ecdf_scalability.png, id=1089, 859.7721pt x 353.8821pt>
 File: picture/rastrigin_ecdf_scalability.png Graphic file (type png)
 <use picture/rastrigin_ecdf_scalability.png>
-Package pdftex.def Info: picture/rastrigin_ecdf_scalability.png  used on input line 98.
+Package pdftex.def Info: picture/rastrigin_ecdf_scalability.png  used on input line 224.
 (pdftex.def)             Requested size: 430.31812pt x 177.11879pt.
- [35 <./picture/rastrigin_ecdf_multimodal_escape.png> <./picture/rastrigin_ecdf_scalability.png>]
-<picture/rastrigin_fixed_budget_quick_convergence.png, id=984, 859.0494pt x 357.2547pt>
+ [37 <./picture/rastrigin_ecdf_multimodal_escape.png>]
+<picture/rastrigin_fixed_budget_quick_convergence.png, id=1096, 859.0494pt x 357.2547pt>
 File: picture/rastrigin_fixed_budget_quick_convergence.png Graphic file (type png)
 <use picture/rastrigin_fixed_budget_quick_convergence.png>
-Package pdftex.def Info: picture/rastrigin_fixed_budget_quick_convergence.png  used on input line 114.
+Package pdftex.def Info: picture/rastrigin_fixed_budget_quick_convergence.png  used on input line 240.
 (pdftex.def)             Requested size: 407.66833pt x 169.53964pt.
-<picture/rastrigin_fixed_budget_multimodal_escape.png, id=985, 859.0494pt x 357.2547pt>
+ [38 <./picture/rastrigin_ecdf_scalability.png> <./picture/rastrigin_fixed_budget_quick_convergence.png>]
+<picture/rastrigin_fixed_budget_multimodal_escape.png, id=1106, 859.0494pt x 357.2547pt>
 File: picture/rastrigin_fixed_budget_multimodal_escape.png Graphic file (type png)
 <use picture/rastrigin_fixed_budget_multimodal_escape.png>
-Package pdftex.def Info: picture/rastrigin_fixed_budget_multimodal_escape.png  used on input line 129.
+Package pdftex.def Info: picture/rastrigin_fixed_budget_multimodal_escape.png  used on input line 255.
 (pdftex.def)             Requested size: 407.66833pt x 169.53964pt.
- [36 <./picture/rastrigin_fixed_budget_quick_convergence.png>]
-<picture/rastrigin_fixed_budget_scalability.png, id=993, 858.8085pt x 357.2547pt>
+<picture/rastrigin_fixed_budget_scalability.png, id=1107, 858.8085pt x 357.2547pt>
 File: picture/rastrigin_fixed_budget_scalability.png Graphic file (type png)
 <use picture/rastrigin_fixed_budget_scalability.png>
-Package pdftex.def Info: picture/rastrigin_fixed_budget_scalability.png  used on input line 144.
+Package pdftex.def Info: picture/rastrigin_fixed_budget_scalability.png  used on input line 270.
 (pdftex.def)             Requested size: 407.66833pt x 169.58871pt.
- [37 <./picture/rastrigin_fixed_budget_multimodal_escape.png> <./picture/rastrigin_fixed_budget_scalability.png>]
-<picture/rastrigin_ert_bronze.png, id=1004, 859.0494pt x 356.0502pt>
+ [39 <./picture/rastrigin_fixed_budget_multimodal_escape.png> <./picture/rastrigin_fixed_budget_scalability.png>]
+<picture/rastrigin_ert_bronze.png, id=1116, 859.0494pt x 356.0502pt>
 File: picture/rastrigin_ert_bronze.png Graphic file (type png)
 <use picture/rastrigin_ert_bronze.png>
-Package pdftex.def Info: picture/rastrigin_ert_bronze.png  used on input line 162.
+Package pdftex.def Info: picture/rastrigin_ert_bronze.png  used on input line 288.
 (pdftex.def)             Requested size: 430.31812pt x 178.35606pt.
-<picture/rastrigin_ert_silver.png, id=1005, 859.0494pt x 356.0502pt>
+<picture/rastrigin_ert_silver.png, id=1117, 859.0494pt x 356.0502pt>
 File: picture/rastrigin_ert_silver.png Graphic file (type png)
 <use picture/rastrigin_ert_silver.png>
-Package pdftex.def Info: picture/rastrigin_ert_silver.png  used on input line 169.
+Package pdftex.def Info: picture/rastrigin_ert_silver.png  used on input line 295.
 (pdftex.def)             Requested size: 430.31812pt x 178.35606pt.
-<picture/rastrigin_ert_gold.png, id=1006, 859.0494pt x 356.0502pt>
+<picture/rastrigin_ert_gold.png, id=1118, 859.0494pt x 356.0502pt>
 File: picture/rastrigin_ert_gold.png Graphic file (type png)
 <use picture/rastrigin_ert_gold.png>
-Package pdftex.def Info: picture/rastrigin_ert_gold.png  used on input line 176.
+Package pdftex.def Info: picture/rastrigin_ert_gold.png  used on input line 302.
 (pdftex.def)             Requested size: 430.31812pt x 178.35606pt.
- [38 <./picture/rastrigin_ert_bronze.png> <./picture/rastrigin_ert_silver.png>]
-<picture/rastrigin_perf_profile.png, id=1017, 712.8231pt x 421.3341pt>
+ [40 <./picture/rastrigin_ert_bronze.png> <./picture/rastrigin_ert_silver.png>]
+<picture/rastrigin_perf_profile.png, id=1129, 712.8231pt x 421.3341pt>
 File: picture/rastrigin_perf_profile.png Graphic file (type png)
 <use picture/rastrigin_perf_profile.png>
-Package pdftex.def Info: picture/rastrigin_perf_profile.png  used on input line 191.
+Package pdftex.def Info: picture/rastrigin_perf_profile.png  used on input line 317.
 (pdftex.def)             Requested size: 385.02547pt x 227.58131pt.
- [39 <./picture/rastrigin_ert_gold.png>]
-<picture/rastrigin_data_profile.png, id=1024, 714.0276pt x 421.3341pt>
+ [41 <./picture/rastrigin_ert_gold.png>]
+<picture/rastrigin_data_profile.png, id=1136, 714.0276pt x 421.3341pt>
 File: picture/rastrigin_data_profile.png Graphic file (type png)
 <use picture/rastrigin_data_profile.png>
-Package pdftex.def Info: picture/rastrigin_data_profile.png  used on input line 206.
+Package pdftex.def Info: picture/rastrigin_data_profile.png  used on input line 332.
 (pdftex.def)             Requested size: 385.02547pt x 227.202pt.
- [40 <./picture/rastrigin_perf_profile.png> <./picture/rastrigin_data_profile.png>]
-<picture/rastrigin_diversity_quick_convergence.png, id=1035, 1004.553pt x 712.8231pt>
+ [42 <./picture/rastrigin_perf_profile.png> <./picture/rastrigin_data_profile.png>]
+<picture/rastrigin_diversity_quick_convergence.png, id=1148, 1004.553pt x 712.8231pt>
 File: picture/rastrigin_diversity_quick_convergence.png Graphic file (type png)
 <use picture/rastrigin_diversity_quick_convergence.png>
-Package pdftex.def Info: picture/rastrigin_diversity_quick_convergence.png  used on input line 230.
+Package pdftex.def Info: picture/rastrigin_diversity_quick_convergence.png  used on input line 356.
 (pdftex.def)             Requested size: 430.31812pt x 305.35503pt.
-<picture/rastrigin_diversity_multimodal_escape.png, id=1036, 1004.553pt x 712.8231pt>
+<picture/rastrigin_diversity_multimodal_escape.png, id=1149, 1004.553pt x 712.8231pt>
 File: picture/rastrigin_diversity_multimodal_escape.png Graphic file (type png)
 <use picture/rastrigin_diversity_multimodal_escape.png>
-Package pdftex.def Info: picture/rastrigin_diversity_multimodal_escape.png  used on input line 237.
+Package pdftex.def Info: picture/rastrigin_diversity_multimodal_escape.png  used on input line 363.
 (pdftex.def)             Requested size: 430.31812pt x 305.35503pt.
- [41 <./picture/rastrigin_diversity_quick_convergence.png>]
-<picture/rastrigin_diversity_scalability.png, id=1045, 1004.553pt x 712.8231pt>
+ [43 <./picture/rastrigin_diversity_quick_convergence.png>]
+<picture/rastrigin_diversity_scalability.png, id=1158, 1004.553pt x 712.8231pt>
 File: picture/rastrigin_diversity_scalability.png Graphic file (type png)
 <use picture/rastrigin_diversity_scalability.png>
-Package pdftex.def Info: picture/rastrigin_diversity_scalability.png  used on input line 244.
+Package pdftex.def Info: picture/rastrigin_diversity_scalability.png  used on input line 370.
 (pdftex.def)             Requested size: 430.31812pt x 305.35503pt.
- [42 <./picture/rastrigin_diversity_multimodal_escape.png> <./picture/rastrigin_diversity_scalability.png>]
-<picture/rastrigin_stagnation_quick_convergence.png, id=1055, 1004.3121pt x 357.2547pt>
+ [44 <./picture/rastrigin_diversity_multimodal_escape.png> <./picture/rastrigin_diversity_scalability.png>]
+<picture/rastrigin_stagnation_quick_convergence.png, id=1169, 1004.3121pt x 357.2547pt>
 File: picture/rastrigin_stagnation_quick_convergence.png Graphic file (type png)
 <use picture/rastrigin_stagnation_quick_convergence.png>
-Package pdftex.def Info: picture/rastrigin_stagnation_quick_convergence.png  used on input line 285.
+Package pdftex.def Info: picture/rastrigin_stagnation_quick_convergence.png  used on input line 411.
 (pdftex.def)             Requested size: 430.31812pt x 153.07684pt.
- [43]
-<picture/rastrigin_stagnation_multimodal_escape.png, id=1064, 1004.3121pt x 357.2547pt>
+ [45]
+<picture/rastrigin_stagnation_multimodal_escape.png, id=1177, 1004.3121pt x 357.2547pt>
 File: picture/rastrigin_stagnation_multimodal_escape.png Graphic file (type png)
 <use picture/rastrigin_stagnation_multimodal_escape.png>
-Package pdftex.def Info: picture/rastrigin_stagnation_multimodal_escape.png  used on input line 292.
+Package pdftex.def Info: picture/rastrigin_stagnation_multimodal_escape.png  used on input line 418.
 (pdftex.def)             Requested size: 430.31812pt x 153.07684pt.
-<picture/rastrigin_stagnation_scalability.png, id=1065, 1004.3121pt x 357.2547pt>
+<picture/rastrigin_stagnation_scalability.png, id=1178, 1004.3121pt x 357.2547pt>
 File: picture/rastrigin_stagnation_scalability.png Graphic file (type png)
 <use picture/rastrigin_stagnation_scalability.png>
-Package pdftex.def Info: picture/rastrigin_stagnation_scalability.png  used on input line 299.
+Package pdftex.def Info: picture/rastrigin_stagnation_scalability.png  used on input line 425.
 (pdftex.def)             Requested size: 430.31812pt x 153.07684pt.
- [44 <./picture/rastrigin_stagnation_quick_convergence.png> <./picture/rastrigin_stagnation_multimodal_escape.png> <./picture/rastrigin_stagnation_scalability.png>]
-
-LaTeX Warning: Reference `subsec:metrics' on page 45 undefined on input line 324.
-
-<picture/knapsack_fixed_budget_Gap_10pct.png, id=1074, 1292.4285pt x 357.2547pt>
+ [46 <./picture/rastrigin_stagnation_quick_convergence.png> <./picture/rastrigin_stagnation_multimodal_escape.png> <./picture/rastrigin_stagnation_scalability.png>]
+<picture/knapsack_fixed_budget_Gap_10pct.png, id=1188, 1292.4285pt x 357.2547pt>
 File: picture/knapsack_fixed_budget_Gap_10pct.png Graphic file (type png)
 <use picture/knapsack_fixed_budget_Gap_10pct.png>
-Package pdftex.def Info: picture/knapsack_fixed_budget_Gap_10pct.png  used on input line 328.
+Package pdftex.def Info: picture/knapsack_fixed_budget_Gap_10pct.png  used on input line 454.
 (pdftex.def)             Requested size: 443.9066pt x 122.70242pt.
-<picture/knapsack_fixed_budget_Gap_30pct.png, id=1075, 1292.4285pt x 357.2547pt>
+<picture/knapsack_fixed_budget_Gap_30pct.png, id=1189, 1292.4285pt x 357.2547pt>
 File: picture/knapsack_fixed_budget_Gap_30pct.png Graphic file (type png)
 <use picture/knapsack_fixed_budget_Gap_30pct.png>
-Package pdftex.def Info: picture/knapsack_fixed_budget_Gap_30pct.png  used on input line 335.
+Package pdftex.def Info: picture/knapsack_fixed_budget_Gap_30pct.png  used on input line 461.
 (pdftex.def)             Requested size: 443.9066pt x 122.70242pt.
-<picture/knapsack_fixed_budget_Gap_50pct.png, id=1076, 1292.4285pt x 357.2547pt>
+<picture/knapsack_fixed_budget_Gap_50pct.png, id=1190, 1292.4285pt x 357.2547pt>
 File: picture/knapsack_fixed_budget_Gap_50pct.png Graphic file (type png)
 <use picture/knapsack_fixed_budget_Gap_50pct.png>
-Package pdftex.def Info: picture/knapsack_fixed_budget_Gap_50pct.png  used on input line 342.
+Package pdftex.def Info: picture/knapsack_fixed_budget_Gap_50pct.png  used on input line 468.
 (pdftex.def)             Requested size: 443.9066pt x 122.70242pt.
-[45 <./picture/knapsack_fixed_budget_Gap_10pct.png> <./picture/knapsack_fixed_budget_Gap_30pct.png>]
-<picture/knapsack_fixed_budget_Gap_100pct.png, id=1085, 1292.4285pt x 357.2547pt>
+ [47 <./picture/knapsack_fixed_budget_Gap_10pct.png> <./picture/knapsack_fixed_budget_Gap_30pct.png>]
+<picture/knapsack_fixed_budget_Gap_100pct.png, id=1199, 1292.4285pt x 357.2547pt>
 File: picture/knapsack_fixed_budget_Gap_100pct.png Graphic file (type png)
 <use picture/knapsack_fixed_budget_Gap_100pct.png>
-Package pdftex.def Info: picture/knapsack_fixed_budget_Gap_100pct.png  used on input line 349.
+Package pdftex.def Info: picture/knapsack_fixed_budget_Gap_100pct.png  used on input line 475.
 (pdftex.def)             Requested size: 443.9066pt x 122.70242pt.
- [46 <./picture/knapsack_fixed_budget_Gap_50pct.png> <./picture/knapsack_fixed_budget_Gap_100pct.png>]
-<picture/knapsack_data_profiles.png, id=1094, 714.0276pt x 434.3427pt>
+ [48 <./picture/knapsack_fixed_budget_Gap_50pct.png> <./picture/knapsack_fixed_budget_Gap_100pct.png>]
+<picture/knapsack_data_profiles.png, id=1209, 714.0276pt x 434.3427pt>
 File: picture/knapsack_data_profiles.png Graphic file (type png)
 <use picture/knapsack_data_profiles.png>
-Package pdftex.def Info: picture/knapsack_data_profiles.png  used on input line 402.
+Package pdftex.def Info: picture/knapsack_data_profiles.png  used on input line 520.
 (pdftex.def)             Requested size: 443.9066pt x 270.03197pt.
- [47]
-
-LaTeX Warning: Citation `more2009benchmarking' on page 48 undefined on input line 407.
-
-<picture/knapsack_performance_profiles.png, id=1101, 714.0276pt x 434.3427pt>
+<picture/knapsack_performance_profiles.png, id=1211, 714.0276pt x 434.3427pt>
 File: picture/knapsack_performance_profiles.png Graphic file (type png)
 <use picture/knapsack_performance_profiles.png>
-Package pdftex.def Info: picture/knapsack_performance_profiles.png  used on input line 411.
+Package pdftex.def Info: picture/knapsack_performance_profiles.png  used on input line 533.
 (pdftex.def)             Requested size: 443.9066pt x 270.03197pt.
-[48 <./picture/knapsack_data_profiles.png>]
-<picture/knapsack_pairwise_heatmap_overall.png, id=1110, 673.3155pt x 577.6782pt>
+ [49 <./picture/knapsack_data_profiles.png>]
+<picture/knapsack_pairwise_heatmap_overall.png, id=1220, 673.3155pt x 577.6782pt>
 File: picture/knapsack_pairwise_heatmap_overall.png Graphic file (type png)
 <use picture/knapsack_pairwise_heatmap_overall.png>
-Package pdftex.def Info: picture/knapsack_pairwise_heatmap_overall.png  used on input line 421.
+Package pdftex.def Info: picture/knapsack_pairwise_heatmap_overall.png  used on input line 548.
 (pdftex.def)             Requested size: 443.9066pt x 380.85449pt.
- [49 <./picture/knapsack_performance_profiles.png>]
-<picture/knapsack_copeland_ranking.png, id=1118, 710.1732pt x 426.6339pt>
+ [50 <./picture/knapsack_performance_profiles.png>]
+<picture/knapsack_copeland_ranking.png, id=1227, 710.1732pt x 426.6339pt>
 File: picture/knapsack_copeland_ranking.png Graphic file (type png)
 <use picture/knapsack_copeland_ranking.png>
-Package pdftex.def Info: picture/knapsack_copeland_ranking.png  used on input line 428.
+Package pdftex.def Info: picture/knapsack_copeland_ranking.png  used on input line 555.
 (pdftex.def)             Requested size: 443.9066pt x 266.67807pt.
- [50 <./picture/knapsack_pairwise_heatmap_overall.png>]
-
-LaTeX Warning: Citation `demvsar2006statistical' on page 51 undefined on input line 433.
-
-<picture/knapsack_pairwise_heatmap_penalty.png, id=1127, 674.0382pt x 571.1739pt>
+ [51 <./picture/knapsack_pairwise_heatmap_overall.png>]
+<picture/knapsack_pairwise_heatmap_penalty.png, id=1236, 674.0382pt x 571.1739pt>
 File: picture/knapsack_pairwise_heatmap_penalty.png Graphic file (type png)
 <use picture/knapsack_pairwise_heatmap_penalty.png>
-Package pdftex.def Info: picture/knapsack_pairwise_heatmap_penalty.png  used on input line 444.
+Package pdftex.def Info: picture/knapsack_pairwise_heatmap_penalty.png  used on input line 570.
 (pdftex.def)             Requested size: 443.9066pt x 376.1654pt.
-[51 <./picture/knapsack_copeland_ranking.png>]
-<picture/knapsack_pairwise_heatmap_repair.png, id=1134, 674.0382pt x 571.1739pt>
+ [52 <./picture/knapsack_copeland_ranking.png>]
+<picture/knapsack_pairwise_heatmap_repair.png, id=1243, 674.0382pt x 571.1739pt>
 File: picture/knapsack_pairwise_heatmap_repair.png Graphic file (type png)
 <use picture/knapsack_pairwise_heatmap_repair.png>
-Package pdftex.def Info: picture/knapsack_pairwise_heatmap_repair.png  used on input line 451.
+Package pdftex.def Info: picture/knapsack_pairwise_heatmap_repair.png  used on input line 577.
 (pdftex.def)             Requested size: 443.9066pt x 376.1654pt.
- [52 <./picture/knapsack_pairwise_heatmap_penalty.png>] [53 <./picture/knapsack_pairwise_heatmap_repair.png>]
-Overfull \hbox (1.16008pt too wide) in paragraph at lines 510--511
+ [53 <./picture/knapsack_pairwise_heatmap_penalty.png>] [54 <./picture/knapsack_pairwise_heatmap_repair.png>]
+Overfull \hbox (1.16008pt too wide) in paragraph at lines 643--644
 [] []\T5/cmr/bx/n/10.95 Þ ngh¾a v  h¤n ch¸ cõa performance/data profiles khi success rate th§p.[] \T5/cmr/m/n/10.95 Dolan^^UMor²
  []
 
-[54]) (./sections/conclusion.tex) (./main.bbl [55]) [56] (./main.aux)
+[55]) [56] (./main.bbl [57]
+Underfull \hbox (badness 1242) in paragraph at lines 45--48
+[]\T5/cmr/m/n/10.95 Marco Dorigo, Vittorio Maniezzo, and Alberto Colorni.  The ant system:
+ []
+
+
+Underfull \hbox (badness 2635) in paragraph at lines 75--78
+\T5/cmr/m/it/10.95 Analysis with Applications to Biology, Control, and Artificial Intelligence\T5/cmr/m/n/10.95 .
+ []
+
+
+Underfull \hbox (badness 7504) in paragraph at lines 80--83
+[]\T5/cmr/m/n/10.95 Ashraf Osman Ibrahim, Elsadig Mohammed Elbushra Elfadel, Ibrahim
+ []
+
+[58]) [59] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 06F8AE5EE73B1E7D0851DC653180FE1A;19794.
+(rerunfilecheck)             Checksum: 8635E114217C1751A4CBCDF65B846CEC;19797.
  ) 
 Here is how much of TeX's memory you used:
- 15192 strings out of 475556
- 244944 string characters out of 5782323
+ 15422 strings out of 475556
+ 249431 string characters out of 5782323
  1943975 words of memory out of 5000000
- 36634 multiletter control sequences out of 15000+600000
- 580715 words of font info for 84 fonts, out of 8000000 for 9000
+ 36825 multiletter control sequences out of 15000+600000
+ 582549 words of font info for 82 fonts, out of 8000000 for 9000
  331 hyphenation exceptions out of 8191
- 75i,10n,79p,1112b,872s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vntt10.pfb>
-Output written on main.pdf (56 pages, 5392766 bytes).
+ 75i,13n,79p,1050b,872s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vncsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vntt10.pfb>
+Output written on main.pdf (60 pages, 6436584 bytes).
 PDF statistics:
- 1362 PDF objects out of 1440 (max. 8388607)
- 1192 compressed objects within 12 object streams
- 484 named destinations out of 1000 (max. 500000)
- 946 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1483 PDF objects out of 1728 (max. 8388607)
+ 1298 compressed objects within 13 object streams
+ 522 named destinations out of 1000 (max. 500000)
+ 952 words of extra memory for PDF output out of 10000 (max. 10000000)
 

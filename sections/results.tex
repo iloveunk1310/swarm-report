@@ -1,63 +1,189 @@
 % sections/results.tex – Results and conclusion section
 
-\section{Thiết lập các bài toán đánh giá}
+\section{Thiết lập và phân tích kết quả các bài toán đánh giá}
 \subsection{ACO}
 \subsection{PSO}
 \subsection{ABC}
+Sau nhiều lần thử với nhiều loại bài toán khác nhau, ta thấy thuật toán ABC có độ ổn định cao, performance tốt với cả những hàm số đa cực trị hay có cực trị đặc biệt
+\begin{figure}[h]
+    \centering
+    \begin{minipage}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{picture/ras_1.png}
+        \caption{Sau lần 10}
+    \end{minipage}
+    \begin{minipage}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{picture/ras_2.png}
+        \caption{Sau lần 30}
+    \end{minipage}
+    \begin{minipage}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{picture/ras_3.png}
+        \caption{Kết quả}
+    \end{minipage}
+\end{figure}
+
+So sánh với các thuật giải truyền thống: như đã nói ở trên, thuật toán ABC có performance cao, giải quyết tốt những bài toán mà các thuật toán truyền thống không giải được, chẳng hạn như hàm rastrigin:
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{picture/ras_compare.png}
+    \label{fig:placeholder1}
+\end{figure}
+\newpage
+Tuy nhiên ABC cũng có điểm hạn chế, đó là tốc độ chậm hơn đáng kể so với các thuật toán truyền thống như hill climbing hay stimulated annealing, đặc biệt là trong một số bài toán không quá phức tạp, chẳng hạn như hàm circle (nửa dưới hình cầu):
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.25\linewidth]{picture/cir_compare.png}
+    \label{fig:placeholder2}
+\end{figure}
+
+Ngoài ra, bộ nhớ sử dụng trong thuật toán ABC cũng nhiều hơn, tỉ lệ thuận với số lượng "con ong" được sử dụng.
 \subsection{Firefly Algorithm}
 
-\paragraph{Bài toán Rastrigin (liên tục).}
-Rastrigin là một hàm benchmark đa cực trị, phi lồi, thường dùng để kiểm tra khả năng tối ưu hoá toàn cục của các thuật toán metaheuristic. Hàm có nhiều cực tiểu địa phương và một cực tiểu toàn cục tại $\mathbf{0}$ với $f(\mathbf{0}) = 0$ :contentReference[oaicite:2]{index=2}.  
+\subsubsection{Thuật toán dùng để so sánh}
 
-Trong benchmark này, chúng tôi dùng 3 cấu hình:
+Để đặt Thuật toán Đom Đóm (FA) vào bối cảnh hợp lý, chúng tôi so sánh với ba thuật toán metaheuristic cổ điển: Hill Climbing (HC), Simulated Annealing (SA) và Genetic Algorithm (GA).  
+Toàn bộ thuật toán được hiện thực trong cùng một khung mã Python, dùng chung: (i) giao diện bài toán, (ii) cơ chế sinh nghiệm khởi tạo, (iii) chuẩn hoá cách ghi log (history, số đánh giá, trạng thái run, \dots) và (iv) pipeline phân tích/visualize dùng chung cho cả Rastrigin và Knapsack.
 
+\paragraph{Hill Climbing (HC).}
+HC là baseline tham lam địa phương: luôn giữ một nghiệm hiện tại, sinh lân cận và chỉ chấp nhận nghiệm tốt hơn; khi không cải thiện sau một số vòng lặp thì restart.
+
+\textbf{Triển khai trong framework.}
 \begin{itemize}[leftmargin=1.6em]
-    \item \textbf{quick\_convergence:} $d = 10$. Budget đánh giá hàm ở mức $O(10^4)$, tương ứng với vài trăm vòng lặp cho mỗi thuật toán. Mục tiêu: so sánh tốc độ hội tụ giai đoạn đầu trên một bài toán tương đối “dễ”.
-    \item \textbf{multimodal\_escape:} $d = 30$. Budget tăng lên (cỡ vài $\times 10^4$ đánh giá) để tạo điều kiện cho việc thoát bẫy cục bộ. Mục tiêu: quan sát khả năng xử lí đa cực trị khi không gian nghiệm mở rộng.
-    \item \textbf{scalability:} $d = 50$. Budget lớn nhất trong ba cấu hình nhưng vẫn bị giới hạn; đây là bài test “khó”, chủ yếu để xem xu hướng suy giảm hiệu năng khi tăng chiều.
+    \item \textbf{Rastrigin (liên tục):} nghiệm được mã hoá dưới dạng vector thực; lân cận sinh bằng perturbation ngẫu nhiên trên từng chiều (Gaussian/Uniform tuỳ cấu hình). Mỗi vòng lặp đánh giá một tập lân cận có kích thước cố định và chọn best improvement. Số vòng lặp hiệu dụng được suy ra từ budget và số lân cận mỗi vòng.
+    \item \textbf{Knapsack (0/1):} nghiệm là vector nhị phân; lân cận sinh bằng bit-flip trên một số vị trí; khi bị kẹt lâu trên plateau (không cải thiện trong một số vòng) thì restart. Hàm mục tiêu dùng đúng cùng quy ước với các thuật toán khác (maximize giá trị, đồng thời kiểm tra ràng buộc).
 \end{itemize}
 
-Tất cả trường hợp đều dùng cùng miền tìm kiếm chuẩn của Rastrigin, với giới hạn biên cố định trên từng chiều.
+\paragraph{Simulated Annealing (SA).}
+SA dùng cùng cấu trúc lân cận với HC, nhưng cho phép chấp nhận nghiệm xấu hơn với xác suất
+\[
+    \mathbb{P}(\text{chấp nhận}) = \exp\!\left(-\frac{\Delta f}{T}\right),
+\]
+trong đó $T$ là nhiệt độ, giảm dần theo lịch làm nguội hình học
+$T_{k+1} = \text{cooling\_rate} \cdot T_k$ cho tới khi chạm $T_{\min}$.
 
-\paragraph{Bài toán Knapsack 0/1 (rời rạc).}
+\textbf{Triển khai trong framework.}
 \begin{itemize}[leftmargin=1.6em]
-    \item Số vật phẩm: $n \in \{50, 100, 200\}$.
-    \item Instance types: \emph{uncorrelated}, \emph{weakly correlated}, \emph{strongly correlated}, \emph{subset-sum} (theo phân loại kinh điển trong knapsack literature).
-    \item Mỗi cấu hình (kích thước $\times$ loại instance): 3 seeds độc lập, mỗi seed chạy 10 lần $\Rightarrow$ 30 runs/thuật toán/cấu hình.
-    \item Với $n \le 100$: tính nghiệm tối ưu bằng Dynamic Programming (DP) để làm ground truth; với $n=200$ so sánh theo gap tương đối so với best-known trong các thuật toán.
+    \item \textbf{Rastrigin (liên tục):} dùng cùng kiểu perturbation như HC để đảm bảo so sánh công bằng; nhiệt độ khởi tạo $T_0$ tương đối cao, hệ số làm nguội gần 1, và $T_{\min}$ cố định cho mọi cấu hình.
+    \item \textbf{Knapsack (0/1):} vẫn dùng lân cận bit-flip; chỉ điều chỉnh $T_0$ và \texttt{cooling\_rate}. Mỗi bước đánh giá đúng một nghiệm mới, nên số vòng lặp bằng budget.
 \end{itemize}
 
-\paragraph{Chỉ số đánh giá.}
+\paragraph{Genetic Algorithm (GA).}
+GA duy trì một quần thể cá thể và lặp lại chu trình: chọn lọc (tournament selection), lai ghép (crossover) và đột biến (mutation), kèm một mức elitism để giữ lại các cá thể tốt nhất qua thế hệ.
 
-\textbf{Rastrigin:}
+\textbf{Triển khai trong framework.}
 \begin{itemize}[leftmargin=1.6em]
-    \item \emph{ECDF Fixed-Target}: empirical CDF của số lượng target đạt được trong một budget cố định (chuẩn Dolan–Moré) :contentReference[oaicite:3]{index=3}.
-    \item \emph{Fixed-Budget CDF}: phân bố sai số cuối cùng tại các mức budget khác nhau.
-    \item \emph{ERT (Expected Running Time)}: số lượng đánh giá kỳ vọng để đạt một target nhất định (khi thành công chưa đạt $100\%$, ERT được tính từ các run thành công).
-    \item \emph{Performance profiles}: xác suất một thuật toán có performance ratio $\rho_{p,s} \le \tau$ so với best solver, theo định nghĩa của Dolan–Moré :contentReference[oaicite:4]{index=4}.
-    \item \emph{Data profiles}: xác suất giải được bài toán trong một budget chuẩn hoá, theo Moré–Wild :contentReference[oaicite:5]{index=5}.
+    \item \textbf{Rastrigin (liên tục):} cá thể là vector thực chiều $d$; crossover và mutation được thiết kế cho không gian liên tục, với tỉ lệ crossover/mutation và kích thước quần thể \texttt{pop\_size} được cố định theo từng cấu hình Rastrigin trong \texttt{config.py}. Budget tổng được phân bổ thành $ \text{max\_iter} \times \text{pop\_size}$ lượt đánh giá.
+    \item \textbf{Knapsack (0/1):} cá thể là vector nhị phân; crossover và mutation đều thao tác trên bit; \texttt{pop\_size} tăng theo kích thước bài toán (lớn hơn cho $n=200$ so với $n=50,100$). Trong mọi trường hợp luôn bật elitism và sử dụng tournament selection với kích thước giải đấu cố định.
 \end{itemize}
 
-\textbf{Knapsack:}
+\paragraph{Firefly Algorithm (FA).}
+FA mô phỏng bầy đom đóm trong đó mỗi nghiệm là một cá thể phát sáng; cá thể kém sáng di chuyển về phía cá thể sáng hơn với cường độ phụ thuộc khoảng cách và tham số hấp dẫn $\beta_0$, trong khi thành phần nhiễu có biên độ $\alpha$ giúp duy trì khả năng khám phá.
+
+\textbf{FA liên tục cho Rastrigin.}
+FA được dùng dưới dạng chuẩn trong không gian liên tục: vị trí đom đóm là vector thực, khoảng cách được tính trong không gian Euclid, và chuyển động kết hợp giữa thành phần hút (về các nghiệm tốt hơn) và nhiễu ngẫu nhiên.  
+
+Ba cấu hình Rastrigin trong \texttt{config.py}—\texttt{quick\_convergence} ($d=10$), \texttt{multimodal\_escape} ($d=30$) và \texttt{scalability} ($d=50$)—mỗi cấu hình có một bộ tham số FA riêng (số đom đóm, $\alpha$, $\beta_0$, $\gamma$) đã được cố định trước. Điểm chung là:
 \begin{itemize}[leftmargin=1.6em]
-    \item \textbf{Optimality gap (\%)}: 
-    \[
-        \text{gap} = \frac{z^\star - z_{\text{alg}}}{z^\star} \times 100\%,
-    \]
-    với $z^\star$ là optimum (hoặc best-known với $n=200$).
-    \item \textbf{Success rate}: tần suất gap $\le$ các ngưỡng cho trước (ví dụ: 10\%).
-    \item \textbf{Feasibility rate}: tần suất nghiệm thỏa ràng buộc sức chứa (đặc biệt quan trọng cho chiến lược penalty).
-    \item \textbf{Thống kê}: kiểm định Wilcoxon signed-rank cho so sánh cặp đôi FA/GA/HC/SA trên từng cấu hình, và Copeland ranking để tổng hợp số lần thắng–thua. (Friedman/Nemenyi không được triển khai đầy đủ nên không báo cáo ở đây.)
+    \item Khi dimension tăng, \texttt{n\_fireflies} và budget tăng để bù lại độ khó cao hơn.
+    \item $\alpha$ được điều chỉnh trong khoảng giá trị vừa đủ để tránh hội tụ quá sớm nhưng không làm thuật toán trở nên hoàn toàn ngẫu nhiên.
+    \item $\gamma$ giảm dần khi $d$ tăng nhằm tránh việc lực hút bị triệt tiêu quá nhanh do khoảng cách tăng theo $\sqrt{d}$.
+\end{itemize}
+
+\textbf{FA rời rạc cho Knapsack.}\cite{pisinger2005hard}
+Đối với Knapsack 0/1, chúng tôi dùng biến thể FA đã rời rạc hoá, đúng với cấu hình trong \texttt{config.py} và \texttt{instance\_generator.py}:
+\begin{itemize}[leftmargin=1.6em]
+    \item \emph{Biểu diễn:} mỗi đom đóm là một vector nhị phân chiều $n$.
+    \item \emph{Chuyển động có hướng:} khi một cá thể di chuyển về phía cá thể sáng hơn, nó lật tối đa \texttt{max\_flips\_per\_move} $=3$ bit để tiến lại gần cấu hình đích.
+    \item \emph{Nhiễu:} ngoài chuyển động có hướng, mỗi bit còn có xác suất bị lật do nhiễu $\alpha_{\text{flip}} = 0{,}2$ để duy trì đa dạng.
+    \item \emph{Ràng buộc:} luôn dùng chiến lược repair \texttt{greedy\_remove} (loại dần các vật phẩm có tỉ lệ $v_k/w_k$ thấp nhất) để đưa nghiệm trở về trạng thái feasible. Cơ chế penalty vẫn được hỗ trợ trong code, nhưng trong benchmark chính, cấu hình được dùng là repair.
+    \item \emph{Quần thể và budget:} số đom đóm \texttt{n\_fireflies} tăng theo kích thước bài toán: với $n \le 100$ dùng $30$ đom đóm, với $n=200$ dùng $40$; budget tổng tương ứng là $5000$ và $10000$ lần đánh giá, phân bổ thành $\text{max\_iter} \times \text{n\_fireflies}$.
+\end{itemize}
+
+\paragraph{Lưu ý về tham số.}
+Các tham số \emph{không} dùng chung cho toàn bộ lớp bài toán, mà được cố định \textbf{theo từng kịch bản benchmark}:
+
+\begin{itemize}[leftmargin=1.6em]
+    \item \textbf{Rastrigin:} mỗi cấu hình \texttt{quick\_convergence} (10D), \texttt{multimodal\_escape} (30D), \texttt{scalability} (50D) có một \emph{RastriginConfig} riêng trong \texttt{config.py}, chứa: dimension, budget, ngưỡng gold/silver/bronze và bộ tham số FA, SA, HC, GA tương ứng. Các tham số này được cố định cho toàn bộ 30 lần chạy (30 seeds) và không tune theo từng instance.
+    \item \textbf{Knapsack:} \texttt{get\_knapsack\_configs()} sinh các cấu hình cho $n \in \{50,100,200\}$, mỗi cấu hình gắn với một loại instance (uncorrelated, weakly, strongly, inverse) và một instance\_seed $\in \{42,123,999\}$. Trong mỗi cấu hình, budget, \texttt{n\_fireflies} và \texttt{pop\_size} được scale theo $n$ như đã nêu; các tham số này cố định cho toàn bộ 30 lần chạy metaheuristic trên cùng một instance.
 \end{itemize}
 
 \vspace{0.5em}
+\subsubsection{Bài toán đánh giá}
+
+\paragraph{Hàm Rastrigin (liên tục).}
+Hàm Rastrigin là một hàm kiểm thử kinh điển trong tối ưu hoá toàn cục: phi lồi, đa cực trị mạnh, với rất nhiều cực tiểu địa phương phân bố đều trong không gian nghiệm, và một cực tiểu toàn cục tại $\mathbf{0}$ với $f(\mathbf{0})=0$. Hàm chuẩn được định nghĩa trên miền $[-5{,}12, 5{,}12]^d$
+\[
+    f(\mathbf{x}) = 10d + \sum_{i=1}^d \left( x_i^2 - 10\cos(2\pi x_i) \right).
+\]
+
+Trong benchmark này, chúng tôi sử dụng ba cấu hình được định nghĩa tường minh trong \texttt{RASTRIGIN\_CONFIGS}:
+\begin{itemize}[leftmargin=1.6em]
+    \item \textbf{\texttt{quick\_convergence}:} $d = 10$, budget $10^4$ đánh giá; mục tiêu là quan sát tốc độ hội tụ sớm của các thuật toán trên một phiên bản tương đối dễ.
+    \item \textbf{\texttt{multimodal\_escape}:} $d = 30$, budget $3 \times 10^4$; nhấn mạnh khả năng thoát bẫy cục bộ khi không gian nghiệm mở rộng và số lượng cực tiểu địa phương tăng.
+    \item \textbf{\texttt{scalability}:} $d = 50$, budget $5 \times 10^4$; đây là cấu hình khó nhất, dùng để kiểm tra xu hướng suy giảm hiệu năng khi tăng dimension trong điều kiện budget hữu hạn.
+\end{itemize}
+Mỗi cấu hình đi kèm một bộ ngưỡng chất lượng (gold/silver/bronze) riêng cho sai số so với optimum; các ngưỡng này được đặt nới lỏng dần khi dimension tăng và được sử dụng nhất quán trong toàn bộ pipeline phân tích.
+
+\paragraph{Bài toán Knapsack 0/1 (rời rạc).}\cite{smithmiles2021revisiting}
+Bài toán Knapsack 0/1 được mô hình hoá dưới dạng tối ưu hoá tổ hợp: cho trước $n$ vật phẩm với trọng lượng $w_k$ và giá trị $v_k$, cùng sức chứa $C$, tìm tập con các vật phẩm sao cho tổng trọng lượng không vượt quá $C$ và tổng giá trị là lớn nhất.
+
+Các instance được sinh bằng \texttt{generate\_knapsack\_instance()} trong \texttt{instance\_generator.py} với bốn kiểu phân phối giá trị–trọng lượng chuẩn trong literature:
+\begin{itemize}[leftmargin=1.6em]
+    \item \textbf{uncorrelated:} $v_k$ và $w_k$ độc lập, đều phân bố đều trên cùng một khoảng; không có cấu trúc tương quan rõ rệt.
+    \item \textbf{weakly correlated:} $w_k$ được sinh trước, $v_k \approx w_k$ cộng thêm nhiễu nhỏ; tạo ra tương quan dương yếu.
+    \item \textbf{strongly correlated:} $v_k = w_k + \text{const}$; tương quan dương mạnh, cấu trúc gần với trường hợp “giá trị tỷ lệ với trọng lượng”.
+    \item \textbf{inverse:} $v_k$ giảm khi $w_k$ tăng (dựa trên $w_{\max}$); tạo ra tương quan âm, thường được xem là khó hơn với các heuristic tham lam. 
+\end{itemize}
+Sức chứa $C$ được đặt bằng một tỉ lệ cố định của tổng trọng lượng (capacity\_ratio trong code).
+
+\textbf{Cấu hình benchmark.}\cite{dolan2002benchmarking,more2009benchmarking}
+\begin{itemize}[leftmargin=1.6em]
+    \item \textbf{Kích thước:} $n \in \{50, 100, 200\}$.
+    \item \textbf{Instance:} với mỗi cặp $(n,\text{instance\_type})$, sinh 3 instance độc lập với \texttt{instance\_seed} $\in \{42,123,999\}$.
+    \item \textbf{Budget:} nếu $n \le 100$ thì budget là $5000$ lần đánh giá; nếu $n=200$ thì budget là $10000$. Budget này được chuyển thành số vòng lặp cho từng thuật toán dựa trên kích thước quần thể/tập lân cận.
+    \item \textbf{Nghiệm tối ưu:} với mọi instance có $n \le 200$, nghiệm tối ưu $z^\star$ được tính bằng Dynamic Programming (DP) trong \texttt{run\_knapsack.py} và được lưu lại trong metadata; đây là chuẩn cho mọi tính toán optimality gap.
+    \item \textbf{Số lần chạy metaheuristic:} trên mỗi instance, mỗi thuật toán được chạy $30$ lần với seed khác nhau (seed $\in \{0,\dots,29\}$), đúng như danh sách \texttt{seeds} trong code.
+\end{itemize}
+
+\vspace{0.5em}
+\subsubsection{Chỉ số đánh giá}
+\label{subsec:Chi_so_danh_gia}
+\paragraph{Rastrigin.}
+Rastrigin được xem như bài toán minimization với nghiệm tối ưu toàn cục $f^\star = 0$. Trên tập kết quả thu được, chúng tôi sử dụng các chỉ số sau, bám sát chuẩn COCO/BBOB và các công trình về benchmarking tối ưu hoá:
+\begin{itemize}[leftmargin=1.6em]
+    \item \textbf{ECDF fixed-target:} hàm phân phối thực nghiệm của runtime (số đánh giá hàm) để đạt các mức sai số mục tiêu (gold/silver/bronze). Mỗi điểm trên đường cong biểu diễn tỉ lệ run đã đạt target trong không quá $N$ đánh giá.
+    \item \textbf{Fixed-budget summary:} sai số cuối cùng tại một số mốc budget chuẩn hoá (ví dụ 10\%, 25\%, 50\%, 75\%, 100\% budget) được dùng để so sánh chất lượng nghiệm khi tài nguyên bị giới hạn.
+    \item \textbf{ERT (Expected Running Time):} số lần đánh giá kỳ vọng để đạt một target nhất định. ERT được tính trên cả các run thành công và thất bại bằng công thức chuẩn trong literature: runtime của run thất bại được thay bằng budget và đưa vào mẫu.
+    \item \textbf{Performance profiles:} theo định nghĩa của Dolan–Moré, performance profile là hàm phân phối của tỉ lệ hiệu năng $\rho_{p,s}$ giữa thuật toán $s$ và thuật toán tốt nhất trên cùng bài toán $p$. Biểu đồ thể hiện xác suất một thuật toán có $\rho_{p,s} \le \tau$ khi quét qua các problem.
+    \item \textbf{Data profiles:} theo Moré–Wild, data profile đo tỉ lệ problem được giải tới một mức chất lượng cho trước trong budget chuẩn hoá $\nu$ (số đánh giá trên mỗi biến). Đây là góc nhìn “theo budget” bổ sung cho performance profile.
+\end{itemize}
+Mọi chỉ số runtime phía trên đều được tính dựa trên số đánh giá hàm (function evaluations), không dùng thời gian thực, để giảm nhiễu do khác biệt phần cứng.
+
+\paragraph{Knapsack.}
+Đối với Knapsack 0/1, chúng tôi khai thác việc có nghiệm tối ưu $z^\star$ từ DP để xây dựng các chỉ số dựa trên \emph{optimality gap}:
+\[
+    \text{gap} = \frac{z^\star - z_{\text{alg}}}{z^\star} \times 100\%,
+\]
+với $z_{\text{alg}}$ là giá trị nghiệm tốt nhất của thuật toán.
+
+\begin{itemize}[leftmargin=1.6em]
+    \item \textbf{Các tier chất lượng:} sử dụng ba ngưỡng
+    \[
+        1\%,\quad 5\%,\quad 10\%
+    \]
+    tương ứng với gold, silver, bronze, trùng với \texttt{KNAPSACK\_GAP\_THRESHOLDS} trong \texttt{config.py}. Các tier này được dùng vừa để đánh nhãn chất lượng nghiệm cuối cùng, vừa làm target cho các phân tích runtime.
+    \item \textbf{Tỉ lệ thành công theo tier:} trên mỗi cấu hình $(n, \text{instance\_type})$, tính tỉ lệ run đạt gap $\le$ ngưỡng tương ứng trong budget cho phép.
+    \item \textbf{Feasibility rate:} tỉ lệ nghiệm cuối cùng thoả ràng buộc sức chứa. Chỉ số này đặc biệt quan trọng khi so sánh các chiến lược xử lý ràng buộc (repair so với penalty).
+    \item \textbf{Runtime và profile:} tương tự Rastrigin, chúng tôi xây dựng ECDF fixed-target, ERT, performance profiles và data profiles, nhưng target ở đây là các ngưỡng gap (1\%, 5\%, 10\%). Để đảm bảo ý nghĩa, các phân tích này chỉ sử dụng các instance có \texttt{has\_dp\_optimal} = True trong metadata.
+\end{itemize}
+
+Toàn bộ chỉ số trên được trích xuất tự động bởi \texttt{analyze\_results.py} dựa trên các JSON kết quả từ \texttt{run\_rastrigin.py} và \texttt{run\_knapsack.py}, sau đó được sử dụng bởi \texttt{visualize.py} để tạo các biểu đồ phục vụ đánh giá định tính và định lượng.
 
 
-\subsection{Cuckoo Search}
-
-\section{Phân tích kết quả bài toán}
-
-\subsection{Firefly Algorithm}
+\vspace{0.5em}
 
 \subsubsection{Rastrigin: mức độ tiệm cận nghiệm tối ưu và đặc trưng hội tụ}
 
@@ -321,7 +447,7 @@ Các kết quả cho thấy:
 \subsubsection{Knapsack: hiệu năng fixed-budget (gap tới nghiệm tối ưu)}
 
 Trong bài toán Knapsack, ta dùng thước đo \emph{Gap to Optimal} (\%) sau khi tiêu tốn một tỉ lệ cố định của ngân sách đánh giá (10\%, 30\%, 50\% và 100\%).  
-Gap được định nghĩa ở Mục~\ref{subsec:metrics}; giá trị nhỏ hơn là tốt hơn, và các giá trị quanh \(200\%\) tương ứng với việc thuật toán chỉ đạt được khoảng một nửa giá trị tối ưu.
+Gap được định nghĩa ở Mục~\ref{subsec:Chi_so_danh_gia}{;} giá trị nhỏ hơn là tốt hơn, và các giá trị quanh \(200\%\) tương ứng với việc thuật toán chỉ đạt được khoảng một nửa giá trị tối ưu.
 
 \begin{figure}[H]
 \centering
@@ -355,41 +481,33 @@ Các kết quả này cho thấy một bức tranh rất khác so với Rastrigi
 
 \begin{itemize}[leftmargin=1.6em]
     \item \textbf{Mức độ khó tổng thể.}  
-    Ở mọi cấu hình, median gap của tất cả thuật toán đều nằm trong dải \(190\%{-}200\%\). Dù cách định nghĩa cụ thể, điều này cho thấy các metaheuristic ở đây \emph{khá xa} nghiệm tối ưu: lời giải thu được chỉ đạt xấp xỉ một nửa giá trị tối ưu.  
-    Việc tăng ngân sách từ 10\% lên 100\% chỉ giảm gap thêm vài đơn vị phần trăm, nghĩa là phần lớn lợi ích đã được “ăn hết” rất sớm; phần ngân sách còn lại chủ yếu chỉ làm thu hẹp phương sai giữa các lần chạy.
-    
+    Ở mọi cấu hình, median gap của bốn thuật toán đều nằm trong dải \(190\%{-}200\%\). Điều này cho thấy các metaheuristic đang làm việc trong một landscape tổ hợp rất khó: lời giải thu được thường chỉ đạt xấp xỉ một nửa giá trị tối ưu.  
+    Việc tăng ngân sách từ 10\% lên 100\% chỉ giúp giảm gap thêm một vài đơn vị phần trăm, nghĩa là phần lớn lợi ích đã được “ăn” trong giai đoạn rất sớm; ngân sách còn lại chủ yếu làm thu hẹp phương sai giữa các lần chạy và kéo dài đuôi dưới.
+
     \item \textbf{Xếp hạng giữa các thuật toán.}  
-    Thứ hạng tương đối giữa bốn thuật toán nhất quán trên mọi \(N\) và mọi mức ngân sách:
+    Thứ hạng tương đối giữa bốn thuật toán khá ổn định trên mọi \(N\) và mọi mức ngân sách:
     \begin{itemize}
         \item \textbf{FA tệ nhất một cách ổn định.}  
-        Hộp boxplot của FA luôn nằm sát phía trên (gap gần \(200\%\)), phương sai rất nhỏ, gần như không có đuôi dưới. Tức là FA nhanh chóng hội tụ vào một vùng nghiệm kém và việc tăng ngân sách không giúp nó cải thiện đáng kể.  
-        Đây là bằng chứng trực tiếp rằng phiên bản FA hiện tại hoàn toàn không phù hợp với Knapsack: biểu diễn liên tục cộng với bước repair rời rạc khiến không gian tìm kiếm hiệu dụng của FA bị méo và giàu local optimum chất lượng thấp.
-        \item \textbf{SA tốt nhất về gap, dù vẫn còn rất tệ so với tối ưu.}  
-        Trong hầu hết panel, SA có median gap thấp nhất (khoảng \(192\%{-}194\%\)) và đặc biệt là có nhiều outlier kéo xuống vùng \(160\%{-}175\%\). Nghĩa là dù đa số run vẫn kém, SA thỉnh thoảng tìm được lời giải tốt hơn hẳn so với phần còn lại.  
-        Điều này hợp lý với một thuật toán local search có cơ chế chấp nhận nghiệm xấu (Metropolis): SA có khả năng thoát khỏi một số cực trị địa phương sâu, dù không hệ thống.
-        \item \textbf{GA và HC ở giữa, khá giống nhau.}  
-        GA và HC thường có median thấp hơn FA nhưng cao hơn SA. Phân bố của hai thuật toán này khá “dày” quanh median, ít có đuôi dưới sâu, thể hiện tính khai thác mạnh nhưng thiếu các bước nhảy đủ lớn để cải thiện chất lượng lời giải trên các instance khó.  
-        GA có xu hướng nhỉnh hơn HC một chút khi \(N\) tăng, nhưng sự khác biệt không đủ lớn để coi GA là lựa chọn tốt rõ rệt.
+        Boxplot của FA gần như “dính” ở vùng gap xấp xỉ \(200\%\) với phương sai rất nhỏ, gần như không có đuôi dưới. FA hội tụ nhanh vào một vùng nghiệm kém và hầu như không cải thiện thêm khi tăng ngân sách.
+        \item \textbf{GA cho chất lượng điển hình tốt nhất.}  
+        Trong hầu hết các panel, GA có median gap thấp nhất (hoặc ngang ngửa SA nhưng ổn định hơn), phân bố tập trung hơn quanh giá trị \(\approx 190\%\). GA rõ ràng là thuật toán cho “chất lượng trung bình” tốt nhất trên Knapsack trong bộ thực nghiệm này.
+        \item \textbf{SA có những lời giải tốt nhất nhưng hiếm.}  
+        Median của SA thường nhỉnh hơn GA một chút, nhưng SA là thuật toán duy nhất có đuôi dưới kéo dài xuống vùng \(150\%{-}170\%\), thể hiện một số run hiếm hoi tìm được lời giải tốt vượt trội so với phần còn lại. Nói cách khác, SA không phải là tốt nhất về mặt điển hình, nhưng lại có tiềm năng sinh ra những nghiệm rất tốt khi “gặp may”.
+        \item \textbf{HC nằm giữa GA và FA.}  
+        HC có median thấp hơn FA nhưng cao hơn GA và thường không chạm được tới những nghiệm rất tốt như SA. Phân bố của HC dày đặc quanh một vùng gap cố định, cho thấy một chiến lược khai thác địa phương tương đối hiệu quả nhưng thiếu các bước nhảy đủ xa để tạo ra những lời giải đột phá.
     \end{itemize}
     
     \item \textbf{Ảnh hưởng của kích thước bài toán.}  
-    Khi tăng số lượng vật phẩm từ \(N=50\) lên \(N=200\), median gap của từng thuật toán chỉ thay đổi nhẹ (thường giảm rất ít hoặc gần như giữ nguyên). Nghĩa là trong khoảng kích thước này, độ khó đối với bốn metaheuristic được quyết định nhiều hơn bởi \emph{cấu trúc} instance và cơ chế thuật toán, chứ không đơn thuần do số biến.  
-    Đối với SA, đuôi dưới có vẻ được kéo dài hơn khi \(N\) lớn, cho thấy ở một số instance lớn, SA tìm được cấu hình rất tốt (nhưng hiếm).
+    Khi tăng số lượng vật phẩm từ \(N=50\) lên \(N=200\), median gap của từng thuật toán chỉ dao động nhẹ quanh ngưỡng \(190\%{-}200\%\), và thứ hạng tương đối hầu như không thay đổi. Độ khó mà các thuật toán đang gặp phải vì vậy có vẻ đến từ \emph{cấu trúc} instance và cơ chế cập nhật hơn là riêng yếu tố số biến. Ở mọi \(N\), SA vẫn là thuật toán duy nhất có đuôi dưới rất sâu, GA vẫn giữ median thấp nhất, trong khi FA luôn nằm sát phía trên.
     
     \item \textbf{Ảnh hưởng của ngân sách.}  
     So sánh bốn mức ngân sách cho thấy:
     \begin{itemize}
-        \item FA hầu như không phản ứng với việc tăng ngân sách – median và phương sai gần như bất biến. Đây là dấu hiệu của \emph{stagnation triệt để}: thêm đánh giá chỉ lặp lại các bước nhảy vô nghĩa quanh một vùng nghiệm tệ.
-        \item GA, HC và SA có cải thiện nhẹ khi tăng ngân sách, chủ yếu ở phần tail: các outlier tốt xuất hiện nhiều hơn, nhưng median chỉ nhích xuống một chút. Điều này nói rằng những thuật toán này chủ yếu dựa vào vài “run may mắn”; muốn cải thiện đảm bảo hơn cần hoặc ngân sách lớn hơn nhiều, hoặc các chiến lược tái khởi tạo / đa khởi tạo.
+        \item FA hầu như không phản ứng với việc tăng ngân sách – median và phương sai gần như bất biến. Đây là dấu hiệu của \emph{stagnation triệt để}: thêm đánh giá chỉ lặp lại các bước nhảy quanh một vùng nghiệm tệ.
+        \item GA, HC và đặc biệt là SA có cải thiện chủ yếu ở phần tail: khi ngân sách tăng, số lượng run đạt được gap tốt (đuôi dưới) tăng lên, nhưng median chỉ nhích xuống rất nhẹ. Các thuật toán này do đó phụ thuộc khá nhiều vào một số run “may mắn”; để cải thiện một cách đáng tin cậy hơn, cần hoặc ngân sách lớn hơn đáng kể, hoặc các chiến lược đa khởi tạo / tái khởi tạo rõ ràng.
     \end{itemize}
 \end{itemize}
 
-\paragraph{Nhận xét tổng hợp cho Knapsack.}
-
-Trên Rastrigin, FA còn thể hiện được vai trò “chuyên gia landscape liên tục”; nhưng sang Knapsack – một bài toán tổ hợp rời rạc với ràng buộc cứng – FA tụt xuống đáy bảng xếp hạng và hầu như không hưởng lợi từ việc tăng ngân sách.  
-Ngược lại, SA (và phần nào là GA/HC) dù vẫn cho lời giải rất xa tối ưu nhưng ít nhất còn thể hiện được sự phụ thuộc hợp lý vào ngân sách và kích thước bài toán.
-
-Do đó, kết quả Knapsack không chỉ cho thấy “FA không đa năng”, mà còn nhấn mạnh một bài học quen thuộc: \textbf{không thể đem nguyên xi một metaheuristic thiết kế cho không gian liên tục sang bài toán tổ hợp, rồi trông đợi hiệu năng hợp lý nếu không tái thiết kế biểu diễn, toán tử và cơ chế repair cho phù hợp với cấu trúc của bài toán}.
 
 \vspace{0.5em}
 
@@ -400,21 +518,30 @@ Do đó, kết quả Knapsack không chỉ cho thấy “FA không đa năng”,
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.98\textwidth]{picture/knapsack_data_profiles.png}
-\caption{Data profile Moré--Wild cho Knapsack: không thuật toán nào đạt ngưỡng ``giải được bài toán'' trong ngân sách khảo sát.}
+\caption{Data profile Moré--Wild cho Knapsack.}
 \label{fig:knapsack_data_profile}
 \end{figure}
 
-Với Knapsack, data profile theo nghĩa Moré--Wild $\psi(\nu)$ gần như suy biến (Hình~\ref{fig:knapsack_data_profile}): trong toàn bộ dải ngân sách từ $10^2$ đến $10^4$ phép đánh giá, không thuật toán nào đạt được ngưỡng ``giải được bài toán'' mà chúng tôi đặt ra, nên $\psi(\nu) = 0$ cho mọi thuật toán và mọi mức $\nu$. Điều này không cho phép phân biệt giữa các thuật toán, nhưng lại gửi một tín hiệu khá rõ: với cấu hình hiện tại (kích thước bài toán, giới hạn ngân sách và cách mã hoá nghiệm), cả bốn heuristic đều đang hoạt động trong chế độ \emph{xấp xỉ thô}, chưa đủ mạnh để đưa khoảng cách tới tối ưu xuống dưới ngưỡng thành công được đề xuất trong tài liệu gốc về data profile.\cite{more2009benchmarking}
+Đối với Knapsack, data profile Moré--Wild $\psi(\nu)$ trong Hình~\ref{fig:knapsack_data_profile} không còn suy biến như trường hợp Rastrigin.  
+Với tập target được chọn, FA đạt giá trị $\psi(\nu)$ cao nhất trên toàn dải ngân sách: ngay từ $\nu \approx 10^2$ đã giải được hơn một nửa số cặp (bài toán, target), và khi $\nu$ tiến tới $10^4$ thì đường của FA gần như chạm tới 1.  
+HC đứng thứ hai với mức phủ khoảng $0.8$, trong khi GA và SA dừng lại quanh $0.6{-}0.65$.  
+Nói cách khác, dưới một định nghĩa thành công khá “thoáng” (gap tới tối ưu không cần quá nhỏ), FA là thuật toán có xác suất cao nhất đưa nghiệm vào vùng “chấp nhận được” trong ngân sách cho trước; HC theo sau, còn GA và SA chậm hơn đáng kể.  
+Tuy nhiên, các ngưỡng target này vẫn tương đối xa tối ưu, nên data profile phản ánh chủ yếu khả năng đạt \emph{xấp xỉ thô} hơn là khả năng tiệm cận nghiệm tối ưu thực sự.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.98\textwidth]{picture/knapsack_performance_profiles.png}
-\caption{Performance profile Dolan--Moré cho Knapsack, dùng khoảng cách tương đối tới nghiệm tốt nhất trong tập thuật toán.}
+\caption{Performance profile Dolan--Moré cho Knapsack, dùng số phép đánh giá để đạt target làm metric.}
 \label{fig:knapsack_perf_profile}
 \end{figure}
 
-Performance profile Dolan--Moré cho Knapsack (Hình~\ref{fig:knapsack_perf_profile}) cũng cần được đọc rất thận trọng. 
-Nếu chỉ nhìn đồ thị, FA có vẻ gần như thống trị: đường $\varphi(\tau)$ của FA nằm cao hơn hẳn trong vùng $\tau$ nhỏ, trong khi GA, HC và SA chỉ dần bắt kịp khi $\tau$ tăng lên. Tuy nhiên, metric dùng trong performance profile ở đây là \emph{khoảng cách tương đối tới nghiệm tốt nhất trong tập thuật toán trên từng instance}, chứ không phải khoảng cách tới nghiệm tối ưu toàn cục. Khi tất cả thuật toán đều còn rất xa tối ưu, performance profile sẽ ``thưởng'' cho thuật toán nào ổn định và hiếm khi rơi vào nghiệm quá tệ, ngay cả khi mức ``ổn định'' đó vẫn treo khá cao so với optimum. Nói cách khác, Hình~\ref{fig:knapsack_perf_profile} phản ánh tính ổn định tương đối của FA nhiều hơn là chất lượng tuyệt đối của nghiệm; vì vậy, nó không được dùng cho xếp hạng cuối cùng, mà chủ yếu mang tính minh hoạ.
+Performance profile Dolan--Moré trong Hình~\ref{fig:knapsack_perf_profile} củng cố bức tranh đó.  
+Đường $\varphi(\tau)$ của FA nằm rất cao ngay từ những giá trị $\tau$ nhỏ: với một hệ số hiệu năng khiêm tốn, FA đã giải được gần như toàn bộ các cặp (bài toán, target) nhanh nhất hoặc gần nhanh nhất trong tập thuật toán.  
+Ba thuật toán còn lại chỉ dần bắt kịp khi $\tau$ tăng lên vài bậc độ lớn, cho thấy chúng thường cần nhiều phép đánh giá hơn FA để đạt cùng một target “dễ”.  
+Giữa ba baseline, HC và SA nhìn chung nằm phía trên GA trong phần lớn dải $\tau$, tức là về tốc độ đạt target thô thì GA thậm chí còn kém cạnh hơn.  
+
+Quan trọng là, cũng như với data profile, performance profile ở đây hoàn toàn \emph{tương đối}: metric được chuẩn hoá theo thuật toán tốt nhất trên từng cặp (bài toán, target), và target lại là các ngưỡng gap khá lỏng.  
+Vì vậy, việc FA “thống trị” Hình~\ref{fig:knapsack_perf_profile} chỉ nói rằng FA hiếm khi tệ nhất và rất ổn định trong việc đạt một mức xấp xỉ tương đối, chứ không hề phủ định kết luận từ các biểu đồ fixed-budget rằng nghiệm cuối của FA vẫn cách rất xa tối ưu.
 
 \begin{figure}[H]
 \centering
@@ -430,14 +557,13 @@ Nếu chỉ nhìn đồ thị, FA có vẻ gần như thống trị: đường $
 \label{fig:knapsack_copeland}
 \end{figure}
 
-Để có một bức tranh cân bằng hơn, chúng tôi dựa vào so sánh thống kê cặp đôi và điểm Copeland trên toàn bộ tập thử nghiệm.\cite{demvsar2006statistical} 
-Hình~\ref{fig:knapsack_pairwise_overall} cho thấy GA, HC và SA đều có số lần vượt trội FA rất lớn; riêng cặp (GA, FA) có tới 72 lần GA thắng có ý nghĩa thống kê, trong khi không có trường hợp nào FA thắng ngược lại. 
-Giữa ba thuật toán còn lại, SA thắng GA 37 lần và thắng HC 52 lần, trong khi số lần GA thắng SA chỉ là 15, và HC hầu như không thắng SA. 
-Khi gộp các kết quả này thành điểm Copeland (số trận thắng trừ số trận thua trên toàn bộ cặp thuật toán), thứ hạng cuối cùng là
-\[
-\text{SA} \gg \text{GA} > \text{HC} \gg \text{FA},
-\]
-với SA đạt điểm Copeland dương rất lớn, GA dương vừa phải, HC âm nhẹ và FA âm rất sâu. Hình~\ref{fig:knapsack_copeland} minh hoạ rõ trật tự ưu thế này.
+Để có một bức tranh cân bằng hơn, chúng tôi dựa vào so sánh thống kê cặp đôi và điểm Copeland.  
+Hình~\ref{fig:knapsack_pairwise_overall} cho thấy mọi thuật toán còn lại đều áp đảo FA: GA thắng FA 72 lần có ý nghĩa thống kê, HC thắng 58 lần và SA thắng 62 lần, trong khi FA chỉ thắng được HC đúng 3 lần và không có trận thắng nào trước GA hoặc SA.  
+Giữa ba thuật toán GA, HC và SA, cán cân nghiêng rõ về phía SA: SA thắng GA 39 lần trong khi GA chỉ thắng SA 21 lần; SA thắng HC 52 lần và HC hoàn toàn không có trận thắng đáng kể nào trước SA.  
+GA lại thắng HC 55 lần so với 6 lần ngược lại, nên xét theo đối đầu trực tiếp, trật tự ưu thế tổng quát là SA $>$ GA $>$ HC $>$ FA.  
+
+Điểm Copeland trong Hình~\ref{fig:knapsack_copeland} tóm tắt gọn các quan sát này: SA đạt $+132$ điểm, GA đạt $+103$, HC ở mức $-46$ và FA rơi xuống $-189$.  
+Như vậy, dù FA trông rất “đẹp” dưới lăng kính data/performance profile, khi đánh giá bằng số trận thắng--thua có ý nghĩa thống kê trên toàn bộ tập nghiệm thì SA vẫn là thuật toán chiếm ưu thế rõ rệt nhất, GA là đối thủ cạnh tranh trực tiếp, HC là trung bình và FA là lựa chọn kém nhất.
 
 \begin{figure}[H]
 \centering
@@ -453,16 +579,23 @@ với SA đạt điểm Copeland dương rất lớn, GA dương vừa phải, H
 \label{fig:knapsack_pairwise_repair}
 \end{figure}
 
-Hai heatmap bổ sung tách riêng đóng góp của pha penalty và pha repair giúp giải thích vì sao SA lại chiếm ưu thế trong xếp hạng chung. 
-Trong Hình~\ref{fig:knapsack_pairwise_penalty}, GA và SA đều áp đảo FA và HC, nhưng SA đặc biệt nổi trội hơn GA: SA thắng GA 24 lần, trong khi GA chỉ thắng SA đúng 1 lần nếu chỉ xét chất lượng nghiệm penalty (trước khi repair). Điều này cho thấy SA có xu hướng tạo ra các nghiệm vi phạm ràng buộc nhưng có giá trị mục tiêu thô rất tốt. 
-Ngược lại, ở Hình~\ref{fig:knapsack_pairwise_repair}, GA và SA trở nên cân bằng hơn (GA thắng SA 14 lần, SA thắng GA 13 lần) và cả hai đều thắng FA, HC với biên khá lớn. Điều đó gợi ý rằng bộ repair heuristic tương tác tốt với cả quỹ đạo tìm kiếm của GA lẫn SA, trong khi quỹ đạo của FA và HC tạo ra các nghiệm penalty ``khó sửa'' hơn.
+Hai heatmap bổ sung trong Hình~\ref{fig:knapsack_pairwise_penalty} và~\ref{fig:knapsack_pairwise_repair} giúp tách riêng vai trò của pha penalty và pha repair.  
+Ở mức penalty (trước khi repair), SA nổi bật nhất: SA thắng GA 28 lần và thắng HC 28 lần, trong khi GA không có trận thắng nào trước SA. GA vẫn thắng HC 22 lần so với 6 lần thua, và cả GA, HC, SA đều thắng FA 36 lần.  
+Điều này gợi ý rằng quỹ đạo tìm kiếm của SA tạo ra nhiều nghiệm “thô” có giá trị mục tiêu rất tốt (dù còn vi phạm ràng buộc), GA đứng thứ hai, còn HC và đặc biệt là FA sinh ra các nghiệm penalty kém cạnh hơn nhiều.  
 
-Kết hợp tất cả các lát cắt trên, bức tranh cuối cùng cho Knapsack là: FA liên tục bị các thuật toán còn lại chi phối và có thể xem như một baseline đơn giản; HC cải thiện so với FA nhưng hiếm khi vượt GA và SA; GA là đối thủ mạnh thứ hai, đặc biệt ổn định sau pha repair; và SA là thuật toán thể hiện tốt nhất về chất lượng nghiệm trong hầu hết cấu hình, dù data profile cho thấy \emph{cả bốn} thuật toán vẫn chưa thực sự giải được Knapsack tới mức tối ưu trong ngân sách đánh giá hiện tại. Do đó, mọi kết luận về Knapsack trong nghiên cứu này nên được hiểu là so sánh trong vùng \emph{``xấp xỉ thô''}, chứ không phải so sánh giữa các thuật toán tối ưu hoá đã hội tụ gần nghiệm tối ưu.
+Sau pha repair (Hình~\ref{fig:knapsack_pairwise_repair}), bức tranh thay đổi phần nào. GA lúc này tương tác rất tốt với heuristic repair: GA thắng SA 21 lần, trong khi SA chỉ thắng GA 11 lần; GA cũng thắng HC 33 lần và thắng FA 36 lần. SA vẫn thắng HC 24 lần và thắng FA 26 lần, còn HC thắng FA 22 lần (FA chỉ gỡ gạc được 3 trận thắng trước HC).  
+Nói cách khác, repair đã “bù đắp” một phần bất lợi ban đầu của GA, giúp GA tận dụng tốt các nghiệm penalty của mình để xây dựng nghiệm khả thi chất lượng cao, trong khi SA vẫn giữ được ưu thế nhưng không còn vượt trội tuyệt đối.
+
+Kết hợp tất cả các lát cắt trên, bức tranh cuối cùng cho Knapsack là:  
+FA tuy có data/profile rất đẹp nhờ ổn định và nhanh đạt target thô, nhưng về chất lượng nghiệm cuối và số lần thắng có ý nghĩa thống kê thì liên tục bị các thuật toán còn lại chi phối và có thể xem như một baseline đơn giản.  
+HC cải thiện rõ rệt so với FA nhưng hiếm khi vượt được GA và SA.  
+GA là đối thủ mạnh thứ hai: sau pha repair, GA cho chất lượng điển hình tốt nhất và thường xuyên thắng HC, đôi khi thua SA trên các instance khó.  
+SA là thuật toán thể hiện tốt nhất về tổng thể, đặc biệt mạnh ở giai đoạn penalty và trong các so sánh cặp đôi, dẫn đến điểm Copeland cao nhất.  
+Dù vậy, cả bốn thuật toán vẫn đang hoạt động trong vùng \emph{xấp xỉ thô}: các fixed-budget boxplot cho thấy gap tới nghiệm tối ưu còn rất lớn, nên mọi kết luận về Knapsack trong báo cáo này cần được hiểu là so sánh giữa các metaheuristic chưa hội tụ, chứ không phải giữa những thuật toán đã thực sự giải được bài toán tới gần mức tối ưu.
 
 \vspace{0.5em}
 
-
-\subsubsection{Thảo luận và kết luận}
+\subsubsection{Thảo luận}
 
 \paragraph{Rastrigin: giới hạn của bộ thuật toán trong bối cảnh high-dimensional.}
 
@@ -554,5 +687,7 @@ Benchmark này cho thấy:
 \end{itemize}
 
 Giá trị của benchmark không nằm ở việc tìm một “người thắng tuyệt đối”, mà ở việc chỉ ra thuật toán nào phù hợp với cấu trúc nào, dưới ngân sách nào — và minh bạch về nơi mỗi thuật toán thất bại.
-\section{Kết luận chung}
+
+
+\subsection{Cuckoo Search}
 

@@ -4,7 +4,7 @@
 
 \subsection{Giới thiệu}
 
-\subsubsection{Ý tưởng cốt lõi}
+\subsubsection{Ý tưởng cốt lõi \cite{yang2010firefly}}
 Thuật toán Đom Đóm (Firefly Algorithm, FA) là một metaheuristic lấy cảm hứng từ hành vi phát quang và bị hút lẫn nhau của đom đóm trong tự nhiên. Trong FA, mỗi nghiệm ứng viên là một ``đom đóm'' với \emph{độ sáng} (brightness) tỉ lệ với \emph{độ phù hợp} (fitness). Một đom đóm kém sáng sẽ di chuyển về phía đom đóm sáng hơn; cường độ \emph{hấp dẫn} suy giảm theo khoảng cách. Thành phần \emph{nhiễu} (randomization) được thêm vào để tăng khả năng thoát bẫy cục bộ và thăm dò không gian nghiệm rộng hơn. Cơ chế này tạo nên sự cân bằng \emph{thăm dò} (exploration) và \emph{khai thác} (exploitation), phù hợp với các bài toán đa cực trị (multimodal) (Yang, 2009; Yang \& He, 2013).
 
 \subsubsection{Lịch sử ngắn gọn}
@@ -14,7 +14,7 @@ FA được đề xuất bởi Xin-She Yang vào giai đoạn 2008--2009 và nha
 FA được áp dụng rộng rãi trong: tối ưu hàm chuẩn (Rastrigin, Ackley, Rosenbrock), điều chỉnh siêu tham số mô hình học máy, chọn đặc trưng, định tuyến--lập lịch, và các bài toán tổ hợp như Knapsack/Flow-Shop sau khi rời rạc hoá (\emph{binarization} hoặc \emph{discretization}) (Yang, 2010; Yang \& He, 2013). Điểm mạnh chính: (i) công thức cập nhật đơn giản; (ii) ít siêu tham số; (iii) linh hoạt để thích nghi với cả không gian liên tục và nhị phân.
 
 \subsection{Cơ sở toán học của thuật toán}
-
+\subsubsection{Mô hình gốc \cite{tilahun2019continuous}}
 Xét bài toán cực tiểu hoá không ràng buộc
 \[
 \min_{x \in \mathbb{R}^d} f(x).
@@ -22,6 +22,7 @@ Xét bài toán cực tiểu hoá không ràng buộc
 Tại vòng lặp $t$, cá thể $i$ có vị trí $\mathbf{x}_i^{(t)} \in \mathbb{R}^d$. Gọi $r_{ij}^{(t)} = \| \mathbf{x}_i^{(t)} - \mathbf{x}_j^{(t)} \|_2$ là khoảng cách giữa $i$ và $j$.
 
 \paragraph{Độ sáng (Brightness).}
+
 Độ sáng của mỗi đom đóm được tính từ fitness:
 \[
 I_i = -f(\mathbf{x}_i) \quad \text{(bài toán cực tiểu)}
@@ -29,6 +30,7 @@ I_i = -f(\mathbf{x}_i) \quad \text{(bài toán cực tiểu)}
 Đom đóm có fitness tốt hơn (giá trị $f$ nhỏ hơn) sẽ sáng hơn.
 
 \paragraph{Hấp dẫn suy giảm theo khoảng cách.}
+
 Hàm hấp dẫn chuẩn trong FA:
 \[
 \beta\!\left(r_{ij}^{(t)}\right) \;=\; \beta_0 \exp\!\big(-\gamma \, (r_{ij}^{(t)})^2\big),
@@ -36,6 +38,7 @@ Hàm hấp dẫn chuẩn trong FA:
 trong đó $\beta_0>0$ là hấp dẫn tại $r=0$, còn $\gamma>0$ điều khiển mức suy giảm theo khoảng cách (Yang, 2009).
 
 \paragraph{Quy tắc cập nhật (không gian liên tục).}
+
 Đối với mỗi đom đóm $i$, chỉ di chuyển về phía các đom đóm sáng hơn:
 \[
 \mathbf{x}_i^{(t+1)}
@@ -46,15 +49,17 @@ trong đó $\beta_0>0$ là hấp dẫn tại $r=0$, còn $\gamma>0$ điều khi�
 khi $I_j > I_i$. Ở đây $\boldsymbol{\varepsilon}_i^{(t)}$ là nhiễu (thường lấy từ $\mathcal{U}[-\tfrac12,\tfrac12]^d$), và $\alpha$ là hệ số randomization. Nếu không có cá thể sáng hơn, nghiệm chủ yếu chịu nhiễu thăm dò.
 
 \paragraph{Xử lý biên.}
-Sau cập nhật, sử dụng \textbf{chiếu (clipping)} về miền hợp lệ 
 
-$[\text{lower\_bound}, \text{upper\_bound}]$ cho từng chiều.
 
-\paragraph{Rời rạc hoá cho Knapsack 0/1.}
+Sau cập nhật, sử dụng \textbf{chiếu (clipping)} về miền hợp lệ $[\text{lower\_bound}, \text{upper\_bound}]$ 
+cho từng chiều.
+
+\subsubsection{Mô hình rời rạc cho Knapsack 0/1\cite{tilahun2017fireflyDiscrete}}
 
 Biểu diễn nghiệm bằng $\mathbf{b}_i^{(t)} \in \{0,1\}^n$. Quy tắc di chuyển:
 
 \textbf{(a) Di chuyển có hướng (Directed movement).}
+
 Với mỗi đom đóm $j$ sáng hơn $i$:
 \begin{enumerate}
     \item Xác định tập vị trí khác biệt: $D = \{k \mid b_{i,k} \neq b_{j,k}\}$.
@@ -63,12 +68,14 @@ Với mỗi đom đóm $j$ sáng hơn $i$:
 \end{enumerate}
 
 \textbf{(b) Nhiễu ngẫu nhiên.}
+
 Với xác suất $\alpha_{\text{flip}}$, chọn ngẫu nhiên một vị trí và lật bit:
 \[
 b_{i,k} \gets 1 - b_{i,k}.
 \]
 
 \textbf{(c) Sửa nghiệm vi phạm (Repair vs Penalty).}
+
 Benchmark hỗ trợ hai chiến lược xử lý ràng buộc:
 \begin{itemize}
     \item \textbf{Repair strategy}: Sau khi di chuyển, nếu nghiệm vi phạm ràng buộc sức chứa, loại dần các vật phẩm có tỷ số $v_k/w_k$ thấp nhất (greedy removal) cho đến khi khả thi.
@@ -142,87 +149,5 @@ $\beta_0$ lớn $\Rightarrow$ khai thác cục bộ mạnh; $\gamma$ nhỏ $\Rig
 \STATE \textbf{Output:} $\mathbf{b}^\star$, giá trị balo $= -f^\star$.
 \end{algorithmic}
 \end{algorithm}
-
-\subsection{Thuật toán dùng để so sánh}
-
-Để đặt Thuật toán Đom Đóm (FA) vào một bối cảnh hợp lý, chúng tôi so sánh với ba thuật toán metaheuristic cổ điển:
-Hill Climbing (HC), Simulated Annealing (SA) và Genetic Algorithm (GA).
-Tất cả đều được hiện thực trong cùng một khung mã Python, dùng chung:
-(i) giao diện bài toán, (ii) bộ sinh nghiệm khởi tạo, (iii) cách ghi log kết quả và (iv) các script phân tích/visualize.
-
-\paragraph{Hill Climbing (HC).}
-HC là baseline tham lam địa phương: giữ một nghiệm hiện tại, sinh lân cận và chỉ chấp nhận nghiệm tốt hơn. Khi không cải thiện sau một số bước, thực hiện restart.
-
-\textbf{Cấu hình đại diện:}
-\begin{itemize}[leftmargin=1.6em]
-    \item \textbf{Rastrigin (liên tục):} lân cận được sinh bằng perturbation Gaussian/Uniform trên từng chiều với bước nhảy cố định; dùng một số lượng lân cận cố định mỗi vòng lặp, sau đó chọn best improvement. Có cơ chế restart sau một số vòng không cải thiện.
-    \item \textbf{Knapsack (0/1):} lân cận sinh bằng cách lật một số bit trong vector nhị phân (bit-flip). Restart khi bị kẹt quá lâu trong plateau.
-\end{itemize}
-
-\paragraph{Simulated Annealing (SA).}
-SA dùng cùng cấu trúc lân cận với HC nhưng chấp nhận nghiệm xấu hơn với xác suất
-$\exp(-\Delta f / T)$, trong đó $T$ giảm dần theo lịch làm nguội hình học:
-$T_{k+1} = \text{cooling\_rate} \cdot T_k$.
-
-\textbf{Cấu hình đại diện:}
-\begin{itemize}[leftmargin=1.6em]
-    \item \textbf{Rastrigin:} nhiệt độ khởi tạo $T_0$ tương đối cao, lịch làm nguội hình học (cooling\_rate gần 1), bước nhảy tương đương với HC để so sánh công bằng.
-    \item \textbf{Knapsack:} chỉ điều chỉnh $T_0$ và cooling\_rate, sử dụng cùng cơ chế lân cận bit-flip với HC.
-\end{itemize}
-
-\paragraph{Genetic Algorithm (GA).}
-GA duy trì một quần thể cá thể, áp dụng tournament selection, crossover và mutation; luôn có elitism giữ lại một số cá thể tốt nhất qua thế hệ.
-
-\textbf{Cấu hình và operator \textit{đúng với code}:}
-\begin{itemize}[leftmargin=1.6em]
-    \item \textbf{Rastrigin (liên tục):}
-    \begin{itemize}
-        \item \emph{Crossover}: sử dụng Simulated Binary Crossover (SBX), \textbf{không} phải one-point/two-point.
-        SBX sinh con liên tục nằm trong vùng lân cận hai cha mẹ, phù hợp không gian thực.
-        \item \emph{Mutation}: perturbation từng chiều với xác suất mutation\_rate; các giá trị mutation\_rate trong benchmark được đặt xấp xỉ $1/d$ (0.10 cho $d=10$, 0.03 cho $d=30$, 0.02 cho $d=50$).
-        \item \emph{Quần thể}: pop\_size tăng dần theo dimension (40 $\rightarrow$ 60 $\rightarrow$ 80) để bù lại độ khó tăng.
-        \item \emph{Selection}: tournament\_size lần lượt là 3, 5, 7 cho ba cấu hình; crossover\_rate giữ khoảng 0.9, luôn bật elitism.
-    \end{itemize}
-    \item \textbf{Knapsack (rời rạc):}
-    \begin{itemize}
-        \item \emph{Crossover}: uniform crossover trên bit – mỗi bit con được chọn độc lập từ cha hoặc mẹ theo một xác suất, phù hợp với biểu diễn 0/1.
-        \item \emph{Mutation}: bit-flip với xác suất mutation\_rate = $1/n$ (chuẩn trong GA nhị phân).
-        \item \emph{Quần thể}: pop\_size tăng theo kích thước bài toán (30 cho $n=50,100$; 40 cho $n=200$); tournament\_size=3; luôn dùng elitism.
-    \end{itemize}
-\end{itemize}
-
-\paragraph{Firefly Algorithm (FA).}
-\textbf{Rastrigin (liên tục):} sử dụng biến thể FA chuẩn trong không gian liên tục, với các tham số $(n_{\text{fireflies}}, \alpha, \beta_0, \gamma)$ được chọn \emph{riêng cho từng cấu hình}:
-
-\begin{itemize}[leftmargin=1.6em]
-    \item quick\_convergence ($d=10$): $n_{\text{fireflies}}=40$, $\alpha=0.18$, $\gamma=0.02$.
-    \item multimodal\_escape ($d=30$): $n_{\text{fireflies}}=60$, $\alpha=0.20$, $\gamma=0.01$.
-    \item scalability ($d=50$): $n_{\text{fireflies}}=80$, $\alpha=0.22$, $\gamma=0.008$.
-\end{itemize}
-
-$\beta_0$ luôn đặt bằng 1.0. Xu hướng chung: dimension càng cao thì quần thể và mức nhiễu $\alpha$ tăng lên một chút để tăng exploration, trong khi $\gamma$ giảm để lực hút không bị “tắt” quá nhanh khi $r$ tăng theo $\sqrt{d}$.
-
-\textbf{Knapsack:} dùng biến thể rời rạc hoá đã mô tả ở \emph{Cơ sở toán học}, trong đó:
-\begin{itemize}[leftmargin=1.6em]
-    \item Di chuyển có hướng (directed movement) lật tối đa một số bit mỗi bước (\texttt{max\_flips\_per\_move}=3) để tiến gần tới firefly sáng hơn.
-    \item Nhiễu ngẫu nhiên bit-flip với xác suất $\alpha_{\text{flip}}=0.2$.
-    \item Luôn dùng chiến lược repair \texttt{greedy\_remove} (loại các vật phẩm có $v_k/w_k$ thấp nhất) để đảm bảo feasibility; penalty được hỗ trợ ở mức framework nhưng không kích hoạt trong cấu hình benchmark chính.
-\end{itemize}
-
-Quy mô quần thể FA cho Knapsack tăng theo $n$: với $n \le 100$ dùng $n_{\text{fireflies}}=30$, với $n=200$ dùng $n_{\text{fireflies}}=40$.
-
-\textbf{Lưu ý về tham số.}
-Các tham số \emph{không} hoàn toàn “cố định cho từng family bài toán” như cách diễn đạt ngắn gọn ban đầu, mà được chọn thủ công \textbf{theo từng kịch bản}:
-
-\begin{itemize}[leftmargin=1.6em]
-    \item Với Rastrigin: mỗi cấu hình \texttt{quick\_convergence} (10D), \texttt{multimodal\_escape} (30D), \texttt{scalability} (50D) có bộ tham số riêng cho FA, SA, HC, GA (pop\_size, n\_fireflies, mutation\_rate, initial\_temp, num\_neighbors, \dots).
-    \item Với Knapsack: tham số thay đổi theo kích thước $n$ (50, 100, 200) – budget, quần thể FA/GA được scale theo $n$, mutation\_rate của GA đặt đúng bằng $1/n$, nhưng trong cùng một kích thước thì tham số cố định cho mọi instance-type và mọi run.
-\end{itemize}
-
-Tuy nhiên, trong \emph{mỗi} cấu hình con (ví dụ: Rastrigin dim=30, hoặc Knapsack $n=100$), bộ tham số được giữ nguyên cho tất cả thuật toán trong mọi lần chạy và \textbf{không} được tune theo từng instance cụ thể. Điều này khiến kết quả vẫn mang tính “out-of-the-box theo từng scenario” chứ không phải đã tối ưu hoá đến mức per-instance.
-
-
-\vspace{0.5em}
-
 
 
