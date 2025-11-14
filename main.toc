@@ -84,20 +84,21 @@
 \contentsline {subsection}{\numberline {8.1}Các bài toán rời rạc}{26}{subsection.8.1}%
 \contentsline {subsubsection}{\numberline {8.1.1}The travelling salesman problem}{26}{subsubsection.8.1.1}%
 \contentsline {subsubsection}{\numberline {8.1.2}Knapsack Problem (KP)}{28}{subsubsection.8.1.2}%
-\contentsline {subsubsection}{\numberline {8.1.3}Graph Coloring (GC)}{29}{subsubsection.8.1.3}%
+\contentsline {subsubsection}{\numberline {8.1.3}Graph Coloring (GC)}{28}{subsubsection.8.1.3}%
 \contentsline {subsection}{\numberline {8.2}Các bài toán liên tục}{29}{subsection.8.2}%
 \contentsline {subsubsection}{\numberline {8.2.1}Sphere function}{29}{subsubsection.8.2.1}%
-\contentsline {subsubsection}{\numberline {8.2.2}Rosenbrock function}{30}{subsubsection.8.2.2}%
-\contentsline {subsubsection}{\numberline {8.2.3}Rastrigin function}{30}{subsubsection.8.2.3}%
+\contentsline {subsubsection}{\numberline {8.2.2}Rosenbrock function}{29}{subsubsection.8.2.2}%
+\contentsline {subsubsection}{\numberline {8.2.3}Rastrigin function \cite {rastrigin1974systems}}{29}{subsubsection.8.2.3}%
 \contentsline {subsubsection}{\numberline {8.2.4}Ackley function}{30}{subsubsection.8.2.4}%
-\contentsline {section}{\numberline {9}Thiết lập và phân tích kết quả các bài toán đánh giá}{31}{section.9}%
-\contentsline {subsection}{\numberline {9.1}ACO và PSO}{31}{subsection.9.1}%
-\contentsline {subsubsection}{\numberline {9.1.1}Phân tích Bản đồ "Tiny" (10 đỉnh)}{32}{subsubsection.9.1.1}%
-\contentsline {paragraph}{Tóm tắt (Tiny):}{33}{paragraph*.14}%
-\contentsline {subsubsection}{\numberline {9.1.2}Phân tích Bản đồ "Small" (30 đỉnh)}{34}{subsubsection.9.1.2}%
-\contentsline {paragraph}{Tóm tắt (Small):}{35}{paragraph*.16}%
-\contentsline {subsubsection}{\numberline {9.1.3}Phân tích Bản đồ "Medium" (50 đỉnh)}{36}{subsubsection.9.1.3}%
-\contentsline {paragraph}{Tóm tắt (Medium):}{37}{paragraph*.18}%
+\contentsline {section}{\numberline {9}Thiết lập và phân tích kết quả các bài toán đánh giá}{30}{section.9}%
+\contentsline {subsection}{\numberline {9.1}ACO và PSO}{30}{subsection.9.1}%
+\contentsline {subsubsection}{\numberline {9.1.1}Phân tích Bản đồ "Tiny" (10 đỉnh)}{31}{subsubsection.9.1.1}%
+\contentsline {paragraph}{Tóm tắt (Tiny):}{32}{paragraph*.14}%
+\contentsline {subsubsection}{\numberline {9.1.2}Phân tích Bản đồ "Small" (30 đỉnh)}{33}{subsubsection.9.1.2}%
+\contentsline {paragraph}{Tóm tắt (Small):}{34}{paragraph*.16}%
+\contentsline {subsubsection}{\numberline {9.1.3}Phân tích Bản đồ "Medium" (50 đỉnh)}{35}{subsubsection.9.1.3}%
+\contentsline {paragraph}{Tóm tắt (Medium):}{36}{paragraph*.18}%
+\contentsline {subsubsection}{\numberline {9.1.4}Thảo luận}{36}{subsubsection.9.1.4}%
 \contentsline {subsection}{\numberline {9.2}ABC}{37}{subsection.9.2}%
 \contentsline {subsection}{\numberline {9.3}Firefly Algorithm}{38}{subsection.9.3}%
 \contentsline {subsubsection}{\numberline {9.3.1}Thuật toán dùng để so sánh}{38}{subsubsection.9.3.1}%
@@ -126,5 +127,6 @@
 \contentsline {paragraph}{Bài học về thiết kế benchmark và cách diễn giải kết quả.}{63}{paragraph*.64}%
 \contentsline {paragraph}{Tổng kết.}{63}{paragraph*.65}%
 \contentsline {subsection}{\numberline {9.4}Cuckoo Search}{63}{subsection.9.4}%
-\contentsline {section}{\numberline {}Phân công công việc}{65}{figure.caption.66}%
+\contentsline {section}{\numberline {10}Kết luận chung}{65}{section.10}%
+\contentsline {section}{\numberline {}Phân công công việc}{65}{section.10}%
 \contentsline {section}{\numberline {}Phụ lục}{65}{table.caption.67}%

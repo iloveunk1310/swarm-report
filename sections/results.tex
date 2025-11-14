@@ -216,6 +216,52 @@ Dựa trên các biểu đồ \texttt{\_medium.png} (Hình~\ref{fig:medium_maps}
 \paragraph{Tóm tắt (Medium):} Khi bài toán lớn lên 50 đỉnh, kết quả càng phân hóa rõ rệt. ACO tiếp tục thể hiện sự áp đảo, còn PSO trở nên càng tệ và chứng tỏ sự thiếu phù hợp.
 
 
+\subsubsection{Thảo luận}
+
+\subsubsection*{ACO: Ưu điểm / Nhược điểm.}
+
+\textbf{Điểm mạnh:}
+\begin{itemize}
+    \item \textbf{Hiệu suất thời gian xuất sắc:} ACO là thuật toán nhanh nhất trong tất cả thử nghiệm và có khả năng mở rộng (scaling) thời gian rất tốt khi kích thước bài toán tăng lên.
+    \item \textbf{Chất lượng giải pháp cao:} Luôn tìm được giải pháp nằm trong top 2, chứng tỏ khả năng tối ưu mạnh mẽ và không bị mắc kẹt ở điểm tối ưu cục bộ quá tệ.
+\end{itemize}
+
+\textbf{Điểm yếu:}
+\begin{itemize}
+    \item \textbf{Hội tụ giai đoạn cuối chậm:} Biểu đồ \texttt{ACO\_small.png} cho thấy thuật toán tìm ra giải pháp "khá tốt" (khoảng 64) rất nhanh (chỉ sau $\sim$40 vòng lặp), nhưng phải mất thêm $\sim$40 vòng lặp nữa để tinh chỉnh dần dần xuống giải pháp cuối cùng (63).
+\end{itemize}
+
+\textbf{Tiềm năng cải thiện:}
+\begin{itemize}
+    \item Các tham số của ACO (như tốc độ bay hơi pheromone, tầm quan trọng của pheromone so với khoảng cách) có thể được \textbf{tinh chỉnh (tuning)}. Tăng cường “khai thác” (exploitation) ở giai đoạn sau có thể giúp hội tụ nhanh hơn.
+\end{itemize}
+
+\vspace{0.5em}
+
+\subsubsection*{PSO: Ưu điểm / Nhược điểm.}
+
+
+\textbf{Điểm mạnh:}
+\begin{itemize}
+    \item Thuật toán phù hợp với các bài toán tối ưu \textbf{liên tục} và khá dễ cài đặt.
+    \item Đường cong hội tụ vẫn cho thấy thuật toán có cải thiện nghiệm theo thời gian (không “chết đứng” hoàn toàn).
+\end{itemize}
+
+\textbf{Điểm yếu:}
+\begin{itemize}
+    \item \textbf{Không phù hợp với bài toán rời rạc:} PSO vốn được thiết kế cho các bài toán tối ưu liên tục. Việc phải “ép” nó giải TSP (bài toán rời rạc trên hoán vị) thông qua mã hoá phức tạp khiến hiệu quả rất kém.
+    \item \textbf{Thời gian chạy rất chậm:} Thời gian thực thi cao hơn ACO và GA hàng chục lần khi kích thước bài toán tăng.
+    \item \textbf{Chất lượng giải pháp thấp:} Dễ bị mắc kẹt tại các điểm tối ưu cục bộ kém; ở các bản đồ Small/Medium cho kết quả tệ nhất trong ba thuật toán.
+    \item \textbf{Khả năng mở rộng cực kỳ tệ:} Thời gian chạy tăng vọt phi tuyến khi số đỉnh tăng, cho thấy PSO gần như không phù hợp với TSP.
+\end{itemize}
+
+\textbf{Tiềm năng (và giới hạn) cải thiện:}
+\begin{itemize}
+    \item \textbf{Không nên dùng PSO cho TSP:} Với cấu trúc hiện tại, PSO đơn giản là lựa chọn sai bài toán; việc tinh chỉnh tham số khó mà cứu được bản chất này.
+    \item \textbf{Ứng dụng đúng chỗ:} Sức mạnh thực sự của PSO nằm ở các bài toán tối ưu liên tục, nơi khái niệm “vị trí” và “vận tốc” có ý nghĩa tự nhiên. Trong bối cảnh đó, PSO có thể vượt trội hơn nhiều so với kết quả thu được trên TSP.
+\end{itemize}
+
+
 \subsection{ABC}
 Sau nhiều lần thử với nhiều loại bài toán khác nhau, ta thấy thuật toán ABC có độ ổn định cao, performance tốt với cả những hàm số đa cực trị hay có cực trị đặc biệt
 \begin{figure}[h]

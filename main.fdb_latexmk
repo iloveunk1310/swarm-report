@@ -1,15 +1,15 @@
 # Fdb version 4
-["bibtex main"] 1763131855.69164 "main.aux" "main.bbl" "main" 1763131871.93262 0
+["bibtex main"] 1763133319.31688 "main.aux" "main.bbl" "main" 1763133347.12505 0
   "./references.bib" 1763129352.76726 12557 14e40900fba716b1c9369b1db78356d9 ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/alpha.bst" 1292289607 23907 a5f93555796fb564b924339521f10a7c ""
-  "main.aux" 1763131871.77407 38393 9742b74a876a1942aa73b24c83611f89 "pdflatex"
+  "main.aux" 1763133346.92602 38697 d1e65a1ffc2fbe70bf0fd6bd7e4b7938 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1763131855.71952 "/home/bui-anh-quan/swarm-report/main.tex" "main.pdf" "main" 1763131871.93294 0
+["pdflatex"] 1763133319.39983 "/home/bui-anh-quan/swarm-report/main.tex" "main.pdf" "main" 1763133347.1254 0
   "/etc/texmf/web2c/texmf.cnf" 1762963465.38547 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/bui-anh-quan/swarm-report/main.tex" 1763131063.46297 4717 7c5909ef65ad821c3f1dbbacf4be8e83 ""
+  "/home/bui-anh-quan/swarm-report/main.tex" 1763132012.5779 4744 7755e70da4ba66ee59c2fce79c29434f ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm" 1246382020 1120 200be8b775682cdf80acad4be5ef57e4 ""
@@ -150,11 +150,11 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1762965493.99455 198142 16d6a54cbe5ab31460400710ee1222d6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1762965559 6977291 9a117c000f73e90b328d020049db3216 ""
-  "main.aux" 1763131871.77407 38393 9742b74a876a1942aa73b24c83611f89 "pdflatex"
-  "main.bbl" 1763131855.7152 8850 bd5b4ece5cd3fae03c912d5ab11460c8 "bibtex main"
-  "main.out" 1763131871.77807 20604 dbf872310152d877d45fea834339f067 "pdflatex"
-  "main.tex" 1763131063.46297 4717 7c5909ef65ad821c3f1dbbacf4be8e83 ""
-  "main.toc" 1763131871.77807 12886 7a48714baba2cf33a2006ed3ab87c066 "pdflatex"
+  "main.aux" 1763133346.92602 38697 d1e65a1ffc2fbe70bf0fd6bd7e4b7938 "pdflatex"
+  "main.bbl" 1763133319.38693 8850 bd5b4ece5cd3fae03c912d5ab11460c8 "bibtex main"
+  "main.out" 1763133346.93102 20956 5636ef15bad479a687dc7216d182459c "pdflatex"
+  "main.tex" 1763132012.5779 4744 7755e70da4ba66ee59c2fce79c29434f ""
+  "main.toc" 1763133346.93312 13075 6b32bc338dd58e9327a911cc0a336306 "pdflatex"
   "picture/ACO_medium.png" 1763130841.9807 23213 5008b9d8f5205fe09d7b48636d92ca1f ""
   "picture/ACO_small.png" 1763130870.98004 23773 abe9db743a502f9d62fc67fa8ebe74d8 ""
   "picture/ACO_tiny.png" 1763130871.03976 23203 47d032da918ac2ca27797c646d5cb22d ""
@@ -208,13 +208,14 @@
   "picture/tsp.png" 1763028739.88389 55964 fdd6e2ea2eda1cc347bdbd052ee373ad ""
   "sections/ant_colony_optimization.tex" 1763128882.90077 11885 f46eb6a3d6328fb4ac9ea472893d05e6 ""
   "sections/artificial_bee_colony.tex" 1763128320.82133 7489 6e422ff2267a64d6bffe5413cbd67147 ""
+  "sections/conclusion.tex" 1763107247.74248 28 21ec17d238b2ed12ecf2c60a82309757 ""
   "sections/cuckoo_search.tex" 1763129353.1495 4675 b1da2203ec04f7c6a8d41d2101a79398 ""
   "sections/firefly_algorithm.tex" 1763129627.83519 9146 7381d3eef7b3f6e95265557fe49572bc ""
   "sections/genetic_algorithm.tex" 1763127095.99027 22595 3e7a5de2372c6e37d8316b65ae55235c ""
   "sections/introduction.tex" 1763127703.334 1620 74297e576450bd348c7522351d146de5 ""
   "sections/particle_swarm_optimization.tex" 1763129072.12315 9814 aa16208070f872884e38dc932404bc40 ""
-  "sections/problems.tex" 1763127862.16756 14409 c5a5c9408946f013df0caf613f3e4f54 ""
-  "sections/results.tex" 1763131834.1133 75183 b9d2e085c6faa78963b6c88a74ab5b63 ""
+  "sections/problems.tex" 1763133199.36806 10822 091079015171c0368ba94f36ba9a68a7 ""
+  "sections/results.tex" 1763133275.65381 78437 1d013a5da55493dfba8956e81be1b23c ""
   (generated)
   "main.aux"
   "main.log"
