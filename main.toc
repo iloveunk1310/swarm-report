@@ -40,7 +40,7 @@
 \contentsline {paragraph}{Hấp dẫn suy giảm theo khoảng cách.}{14}{paragraph*.2}%
 \contentsline {paragraph}{Quy tắc cập nhật (không gian liên tục).}{14}{paragraph*.3}%
 \contentsline {paragraph}{Xử lý biên.}{14}{paragraph*.4}%
-\contentsline {subsubsection}{\numberline {5.2.2}Mô hình rời rạc cho Knapsack 0/1\cite {tilahun2017fireflyDiscrete}}{14}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2}Mô hình rời rạc cho Knapsack 0/1 \cite {tilahun2017fireflyDiscrete}}{14}{subsubsection.5.2.2}%
 \contentsline {paragraph}{Gợi ý lựa chọn tham số.}{15}{paragraph*.5}%
 \contentsline {subsection}{\numberline {5.3}Chi tiết triển khai thuật toán (Mã giả)}{15}{subsection.5.3}%
 \contentsline {section}{\numberline {6}Cuckoo Search}{16}{section.6}%
@@ -91,39 +91,40 @@
 \contentsline {subsubsection}{\numberline {8.2.3}Rastrigin function}{30}{subsubsection.8.2.3}%
 \contentsline {subsubsection}{\numberline {8.2.4}Ackley function}{30}{subsubsection.8.2.4}%
 \contentsline {section}{\numberline {9}Thiết lập và phân tích kết quả các bài toán đánh giá}{31}{section.9}%
-\contentsline {subsection}{\numberline {9.1}ACO}{31}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}PSO}{31}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}ABC}{31}{subsection.9.3}%
-\contentsline {subsection}{\numberline {9.4}Firefly Algorithm}{32}{subsection.9.4}%
-\contentsline {subsubsection}{\numberline {9.4.1}Thuật toán dùng để so sánh}{32}{subsubsection.9.4.1}%
-\contentsline {paragraph}{Hill Climbing (HC).}{32}{paragraph*.16}%
-\contentsline {paragraph}{Simulated Annealing (SA).}{32}{paragraph*.17}%
-\contentsline {paragraph}{Genetic Algorithm (GA).}{33}{paragraph*.18}%
-\contentsline {paragraph}{Firefly Algorithm (FA).}{33}{paragraph*.19}%
-\contentsline {paragraph}{Lưu ý về tham số.}{34}{paragraph*.20}%
-\contentsline {subsubsection}{\numberline {9.4.2}Bài toán đánh giá}{34}{subsubsection.9.4.2}%
-\contentsline {paragraph}{Hàm Rastrigin (liên tục).}{34}{paragraph*.21}%
-\contentsline {paragraph}{Bài toán Knapsack 0/1 (rời rạc).}{34}{paragraph*.22}%
-\contentsline {subsubsection}{\numberline {9.4.3}Chỉ số đánh giá}{35}{subsubsection.9.4.3}%
-\contentsline {paragraph}{Rastrigin.}{35}{paragraph*.23}%
-\contentsline {paragraph}{Knapsack.}{36}{paragraph*.24}%
-\contentsline {subsubsection}{\numberline {9.4.4}Rastrigin: mức độ tiệm cận nghiệm tối ưu và đặc trưng hội tụ}{36}{subsubsection.9.4.4}%
-\contentsline {paragraph}{ECDF theo ngưỡng mục tiêu.}{36}{paragraph*.25}%
-\contentsline {paragraph}{Fixed-Budget Performance: sai số cuối cùng dưới các mức ngân sách cố định.}{38}{paragraph*.29}%
-\contentsline {paragraph}{ERT, performance profiles và data profiles.}{40}{paragraph*.33}%
-\contentsline {subsubsection}{\numberline {9.4.5}Rastrigin: đa dạng quần thể và hiện tượng dừng sớm (stagnation)}{43}{subsubsection.9.4.5}%
-\contentsline {paragraph}{Đa dạng quần thể theo thời gian.}{43}{paragraph*.39}%
-\contentsline {paragraph}{Phân tích stagnation.}{45}{paragraph*.43}%
-\contentsline {subsubsection}{\numberline {9.4.6}Knapsack: hiệu năng fixed-budget (gap tới nghiệm tối ưu)}{47}{subsubsection.9.4.6}%
-\contentsline {subsubsection}{\numberline {9.4.7}Knapsack: performance/data profiles và so sánh thống kê}{49}{subsubsection.9.4.7}%
-\contentsline {subsubsection}{\numberline {9.4.8}Thảo luận}{55}{subsubsection.9.4.8}%
-\contentsline {paragraph}{Rastrigin: giới hạn của bộ thuật toán trong bối cảnh high-dimensional.}{55}{paragraph*.57}%
-\contentsline {paragraph}{Firefly Algorithm trên Rastrigin: tác động của độ suy giảm hấp dẫn.}{55}{paragraph*.58}%
-\contentsline {paragraph}{Knapsack: sức mạnh của FA rời rạc kết hợp repair heuristic.}{55}{paragraph*.59}%
-\contentsline {paragraph}{Ý nghĩa và hạn chế của performance/data profiles khi success rate thấp.}{56}{paragraph*.60}%
-\contentsline {paragraph}{Không có thuật toán tối ưu “mọi nơi”: liên hệ với No Free Lunch.}{56}{paragraph*.61}%
-\contentsline {paragraph}{Bài học về thiết kế benchmark và cách diễn giải kết quả.}{56}{paragraph*.62}%
-\contentsline {paragraph}{Tổng kết.}{56}{paragraph*.63}%
-\contentsline {subsection}{\numberline {9.5}Cuckoo Search}{57}{subsection.9.5}%
-\contentsline {section}{\numberline {}Phân công công việc}{57}{subsection.9.5}%
-\contentsline {section}{\numberline {}Phụ lục}{57}{table.caption.64}%
+\contentsline {subsection}{\numberline {9.1}ACO và PSO}{31}{subsection.9.1}%
+\contentsline {subsubsection}{\numberline {9.1.1}Phân tích Bản đồ "Tiny" (10 đỉnh)}{32}{subsubsection.9.1.1}%
+\contentsline {paragraph}{Tóm tắt (Tiny):}{33}{paragraph*.14}%
+\contentsline {subsubsection}{\numberline {9.1.2}Phân tích Bản đồ "Small" (30 đỉnh)}{34}{subsubsection.9.1.2}%
+\contentsline {paragraph}{Tóm tắt (Small):}{35}{paragraph*.16}%
+\contentsline {subsubsection}{\numberline {9.1.3}Phân tích Bản đồ "Medium" (50 đỉnh)}{36}{subsubsection.9.1.3}%
+\contentsline {paragraph}{Tóm tắt (Medium):}{37}{paragraph*.18}%
+\contentsline {subsection}{\numberline {9.2}ABC}{37}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Firefly Algorithm}{38}{subsection.9.3}%
+\contentsline {subsubsection}{\numberline {9.3.1}Thuật toán dùng để so sánh}{38}{subsubsection.9.3.1}%
+\contentsline {paragraph}{Lưu ý về tham số.}{39}{paragraph*.22}%
+\contentsline {subsubsection}{\numberline {9.3.2}Bài toán đánh giá}{40}{subsubsection.9.3.2}%
+\contentsline {paragraph}{Hàm Rastrigin (liên tục).}{40}{paragraph*.23}%
+\contentsline {paragraph}{Bài toán Knapsack 0/1 (rời rạc).}{40}{paragraph*.24}%
+\contentsline {subsubsection}{\numberline {9.3.3}Chỉ số đánh giá}{41}{subsubsection.9.3.3}%
+\contentsline {paragraph}{Rastrigin.}{41}{paragraph*.25}%
+\contentsline {paragraph}{Knapsack.}{41}{paragraph*.26}%
+\contentsline {subsubsection}{\numberline {9.3.4}Rastrigin: mức độ tiệm cận nghiệm tối ưu và đặc trưng hội tụ}{42}{subsubsection.9.3.4}%
+\contentsline {paragraph}{ECDF theo ngưỡng mục tiêu.}{42}{paragraph*.27}%
+\contentsline {paragraph}{Fixed-Budget Performance: sai số cuối cùng dưới các mức ngân sách cố định.}{44}{paragraph*.31}%
+\contentsline {paragraph}{ERT, performance profiles và data profiles.}{46}{paragraph*.35}%
+\contentsline {subsubsection}{\numberline {9.3.5}Rastrigin: đa dạng quần thể và hiện tượng dừng sớm (stagnation)}{49}{subsubsection.9.3.5}%
+\contentsline {paragraph}{Đa dạng quần thể theo thời gian.}{49}{paragraph*.41}%
+\contentsline {paragraph}{Phân tích stagnation.}{51}{paragraph*.45}%
+\contentsline {subsubsection}{\numberline {9.3.6}Knapsack: hiệu năng fixed-budget (gap tới nghiệm tối ưu)}{53}{subsubsection.9.3.6}%
+\contentsline {subsubsection}{\numberline {9.3.7}Knapsack: performance/data profiles và so sánh thống kê}{55}{subsubsection.9.3.7}%
+\contentsline {subsubsection}{\numberline {9.3.8}Thảo luận}{61}{subsubsection.9.3.8}%
+\contentsline {paragraph}{Rastrigin: giới hạn của bộ thuật toán trong bối cảnh high-dimensional.}{61}{paragraph*.59}%
+\contentsline {paragraph}{Firefly Algorithm trên Rastrigin: tác động của độ suy giảm hấp dẫn.}{61}{paragraph*.60}%
+\contentsline {paragraph}{Knapsack: FA rời rạc giữa tốc độ hội tụ và chất lượng nghiệm cuối.}{61}{paragraph*.61}%
+\contentsline {paragraph}{Ý nghĩa và hạn chế của performance/data profiles khi success rate thấp hoặc target “thoáng”.}{62}{paragraph*.62}%
+\contentsline {paragraph}{Không có thuật toán tối ưu “mọi nơi”: liên hệ với No Free Lunch.}{62}{paragraph*.63}%
+\contentsline {paragraph}{Bài học về thiết kế benchmark và cách diễn giải kết quả.}{63}{paragraph*.64}%
+\contentsline {paragraph}{Tổng kết.}{63}{paragraph*.65}%
+\contentsline {subsection}{\numberline {9.4}Cuckoo Search}{63}{subsection.9.4}%
+\contentsline {section}{\numberline {}Phân công công việc}{65}{figure.caption.66}%
+\contentsline {section}{\numberline {}Phụ lục}{65}{table.caption.67}%

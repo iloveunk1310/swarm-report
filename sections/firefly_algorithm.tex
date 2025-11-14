@@ -54,32 +54,43 @@ khi $I_j > I_i$. Ở đây $\boldsymbol{\varepsilon}_i^{(t)}$ là nhiễu (thư�
 Sau cập nhật, sử dụng \textbf{chiếu (clipping)} về miền hợp lệ $[\text{lower\_bound}, \text{upper\_bound}]$ 
 cho từng chiều.
 
-\subsubsection{Mô hình rời rạc cho Knapsack 0/1\cite{tilahun2017fireflyDiscrete}}
+\subsubsection{Mô hình rời rạc cho Knapsack 0/1 \cite{tilahun2017fireflyDiscrete}}
 
-Biểu diễn nghiệm bằng $\mathbf{b}_i^{(t)} \in \{0,1\}^n$. Quy tắc di chuyển:
+Biểu diễn nghiệm bằng $\mathbf{b}_i^{(t)} \in \{0,1\}^n$. Các quy tắc di chuyển như sau.
 
-\textbf{(a) Di chuyển có hướng (Directed movement).}
+\subsubsection*{(a) Di chuyển có hướng (Directed movement)}
 
 Với mỗi đom đóm $j$ sáng hơn $i$:
-\begin{enumerate}
-    \item Xác định tập vị trí khác biệt: $D = \{k \mid b_{i,k} \neq b_{j,k}\}$.
-    \item Chọn ngẫu nhiên **TỐI ĐA** $m_{\max}$ vị trí từ $D$.
-    \item Lật bit tại các vị trí được chọn để $b_{i,k} \gets b_{j,k}$.
+\begin{enumerate}[leftmargin=1.6em]
+    \item Xác định tập vị trí khác biệt:
+    \[
+        D = \{k \mid b_{i,k} \neq b_{j,k}\}.
+    \]
+
+    \item Chọn ngẫu nhiên \emph{tối đa} $m_{\max}$ vị trí từ $D$.
+
+    \item Lật bit tại các vị trí được chọn sao cho:
+    \[
+        b_{i,k} \leftarrow b_{j,k}.
+    \]
 \end{enumerate}
 
-\textbf{(b) Nhiễu ngẫu nhiên.}
+\subsubsection*{(b) Nhiễu ngẫu nhiên (Random noise)}
 
 Với xác suất $\alpha_{\text{flip}}$, chọn ngẫu nhiên một vị trí và lật bit:
 \[
-b_{i,k} \gets 1 - b_{i,k}.
+    b_{i,k} \leftarrow 1 - b_{i,k}.
 \]
 
-\textbf{(c) Sửa nghiệm vi phạm (Repair vs Penalty).}
+\subsubsection*{(c) Sửa nghiệm vi phạm (Repair vs Penalty)}
 
 Benchmark hỗ trợ hai chiến lược xử lý ràng buộc:
-\begin{itemize}
-    \item \textbf{Repair strategy}: Sau khi di chuyển, nếu nghiệm vi phạm ràng buộc sức chứa, loại dần các vật phẩm có tỷ số $v_k/w_k$ thấp nhất (greedy removal) cho đến khi khả thi.
-    \item \textbf{Penalty strategy}: Nghiệm vi phạm nhận penalty lớn trong fitness, cho phép exploration trong không gian infeasible.
+\begin{itemize}[leftmargin=1.6em]
+    \item \textbf{Repair strategy}: Sau khi di chuyển, nếu nghiệm vi phạm ràng buộc sức chứa,
+          loại dần các vật phẩm có tỷ số $v_k / w_k$ thấp nhất (greedy removal) cho đến khi khả thi.
+
+    \item \textbf{Penalty strategy}: Nghiệm vi phạm nhận penalty lớn trong fitness,
+          cho phép exploration trong không gian infeasible.
 \end{itemize}
 
 \paragraph{Gợi ý lựa chọn tham số.}

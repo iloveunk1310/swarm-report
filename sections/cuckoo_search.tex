@@ -2,7 +2,7 @@
 
 \section{Cuckoo Search}
 \subsection{Giới thiệu thuật toán}
-Cuckoo Search (CS) là một thuật toán metaheuristic được đề xuất bởi Xin-She Yang và Suash Deb vào năm 2009. Thuật toán lấy cảm hứng từ hành vi sinh sản ký sinh của loài chim cu (cuckoo), kết hợp với cơ chế Lévy flight để khám phá không gian tìm kiếm hiệu quả.
+Cuckoo Search (CS) là một thuật toán metaheuristic được đề xuất bởi Xin-She Yang và Suash Deb vào năm 2009,\cite{yang2009cuckoo,yang2014cuckoo} lấy cảm hứng từ hành vi sinh sản ký sinh của loài chim cu (cuckoo), kết hợp với cơ chế Lévy flight để khám phá không gian tìm kiếm hiệu quả.\cite{li2022levy}
 
 Cuckoo Search thuộc nhóm \textit{Swarm Intelligence} tương tự như PSO hay ABC, với ý tưởng là mỗi cá thể (tổ chim) đại diện cho một nghiệm ứng viên trong không gian tìm kiếm. Quá trình tiến hóa xảy ra thông qua việc các tổ chim được thay thế dần bằng các nghiệm tốt hơn.
 
@@ -24,10 +24,10 @@ Tại mỗi vòng lặp, tổ mới được tạo ra theo công thức:
 Trong đó:
 \begin{itemize}
     \item $\alpha$ là hệ số bước bay (step size),
-    \item $\text{Levy}(\beta)$ là bước nhảy theo phân phối Lévy với tham số $\beta$ (thường $\beta = 1.5$).
+    \item $\text{Levy}(\beta)$ là bước nhảy theo phân phối Lévy với tham số $\beta$ (thường $\beta = 1.5$).\cite{li2022levy}
 \end{itemize}
 
-Phân phối Lévy được sinh ra theo công thức Mantegna:
+Phân phối Lévy thường được sinh ra theo công thức Mantegna:\cite{mantegna1994fast}
 \begin{equation}
     s = \frac{u}{|v|^{1/\beta}}, \quad
     u \sim N(0, \sigma_u^2), \quad

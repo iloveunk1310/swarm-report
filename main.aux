@@ -95,14 +95,19 @@
 \@writefile{toc}{\contentsline {paragraph}{Hấp dẫn suy giảm theo khoảng cách.}{14}{paragraph*.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Quy tắc cập nhật (không gian liên tục).}{14}{paragraph*.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Xử lý biên.}{14}{paragraph*.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2}Mô hình rời rạc cho Knapsack 0/1\cite  {tilahun2017fireflyDiscrete}}{14}{subsubsection.5.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2}Mô hình rời rạc cho Knapsack 0/1 \cite  {tilahun2017fireflyDiscrete}}{14}{subsubsection.5.2.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Gợi ý lựa chọn tham số.}{15}{paragraph*.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Chi tiết triển khai thuật toán (Mã giả)}{15}{subsection.5.3}\protected@file@percent }
 \@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces Thuật toán Đom Đóm cho tối ưu liên tục}}{15}{algorithm.3}\protected@file@percent }
+\citation{yang2009cuckoo}
+\citation{yang2014cuckoo}
+\citation{li2022levy}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {4}{\ignorespaces Thuật toán Đom Đóm cho Knapsack 0/1}}{16}{algorithm.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {6}Cuckoo Search}{16}{section.6}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Giới thiệu thuật toán}{16}{subsection.6.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Ý tưởng thuật toán}{16}{subsection.6.2}\protected@file@percent }
+\citation{li2022levy}
+\citation{mantegna1994fast}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Cơ sở toán học của thuật toán}{17}{subsection.6.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Triển khai thuật toán}{17}{subsection.6.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {6.4.1}Cách hoạt động của thuật toán}{17}{subsubsection.6.4.1}\protected@file@percent }
@@ -181,103 +186,146 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {8.2.3}Rastrigin function}{30}{subsubsection.8.2.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {8.2.4}Ackley function}{30}{subsubsection.8.2.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {9}Thiết lập và phân tích kết quả các bài toán đánh giá}{31}{section.9}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}ACO}{31}{subsection.9.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}PSO}{31}{subsection.9.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}ABC}{31}{subsection.9.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Sau lần 10}}{31}{figure.caption.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Sau lần 30}}{31}{figure.caption.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Kết quả}}{31}{figure.caption.13}\protected@file@percent }
-\newlabel{fig:placeholder1}{{\caption@xref {fig:placeholder1}{ on input line 31}}{31}{ABC}{figure.caption.14}{}}
-\newlabel{fig:placeholder2}{{\caption@xref {fig:placeholder2}{ on input line 39}}{32}{ABC}{figure.caption.15}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.4}Firefly Algorithm}{32}{subsection.9.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.4.1}Thuật toán dùng để so sánh}{32}{subsubsection.9.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Hill Climbing (HC).}{32}{paragraph*.16}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Simulated Annealing (SA).}{32}{paragraph*.17}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}ACO và PSO}{31}{subsection.9.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.1.1}Phân tích Bản đồ "Tiny" (10 đỉnh)}{32}{subsubsection.9.1.1}\protected@file@percent }
+\newlabel{subsec:tiny}{{9.1.1}{32}{Phân tích Bản đồ "Tiny" (10 đỉnh)}{subsubsection.9.1.1}{}}
+\newlabel{fig:iter_tiny}{{3a}{32}{So sánh vòng lặp (Tiny)}{figure.caption.13}{}}
+\newlabel{sub@fig:iter_tiny}{{a}{32}{So sánh vòng lặp (Tiny)}{figure.caption.13}{}}
+\newlabel{fig:len_tiny}{{3b}{32}{So sánh độ dài tour (Tiny)}{figure.caption.13}{}}
+\newlabel{sub@fig:len_tiny}{{b}{32}{So sánh độ dài tour (Tiny)}{figure.caption.13}{}}
+\newlabel{fig:time_tiny}{{3c}{32}{So sánh thời gian chạy (Tiny)}{figure.caption.13}{}}
+\newlabel{sub@fig:time_tiny}{{c}{32}{So sánh thời gian chạy (Tiny)}{figure.caption.13}{}}
+\newlabel{fig:aco_tiny}{{3d}{32}{Hội tụ ACO (Tiny)}{figure.caption.13}{}}
+\newlabel{sub@fig:aco_tiny}{{d}{32}{Hội tụ ACO (Tiny)}{figure.caption.13}{}}
+\newlabel{fig:pso_tiny}{{3e}{32}{Hội tụ PSO (Tiny)}{figure.caption.13}{}}
+\newlabel{sub@fig:pso_tiny}{{e}{32}{Hội tụ PSO (Tiny)}{figure.caption.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Kết quả thử nghiệm trên bản đồ ``Tiny'' (10 đỉnh).}}{32}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:tiny_maps}{{3}{32}{Kết quả thử nghiệm trên bản đồ ``Tiny'' (10 đỉnh)}{figure.caption.13}{}}
+\@writefile{toc}{\contentsline {paragraph}{Tóm tắt (Tiny):}{33}{paragraph*.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.1.2}Phân tích Bản đồ "Small" (30 đỉnh)}{34}{subsubsection.9.1.2}\protected@file@percent }
+\newlabel{subsec:small}{{9.1.2}{34}{Phân tích Bản đồ "Small" (30 đỉnh)}{subsubsection.9.1.2}{}}
+\newlabel{fig:iter_small}{{4a}{34}{So sánh vòng lặp (Small)}{figure.caption.15}{}}
+\newlabel{sub@fig:iter_small}{{a}{34}{So sánh vòng lặp (Small)}{figure.caption.15}{}}
+\newlabel{fig:len_small}{{4b}{34}{So sánh độ dài tour (Small)}{figure.caption.15}{}}
+\newlabel{sub@fig:len_small}{{b}{34}{So sánh độ dài tour (Small)}{figure.caption.15}{}}
+\newlabel{fig:time_small}{{4c}{34}{So sánh thời gian chạy (Small)}{figure.caption.15}{}}
+\newlabel{sub@fig:time_small}{{c}{34}{So sánh thời gian chạy (Small)}{figure.caption.15}{}}
+\newlabel{fig:aco_small}{{4d}{34}{Hội tụ ACO (Small)}{figure.caption.15}{}}
+\newlabel{sub@fig:aco_small}{{d}{34}{Hội tụ ACO (Small)}{figure.caption.15}{}}
+\newlabel{fig:pso_small}{{4e}{34}{Hội tụ PSO (Small)}{figure.caption.15}{}}
+\newlabel{sub@fig:pso_small}{{e}{34}{Hội tụ PSO (Small)}{figure.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Kết quả thử nghiệm trên bản đồ ``Small'' (30 đỉnh).}}{34}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:small_maps}{{4}{34}{Kết quả thử nghiệm trên bản đồ ``Small'' (30 đỉnh)}{figure.caption.15}{}}
+\@writefile{toc}{\contentsline {paragraph}{Tóm tắt (Small):}{35}{paragraph*.16}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.1.3}Phân tích Bản đồ "Medium" (50 đỉnh)}{36}{subsubsection.9.1.3}\protected@file@percent }
+\newlabel{subsec:medium}{{9.1.3}{36}{Phân tích Bản đồ "Medium" (50 đỉnh)}{subsubsection.9.1.3}{}}
+\newlabel{fig:iter_medium}{{5a}{36}{So sánh vòng lặp (Medium)}{figure.caption.17}{}}
+\newlabel{sub@fig:iter_medium}{{a}{36}{So sánh vòng lặp (Medium)}{figure.caption.17}{}}
+\newlabel{fig:len_medium}{{5b}{36}{So sánh độ dài tour (Medium)}{figure.caption.17}{}}
+\newlabel{sub@fig:len_medium}{{b}{36}{So sánh độ dài tour (Medium)}{figure.caption.17}{}}
+\newlabel{fig:time_medium}{{5c}{36}{So sánh thời gian chạy (Medium)}{figure.caption.17}{}}
+\newlabel{sub@fig:time_medium}{{c}{36}{So sánh thời gian chạy (Medium)}{figure.caption.17}{}}
+\newlabel{fig:aco_medium}{{5d}{36}{Hội tụ ACO (Medium)}{figure.caption.17}{}}
+\newlabel{sub@fig:aco_medium}{{d}{36}{Hội tụ ACO (Medium)}{figure.caption.17}{}}
+\newlabel{fig:pso_medium}{{5e}{36}{Hội tụ PSO (Medium)}{figure.caption.17}{}}
+\newlabel{sub@fig:pso_medium}{{e}{36}{Hội tụ PSO (Medium)}{figure.caption.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Kết quả thử nghiệm trên bản đồ ``Medium'' (50 đỉnh).}}{36}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:medium_maps}{{5}{36}{Kết quả thử nghiệm trên bản đồ ``Medium'' (50 đỉnh)}{figure.caption.17}{}}
+\@writefile{toc}{\contentsline {paragraph}{Tóm tắt (Medium):}{37}{paragraph*.18}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}ABC}{37}{subsection.9.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Sau lần 10}}{37}{figure.caption.19}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Sau lần 30}}{37}{figure.caption.19}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Kết quả}}{37}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:placeholder1}{{\caption@xref {fig:placeholder1}{ on input line 244}}{37}{ABC}{figure.caption.20}{}}
+\newlabel{fig:placeholder2}{{\caption@xref {fig:placeholder2}{ on input line 252}}{38}{ABC}{figure.caption.21}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}Firefly Algorithm}{38}{subsection.9.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.3.1}Thuật toán dùng để so sánh}{38}{subsubsection.9.3.1}\protected@file@percent }
 \citation{pisinger2005hard}
-\@writefile{toc}{\contentsline {paragraph}{Genetic Algorithm (GA).}{33}{paragraph*.18}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Firefly Algorithm (FA).}{33}{paragraph*.19}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Lưu ý về tham số.}{39}{paragraph*.22}\protected@file@percent }
 \citation{smithmiles2021revisiting}
-\@writefile{toc}{\contentsline {paragraph}{Lưu ý về tham số.}{34}{paragraph*.20}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.4.2}Bài toán đánh giá}{34}{subsubsection.9.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Hàm Rastrigin (liên tục).}{34}{paragraph*.21}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Bài toán Knapsack 0/1 (rời rạc).}{34}{paragraph*.22}\protected@file@percent }
 \citation{dolan2002benchmarking}
 \citation{more2009benchmarking}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.4.3}Chỉ số đánh giá}{35}{subsubsection.9.4.3}\protected@file@percent }
-\newlabel{subsec:Chi_so_danh_gia}{{9.4.3}{35}{Chỉ số đánh giá}{subsubsection.9.4.3}{}}
-\@writefile{toc}{\contentsline {paragraph}{Rastrigin.}{35}{paragraph*.23}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Knapsack.}{36}{paragraph*.24}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.4.4}Rastrigin: mức độ tiệm cận nghiệm tối ưu và đặc trưng hội tụ}{36}{subsubsection.9.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{ECDF theo ngưỡng mục tiêu.}{36}{paragraph*.25}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces ECDF cho quick\_convergence (dim=10).}}{36}{figure.caption.26}\protected@file@percent }
-\newlabel{fig:rastrigin_ecdf_quick}{{6}{36}{ECDF cho quick\_convergence (dim=10)}{figure.caption.26}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces ECDF cho multimodal\_escape (dim=30).}}{37}{figure.caption.27}\protected@file@percent }
-\newlabel{fig:rastrigin_ecdf_multimodal}{{7}{37}{ECDF cho multimodal\_escape (dim=30)}{figure.caption.27}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces ECDF cho scalability (dim=50, trục log).}}{38}{figure.caption.28}\protected@file@percent }
-\newlabel{fig:rastrigin_ecdf_scale}{{8}{38}{ECDF cho scalability (dim=50, trục log)}{figure.caption.28}{}}
-\@writefile{toc}{\contentsline {paragraph}{Fixed-Budget Performance: sai số cuối cùng dưới các mức ngân sách cố định.}{38}{paragraph*.29}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Rastrigin – fixed-budget performance (quick\_convergence, $d=10$). Trục tung là sai số trung vị (median error), trục hoành là tỉ lệ ngân sách.}}{38}{figure.caption.30}\protected@file@percent }
-\newlabel{fig:rastrigin_budget_quick}{{9}{38}{Rastrigin – fixed-budget performance (quick\_convergence, $d=10$). Trục tung là sai số trung vị (median error), trục hoành là tỉ lệ ngân sách}{figure.caption.30}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Rastrigin – fixed-budget performance (multimodal\_escape, $d=30$).}}{39}{figure.caption.31}\protected@file@percent }
-\newlabel{fig:rastrigin_budget_multimodal}{{10}{39}{Rastrigin – fixed-budget performance (multimodal\_escape, $d=30$)}{figure.caption.31}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Rastrigin – fixed-budget performance (scalability, $d=50$).}}{39}{figure.caption.32}\protected@file@percent }
-\newlabel{fig:rastrigin_budget_scale}{{11}{39}{Rastrigin – fixed-budget performance (scalability, $d=50$)}{figure.caption.32}{}}
-\@writefile{toc}{\contentsline {paragraph}{ERT, performance profiles và data profiles.}{40}{paragraph*.33}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Rastrigin – ERT tới ngưỡng Bronze.}}{40}{figure.caption.34}\protected@file@percent }
-\newlabel{fig:rastrigin_ert_bronze}{{12}{40}{Rastrigin – ERT tới ngưỡng Bronze}{figure.caption.34}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Rastrigin – ERT tới ngưỡng Silver.}}{40}{figure.caption.35}\protected@file@percent }
-\newlabel{fig:rastrigin_ert_silver}{{13}{40}{Rastrigin – ERT tới ngưỡng Silver}{figure.caption.35}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Rastrigin – ERT tới ngưỡng Gold (không có thuật toán nào đạt target).}}{41}{figure.caption.36}\protected@file@percent }
-\newlabel{fig:rastrigin_ert_gold}{{14}{41}{Rastrigin – ERT tới ngưỡng Gold (không có thuật toán nào đạt target)}{figure.caption.36}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Performance profiles cho Rastrigin (Dolan–Moré).}}{42}{figure.caption.37}\protected@file@percent }
-\newlabel{fig:rastrigin_perf_profile}{{15}{42}{Performance profiles cho Rastrigin (Dolan–Moré)}{figure.caption.37}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Data profiles cho Rastrigin (Moré–Wild).}}{42}{figure.caption.38}\protected@file@percent }
-\newlabel{fig:rastrigin_data_profile}{{16}{42}{Data profiles cho Rastrigin (Moré–Wild)}{figure.caption.38}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.4.5}Rastrigin: đa dạng quần thể và hiện tượng dừng sớm (stagnation)}{43}{subsubsection.9.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Đa dạng quần thể theo thời gian.}{43}{paragraph*.39}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Rastrigin – phân tích đa dạng quần thể (quick\_convergence, \(D=10\)).}}{43}{figure.caption.40}\protected@file@percent }
-\newlabel{fig:rastrigin_diversity_quick}{{17}{43}{Rastrigin – phân tích đa dạng quần thể (quick\_convergence, \(D=10\))}{figure.caption.40}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Rastrigin – phân tích đa dạng quần thể (multimodal\_escape, \(D=30\)).}}{44}{figure.caption.41}\protected@file@percent }
-\newlabel{fig:rastrigin_diversity_multimodal}{{18}{44}{Rastrigin – phân tích đa dạng quần thể (multimodal\_escape, \(D=30\))}{figure.caption.41}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Rastrigin – phân tích đa dạng quần thể (scalability, \(D=50\)).}}{44}{figure.caption.42}\protected@file@percent }
-\newlabel{fig:rastrigin_diversity_scale}{{19}{44}{Rastrigin – phân tích đa dạng quần thể (scalability, \(D=50\))}{figure.caption.42}{}}
-\@writefile{toc}{\contentsline {paragraph}{Phân tích stagnation.}{45}{paragraph*.43}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Rastrigin – phân tích stagnation (quick\_convergence, \(D=10\)).}}{46}{figure.caption.44}\protected@file@percent }
-\newlabel{fig:rastrigin_stagnation_quick}{{20}{46}{Rastrigin – phân tích stagnation (quick\_convergence, \(D=10\))}{figure.caption.44}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Rastrigin – phân tích stagnation (multimodal\_escape, \(D=30\)).}}{46}{figure.caption.45}\protected@file@percent }
-\newlabel{fig:rastrigin_stagnation_multimodal}{{21}{46}{Rastrigin – phân tích stagnation (multimodal\_escape, \(D=30\))}{figure.caption.45}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces Rastrigin – phân tích stagnation (scalability, \(D=50\)).}}{46}{figure.caption.46}\protected@file@percent }
-\newlabel{fig:rastrigin_stagnation_scale}{{22}{46}{Rastrigin – phân tích stagnation (scalability, \(D=50\))}{figure.caption.46}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.4.6}Knapsack: hiệu năng fixed-budget (gap tới nghiệm tối ưu)}{47}{subsubsection.9.4.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Knapsack – fixed-budget gap tại 10\% ngân sách cho ba kích thước bài toán \(N \in \{50, 100, 200\}\).}}{47}{figure.caption.47}\protected@file@percent }
-\newlabel{fig:knapsack_fb_10}{{23}{47}{Knapsack – fixed-budget gap tại 10\% ngân sách cho ba kích thước bài toán \(N \in \{50, 100, 200\}\)}{figure.caption.47}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces Knapsack – fixed-budget gap tại 30\% ngân sách.}}{47}{figure.caption.48}\protected@file@percent }
-\newlabel{fig:knapsack_fb_30}{{24}{47}{Knapsack – fixed-budget gap tại 30\% ngân sách}{figure.caption.48}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces Knapsack – fixed-budget gap tại 50\% ngân sách.}}{48}{figure.caption.49}\protected@file@percent }
-\newlabel{fig:knapsack_fb_50}{{25}{48}{Knapsack – fixed-budget gap tại 50\% ngân sách}{figure.caption.49}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {26}{\ignorespaces Knapsack – fixed-budget gap tại 100\% ngân sách.}}{48}{figure.caption.50}\protected@file@percent }
-\newlabel{fig:knapsack_fb_100}{{26}{48}{Knapsack – fixed-budget gap tại 100\% ngân sách}{figure.caption.50}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.4.7}Knapsack: performance/data profiles và so sánh thống kê}{49}{subsubsection.9.4.7}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {27}{\ignorespaces Data profile Moré--Wild cho Knapsack.}}{49}{figure.caption.51}\protected@file@percent }
-\newlabel{fig:knapsack_data_profile}{{27}{49}{Data profile Moré--Wild cho Knapsack}{figure.caption.51}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {28}{\ignorespaces Performance profile Dolan--Moré cho Knapsack, dùng số phép đánh giá để đạt target làm metric.}}{50}{figure.caption.52}\protected@file@percent }
-\newlabel{fig:knapsack_perf_profile}{{28}{50}{Performance profile Dolan--Moré cho Knapsack, dùng số phép đánh giá để đạt target làm metric}{figure.caption.52}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {29}{\ignorespaces Heatmap số lần thắng--thua có ý nghĩa thống kê giữa các cặp thuật toán trên toàn bộ nghiệm cuối.}}{51}{figure.caption.53}\protected@file@percent }
-\newlabel{fig:knapsack_pairwise_overall}{{29}{51}{Heatmap số lần thắng--thua có ý nghĩa thống kê giữa các cặp thuật toán trên toàn bộ nghiệm cuối}{figure.caption.53}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {30}{\ignorespaces Điểm Copeland (thắng trừ thua) cho từng thuật toán Knapsack.}}{52}{figure.caption.54}\protected@file@percent }
-\newlabel{fig:knapsack_copeland}{{30}{52}{Điểm Copeland (thắng trừ thua) cho từng thuật toán Knapsack}{figure.caption.54}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {31}{\ignorespaces Heatmap thắng--thua khi chỉ xét chất lượng nghiệm penalty (trước pha repair).}}{53}{figure.caption.55}\protected@file@percent }
-\newlabel{fig:knapsack_pairwise_penalty}{{31}{53}{Heatmap thắng--thua khi chỉ xét chất lượng nghiệm penalty (trước pha repair)}{figure.caption.55}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {32}{\ignorespaces Heatmap thắng--thua khi chỉ xét chất lượng nghiệm sau pha repair.}}{54}{figure.caption.56}\protected@file@percent }
-\newlabel{fig:knapsack_pairwise_repair}{{32}{54}{Heatmap thắng--thua khi chỉ xét chất lượng nghiệm sau pha repair}{figure.caption.56}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.4.8}Thảo luận}{55}{subsubsection.9.4.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Rastrigin: giới hạn của bộ thuật toán trong bối cảnh high-dimensional.}{55}{paragraph*.57}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Firefly Algorithm trên Rastrigin: tác động của độ suy giảm hấp dẫn.}{55}{paragraph*.58}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Knapsack: sức mạnh của FA rời rạc kết hợp repair heuristic.}{55}{paragraph*.59}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Ý nghĩa và hạn chế của performance/data profiles khi success rate thấp.}{56}{paragraph*.60}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Không có thuật toán tối ưu “mọi nơi”: liên hệ với No Free Lunch.}{56}{paragraph*.61}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Bài học về thiết kế benchmark và cách diễn giải kết quả.}{56}{paragraph*.62}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Tổng kết.}{56}{paragraph*.63}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.3.2}Bài toán đánh giá}{40}{subsubsection.9.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Hàm Rastrigin (liên tục).}{40}{paragraph*.23}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Bài toán Knapsack 0/1 (rời rạc).}{40}{paragraph*.24}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.3.3}Chỉ số đánh giá}{41}{subsubsection.9.3.3}\protected@file@percent }
+\newlabel{subsec:Chi_so_danh_gia}{{9.3.3}{41}{Chỉ số đánh giá}{subsubsection.9.3.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{Rastrigin.}{41}{paragraph*.25}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Knapsack.}{41}{paragraph*.26}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.3.4}Rastrigin: mức độ tiệm cận nghiệm tối ưu và đặc trưng hội tụ}{42}{subsubsection.9.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{ECDF theo ngưỡng mục tiêu.}{42}{paragraph*.27}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces ECDF cho quick\_convergence (dim=10).}}{42}{figure.caption.28}\protected@file@percent }
+\newlabel{fig:rastrigin_ecdf_quick}{{9}{42}{ECDF cho quick\_convergence (dim=10)}{figure.caption.28}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces ECDF cho multimodal\_escape (dim=30).}}{43}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:rastrigin_ecdf_multimodal}{{10}{43}{ECDF cho multimodal\_escape (dim=30)}{figure.caption.29}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces ECDF cho scalability (dim=50, trục log).}}{43}{figure.caption.30}\protected@file@percent }
+\newlabel{fig:rastrigin_ecdf_scale}{{11}{43}{ECDF cho scalability (dim=50, trục log)}{figure.caption.30}{}}
+\@writefile{toc}{\contentsline {paragraph}{Fixed-Budget Performance: sai số cuối cùng dưới các mức ngân sách cố định.}{44}{paragraph*.31}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Rastrigin – fixed-budget performance (quick\_convergence, $d=10$). Trục tung là sai số trung vị (median error), trục hoành là tỉ lệ ngân sách.}}{44}{figure.caption.32}\protected@file@percent }
+\newlabel{fig:rastrigin_budget_quick}{{12}{44}{Rastrigin – fixed-budget performance (quick\_convergence, $d=10$). Trục tung là sai số trung vị (median error), trục hoành là tỉ lệ ngân sách}{figure.caption.32}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Rastrigin – fixed-budget performance (multimodal\_escape, $d=30$).}}{45}{figure.caption.33}\protected@file@percent }
+\newlabel{fig:rastrigin_budget_multimodal}{{13}{45}{Rastrigin – fixed-budget performance (multimodal\_escape, $d=30$)}{figure.caption.33}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Rastrigin – fixed-budget performance (scalability, $d=50$).}}{45}{figure.caption.34}\protected@file@percent }
+\newlabel{fig:rastrigin_budget_scale}{{14}{45}{Rastrigin – fixed-budget performance (scalability, $d=50$)}{figure.caption.34}{}}
+\@writefile{toc}{\contentsline {paragraph}{ERT, performance profiles và data profiles.}{46}{paragraph*.35}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Rastrigin – ERT tới ngưỡng Bronze.}}{46}{figure.caption.36}\protected@file@percent }
+\newlabel{fig:rastrigin_ert_bronze}{{15}{46}{Rastrigin – ERT tới ngưỡng Bronze}{figure.caption.36}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Rastrigin – ERT tới ngưỡng Silver.}}{46}{figure.caption.37}\protected@file@percent }
+\newlabel{fig:rastrigin_ert_silver}{{16}{46}{Rastrigin – ERT tới ngưỡng Silver}{figure.caption.37}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Rastrigin – ERT tới ngưỡng Gold (không có thuật toán nào đạt target).}}{47}{figure.caption.38}\protected@file@percent }
+\newlabel{fig:rastrigin_ert_gold}{{17}{47}{Rastrigin – ERT tới ngưỡng Gold (không có thuật toán nào đạt target)}{figure.caption.38}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Performance profiles cho Rastrigin (Dolan–Moré).}}{48}{figure.caption.39}\protected@file@percent }
+\newlabel{fig:rastrigin_perf_profile}{{18}{48}{Performance profiles cho Rastrigin (Dolan–Moré)}{figure.caption.39}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Data profiles cho Rastrigin (Moré–Wild).}}{48}{figure.caption.40}\protected@file@percent }
+\newlabel{fig:rastrigin_data_profile}{{19}{48}{Data profiles cho Rastrigin (Moré–Wild)}{figure.caption.40}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.3.5}Rastrigin: đa dạng quần thể và hiện tượng dừng sớm (stagnation)}{49}{subsubsection.9.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Đa dạng quần thể theo thời gian.}{49}{paragraph*.41}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Rastrigin – phân tích đa dạng quần thể (quick\_convergence, \(D=10\)).}}{49}{figure.caption.42}\protected@file@percent }
+\newlabel{fig:rastrigin_diversity_quick}{{20}{49}{Rastrigin – phân tích đa dạng quần thể (quick\_convergence, \(D=10\))}{figure.caption.42}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Rastrigin – phân tích đa dạng quần thể (multimodal\_escape, \(D=30\)).}}{50}{figure.caption.43}\protected@file@percent }
+\newlabel{fig:rastrigin_diversity_multimodal}{{21}{50}{Rastrigin – phân tích đa dạng quần thể (multimodal\_escape, \(D=30\))}{figure.caption.43}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces Rastrigin – phân tích đa dạng quần thể (scalability, \(D=50\)).}}{50}{figure.caption.44}\protected@file@percent }
+\newlabel{fig:rastrigin_diversity_scale}{{22}{50}{Rastrigin – phân tích đa dạng quần thể (scalability, \(D=50\))}{figure.caption.44}{}}
+\@writefile{toc}{\contentsline {paragraph}{Phân tích stagnation.}{51}{paragraph*.45}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Rastrigin – phân tích stagnation (quick\_convergence, \(D=10\)).}}{52}{figure.caption.46}\protected@file@percent }
+\newlabel{fig:rastrigin_stagnation_quick}{{23}{52}{Rastrigin – phân tích stagnation (quick\_convergence, \(D=10\))}{figure.caption.46}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces Rastrigin – phân tích stagnation (multimodal\_escape, \(D=30\)).}}{52}{figure.caption.47}\protected@file@percent }
+\newlabel{fig:rastrigin_stagnation_multimodal}{{24}{52}{Rastrigin – phân tích stagnation (multimodal\_escape, \(D=30\))}{figure.caption.47}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces Rastrigin – phân tích stagnation (scalability, \(D=50\)).}}{52}{figure.caption.48}\protected@file@percent }
+\newlabel{fig:rastrigin_stagnation_scale}{{25}{52}{Rastrigin – phân tích stagnation (scalability, \(D=50\))}{figure.caption.48}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.3.6}Knapsack: hiệu năng fixed-budget (gap tới nghiệm tối ưu)}{53}{subsubsection.9.3.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {26}{\ignorespaces Knapsack – fixed-budget gap tại 10\% ngân sách cho ba kích thước bài toán \(N \in \{50, 100, 200\}\).}}{53}{figure.caption.49}\protected@file@percent }
+\newlabel{fig:knapsack_fb_10}{{26}{53}{Knapsack – fixed-budget gap tại 10\% ngân sách cho ba kích thước bài toán \(N \in \{50, 100, 200\}\)}{figure.caption.49}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {27}{\ignorespaces Knapsack – fixed-budget gap tại 30\% ngân sách.}}{53}{figure.caption.50}\protected@file@percent }
+\newlabel{fig:knapsack_fb_30}{{27}{53}{Knapsack – fixed-budget gap tại 30\% ngân sách}{figure.caption.50}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {28}{\ignorespaces Knapsack – fixed-budget gap tại 50\% ngân sách.}}{54}{figure.caption.51}\protected@file@percent }
+\newlabel{fig:knapsack_fb_50}{{28}{54}{Knapsack – fixed-budget gap tại 50\% ngân sách}{figure.caption.51}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {29}{\ignorespaces Knapsack – fixed-budget gap tại 100\% ngân sách.}}{54}{figure.caption.52}\protected@file@percent }
+\newlabel{fig:knapsack_fb_100}{{29}{54}{Knapsack – fixed-budget gap tại 100\% ngân sách}{figure.caption.52}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.3.7}Knapsack: performance/data profiles và so sánh thống kê}{55}{subsubsection.9.3.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {30}{\ignorespaces Data profile Moré--Wild cho Knapsack.}}{55}{figure.caption.53}\protected@file@percent }
+\newlabel{fig:knapsack_data_profile}{{30}{55}{Data profile Moré--Wild cho Knapsack}{figure.caption.53}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {31}{\ignorespaces Performance profile Dolan--Moré cho Knapsack, dùng số phép đánh giá để đạt target làm metric.}}{56}{figure.caption.54}\protected@file@percent }
+\newlabel{fig:knapsack_perf_profile}{{31}{56}{Performance profile Dolan--Moré cho Knapsack, dùng số phép đánh giá để đạt target làm metric}{figure.caption.54}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {32}{\ignorespaces Heatmap số lần thắng--thua có ý nghĩa thống kê giữa các cặp thuật toán trên toàn bộ nghiệm cuối.}}{57}{figure.caption.55}\protected@file@percent }
+\newlabel{fig:knapsack_pairwise_overall}{{32}{57}{Heatmap số lần thắng--thua có ý nghĩa thống kê giữa các cặp thuật toán trên toàn bộ nghiệm cuối}{figure.caption.55}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {33}{\ignorespaces Điểm Copeland (thắng trừ thua) cho từng thuật toán Knapsack.}}{58}{figure.caption.56}\protected@file@percent }
+\newlabel{fig:knapsack_copeland}{{33}{58}{Điểm Copeland (thắng trừ thua) cho từng thuật toán Knapsack}{figure.caption.56}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {34}{\ignorespaces Heatmap thắng--thua khi chỉ xét chất lượng nghiệm penalty (trước pha repair).}}{59}{figure.caption.57}\protected@file@percent }
+\newlabel{fig:knapsack_pairwise_penalty}{{34}{59}{Heatmap thắng--thua khi chỉ xét chất lượng nghiệm penalty (trước pha repair)}{figure.caption.57}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {35}{\ignorespaces Heatmap thắng--thua khi chỉ xét chất lượng nghiệm sau pha repair.}}{60}{figure.caption.58}\protected@file@percent }
+\newlabel{fig:knapsack_pairwise_repair}{{35}{60}{Heatmap thắng--thua khi chỉ xét chất lượng nghiệm sau pha repair}{figure.caption.58}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.3.8}Thảo luận}{61}{subsubsection.9.3.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Rastrigin: giới hạn của bộ thuật toán trong bối cảnh high-dimensional.}{61}{paragraph*.59}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Firefly Algorithm trên Rastrigin: tác động của độ suy giảm hấp dẫn.}{61}{paragraph*.60}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Knapsack: FA rời rạc giữa tốc độ hội tụ và chất lượng nghiệm cuối.}{61}{paragraph*.61}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Ý nghĩa và hạn chế của performance/data profiles khi success rate thấp hoặc target “thoáng”.}{62}{paragraph*.62}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Không có thuật toán tối ưu “mọi nơi”: liên hệ với No Free Lunch.}{62}{paragraph*.63}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Bài học về thiết kế benchmark và cách diễn giải kết quả.}{63}{paragraph*.64}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Tổng kết.}{63}{paragraph*.65}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.4}Cuckoo Search}{63}{subsection.9.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {36}{\ignorespaces Kết quả so sánh CS và GA trên Rastrigin 10D}}{64}{figure.caption.66}\protected@file@percent }
+\newlabel{fig:cs_ga_compare}{{36}{64}{Kết quả so sánh CS và GA trên Rastrigin 10D}{figure.caption.66}{}}
 \bibstyle{alpha}
 \bibdata{references}
 \bibcite{ackley1987connectionist}{Ack87}
@@ -286,9 +334,8 @@
 \bibcite{dorigo1999acometa}{DDC99}
 \bibcite{deneubourg1989collective}{DG89}
 \bibcite{dorigo1997acs}{DG97}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.5}Cuckoo Search}{57}{subsection.9.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {}Phân công công việc}{57}{subsection.9.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {}Phụ lục}{57}{table.caption.64}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {}Phân công công việc}{65}{figure.caption.66}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {}Phụ lục}{65}{table.caption.67}\protected@file@percent }
 \bibcite{dejong1975analysis}{DJ75}
 \bibcite{dolan2002benchmarking}{DM02}
 \bibcite{dorigo1996antsystem}{DMC96}
@@ -305,7 +352,9 @@
 \bibcite{kennedy1995particle}{KE95}
 \bibcite{kirkpatrick1983optimization}{KGV83}
 \bibcite{laporte1992tsp}{Lap92}
+\bibcite{li2022levy}{LL22}
 \bibcite{lawler1985tsp}{LLRKS85}
+\bibcite{mantegna1994fast}{Man94}
 \bibcite{more2009benchmarking}{MW09}
 \bibcite{pisinger2005hard}{Pis05}
 \bibcite{poli2007pso_overview}{PKB07}
@@ -319,4 +368,6 @@
 \bibcite{kumar2013review}{VK13}
 \bibcite{wang2018pso_overview}{WTL18}
 \bibcite{yang2010firefly}{Yan10}
-\gdef \@abspage@last{60}
+\bibcite{yang2014cuckoo}{Yan14}
+\bibcite{yang2009cuckoo}{YD09}
+\gdef \@abspage@last{69}

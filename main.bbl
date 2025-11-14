@@ -111,10 +111,20 @@ Gilbert Laporte.
 \newblock The traveling salesman problem: An overview of exact and approximate algorithms.
 \newblock {\em European Journal of Operational Research}, 59(2):231--247, 1992.
 
+\bibitem[LL22]{li2022levy}
+Jihong Li and others Li.
+\newblock Survey of l{\'e}vy flight-based metaheuristics for optimization.
+\newblock {\em Mathematics}, 10(15):2785, 2022.
+
 \bibitem[LLRKS85]{lawler1985tsp}
 Eugene~L. Lawler, Jan~Karel Lenstra, A.~H.~G. Rinnooy~Kan, and David~B. Shmoys, editors.
 \newblock {\em The Traveling Salesman Problem: A Guided Tour of Combinatorial Optimization}.
 \newblock Wiley, Chichester, 1985.
+
+\bibitem[Man94]{mantegna1994fast}
+Rosario~N. Mantegna.
+\newblock Fast, accurate algorithm for numerical simulation of l{\'e}vy stable stochastic processes.
+\newblock {\em Physical Review E}, 49(5):4677--4683, 1994.
 
 \bibitem[MW09]{more2009benchmarking}
 Jorge~J. Mor{\'e} and Stefan~M. Wild.
@@ -180,5 +190,15 @@ Dingwei Wang, Dejun Tan, and Li~Liu.
 Xin-She Yang.
 \newblock Firefly algorithm, stochastic test functions and design optimisation.
 \newblock {\em International Journal of Bio-Inspired Computation}, 2(2):78--84, 2010.
+
+\bibitem[Yan14]{yang2014cuckoo}
+Xin-She Yang.
+\newblock Cuckoo search: recent advances and applications.
+\newblock {\em Neural Computing and Applications}, 24(1):169--174, 2014.
+
+\bibitem[YD09]{yang2009cuckoo}
+Xin-She Yang and Suash Deb.
+\newblock Cuckoo search via l{\'e}vy flights.
+\newblock In {\em 2009 World Congress on Nature \& Biologically Inspired Computing (NaBIC)}, pages 210--214. IEEE, 2009.
 
 \end{thebibliography}

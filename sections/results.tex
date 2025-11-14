@@ -1,8 +1,221 @@
 % sections/results.tex – Results and conclusion section
 
 \section{Thiết lập và phân tích kết quả các bài toán đánh giá}
-\subsection{ACO}
-\subsection{PSO}
+\subsection{ACO và PSO}
+
+Hai thuật toán này được áp dụng trên bài toán rời rạc - TSP. Đối với thuật toán PSO, nó sẽ áp dụng tốt nhất trên bài toán liên tục, tuy nhiên vì đã có 2 thuật toán đảm nhận việc đó (ABC và CS) nên thuật toán PSO sẽ được áp dụng trên bài toán TSP để khám phá giới hạn của nó trong việc giải các bài toán khó.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Phân tích Bản đồ "Tiny" (10 đỉnh)}
+\label{subsec:tiny}
+
+%--- CHỖ ĐỂ ĐIỀN ẢNH "TINY" ---
+\begin{figure}[H]
+    \centering
+    % Nhóm 1: So sánh
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{picture/compare_iterator_tiny.png}
+        \caption{So sánh vòng lặp (Tiny)}
+        \label{fig:iter_tiny}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{picture/compare_length_tiny.png}
+        \caption{So sánh độ dài tour (Tiny)}
+        \label{fig:len_tiny}
+    \end{subfigure}
+    
+    \vspace{1em}
+    
+    % Nhóm 2: So sánh thời gian và ACO
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{picture/compare_time_tiny.png}
+        \caption{So sánh thời gian chạy (Tiny)}
+        \label{fig:time_tiny}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{picture/ACO_tiny.png}
+        \caption{Hội tụ ACO (Tiny)}
+        \label{fig:aco_tiny}
+    \end{subfigure}
+    
+    \vspace{1em}
+    
+    % Nhóm 3: PSO
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{picture/PSO_tiny.png}
+        \caption{Hội tụ PSO (Tiny)}
+        \label{fig:pso_tiny}
+    \end{subfigure}
+    
+    \caption{Kết quả thử nghiệm trên bản đồ ``Tiny'' (10 đỉnh).}
+    \label{fig:tiny_maps}
+\end{figure}
+%--- KẾT THÚC CHỖ ĐỂ ẢNH "TINY" ---
+
+Dựa trên các biểu đồ \texttt{\_tiny.png} (Hình~\ref{fig:tiny_maps}):
+
+\begin{itemize}
+    \item \textbf{Về Chất lượng Giải pháp (Độ dài Tour tốt nhất):}
+    Biểu đồ \texttt{compare\_length\_tiny.png} cho thấy cả ba thuật toán đều tìm được các giải pháp có chất lượng \textbf{gần như tương đương nhau}.
+    ACO (màu xanh) và Genetic Algorithm (GA - màu xanh lá) tìm được độ dài tour tốt nhất, xấp xỉ 12.4.
+    PSO (màu cam) cho kết quả kém hơn một chút, xấp xỉ 12.5.
+    Với bài toán quá nhỏ, sự khác biệt này là không đáng kể.
+
+    \item \textbf{Về Thời gian Chạy (Total Execution Time):}
+    Đây là nơi có sự khác biệt rõ rệt nhất (biểu đồ \texttt{compare\_time\_tiny.png}).
+    \textbf{PSO (cam) cực kỳ chậm} (khoảng 1.85 giây).
+    ACO (xanh) và GA (xanh lá) \textbf{rất nhanh} (lần lượt khoảng 0.15 giây và 0.08 giây). GA là nhanh nhất.
+
+    \item \textbf{Về Tốc độ Hội tụ (Số vòng lặp):}
+    Biểu đồ \texttt{compare\_iterator\_tiny.png} cho thấy cả ba thuật toán đều hội tụ (tìm thấy giải pháp tốt nhất) \textbf{rất nhanh, chỉ trong khoảng 10-15 vòng lặp đầu tiên}.
+\end{itemize}
+
+\paragraph{Tóm tắt (Tiny):} Với bài toán 10 đỉnh, cả ba thuật toán đều tìm ra giải pháp tốt gần như nhau. Tuy nhiên, PSO tốn thời gian tính toán \textit{lớn hơn hàng chục lần} so với ACO và GA.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Phân tích Bản đồ "Small" (30 đỉnh)}
+\label{subsec:small}
+
+%--- CHỖ ĐỂ ĐIỀN ẢNH "SMALL" ---
+\begin{figure}[H]
+    \centering
+    % Nhóm 1: So sánh
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{picture/compare_iterator_small.png}
+        \caption{So sánh vòng lặp (Small)}
+        \label{fig:iter_small}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{picture/compare_length_small.png}
+        \caption{So sánh độ dài tour (Small)}
+        \label{fig:len_small}
+    \end{subfigure}
+    
+    \vspace{1em}
+    
+    % Nhóm 2: So sánh thời gian và ACO
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{picture/compare_time_small.png}
+        \caption{So sánh thời gian chạy (Small)}
+        \label{fig:time_small}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{picture/ACO_small.png}
+        \caption{Hội tụ ACO (Small)}
+        \label{fig:aco_small}
+    \end{subfigure}
+    
+    \vspace{1em}
+    
+    % Nhóm 3: PSO
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{picture/PSO_small.png}
+        \caption{Hội tụ PSO (Small)}
+        \label{fig:pso_small}
+    \end{subfigure}
+    
+    \caption{Kết quả thử nghiệm trên bản đồ ``Small'' (30 đỉnh).}
+    \label{fig:small_maps}
+\end{figure}
+%--- KẾT THÚC CHỖ ĐỂ ẢNH "SMALL" ---
+
+Dựa trên các biểu đồ \texttt{\_small.png} (Hình~\ref{fig:small_maps}):
+
+
+\begin{itemize}
+    \item \textbf{Về Chất lượng Giải pháp (Độ dài Tour tốt nhất):}
+    Khi bài toán phức tạp hơn, sự khác biệt bắt đầu xuất hiện (biểu đồ \texttt{compare\_length\_small.png}).
+    GA (xanh lá) tìm được giải pháp tốt nhất (ngắn nhất), khoảng 62.5.
+    ACO (xanh) đứng thứ hai, rất sát sao, khoảng 63.0.
+    PSO (cam) cho kết quả \textbf{tệ nhất} (dài nhất), khoảng 64.0.
+
+    \item \textbf{Về Thời gian Chạy (Total Execution Time):}
+    Xu hướng từ bản đồ "tiny" trở nên cực kỳ rõ rệt (biểu đồ \texttt{compare\_time\_small.png}).
+    \textbf{PSO (cam) tốn thời gian một cách báo động} (gần 90 giây).
+    ACO (xanh) và GA (xanh lá) vẫn duy trì hiệu quả, \textbf{rất nhanh} (lần lượt khoảng 1.5 giây và 2.0 giây). Lần này, ACO là nhanh nhất.
+
+    \item \textbf{Về Tốc độ Hội tụ (Số vòng lặp):}
+    Biểu đồ \texttt{compare\_iterator\_small.png} cho thấy:
+    ACO (xanh) cần nhiều vòng lặp nhất để hội tụ hoàn toàn (khoảng 75-80 vòng lặp) nhưng liên tục cải thiện để đạt kết quả tốt.
+    PSO (cam) và GA (đỏ) dường như hội tụ (ngừng cải thiện) nhanh hơn (khoảng 40-50 vòng lặp), nhưng lại bị kẹt ở các giải pháp kém chất lượng hơn.
+\end{itemize}
+
+\paragraph{Tóm tắt (Small):} Khi bài toán lớn lên 30 đỉnh, PSO bộc lộ rõ điểm yếu kép: vừa cho \textbf{kết quả tệ nhất} vừa tốn \textbf{thời gian chạy lâu nhất} (gấp $\sim$45 lần GA và $\sim$60 lần ACO). ACO và GA vẫn rất hiệu quả.
+
+
+\subsubsection{Phân tích Bản đồ "Medium" (50 đỉnh)}
+\label{subsec:medium}
+
+%--- CHỖ ĐỂ ĐIỀN ẢNH "MEDIUM" ---
+\begin{figure}[H]
+    \centering
+    % Nhóm 1: So sánh
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{picture/compare_iterator_medium.png}
+        \caption{So sánh vòng lặp (Medium)}
+        \label{fig:iter_medium}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{picture/compare_length_medium.png}
+        \caption{So sánh độ dài tour (Medium)}
+        \label{fig:len_medium}
+    \end{subfigure}
+    
+    \vspace{1em}
+    
+    % Nhóm 2: So sánh thời gian và ACO
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{picture/compare_time_medium.png}
+        \caption{So sánh thời gian chạy (Medium)}
+        \label{fig:time_medium}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{picture/ACO_medium.png}
+        \caption{Hội tụ ACO (Medium)}
+        \label{fig:aco_medium}
+    \end{subfigure}
+    
+    \vspace{1em}
+    
+    % Nhóm 3: PSO
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{picture/PSO_medium.png}
+        \caption{Hội tụ PSO (Medium)}
+        \label{fig:pso_medium}
+    \end{subfigure}
+    
+    \caption{Kết quả thử nghiệm trên bản đồ ``Medium'' (50 đỉnh).}
+    \label{fig:medium_maps}
+\end{figure}
+%--- KẾT THÚC CHỖ ĐỂ ẢNH "MEDIUM" ---
+
+Dựa trên các biểu đồ \texttt{\_medium.png} (Hình~\ref{fig:medium_maps}):
+
+\begin{itemize}
+    \item \textbf{Về Chất lượng Giải pháp (Độ dài Tour tốt nhất):}
+    Đối với bài toán rất phức tạp với số đỉnh lớn, sự khác biệt càng được lộ rõ (biểu đồ \texttt{compare\_length\_medium.png}).
+    ACO và GA tìm được giải pháp tốt nhất (ngắn nhất) khá sát nhau, khoảng 6.0.
+    PSO (cam) cho kết quả \textbf{tệ nhất}, khoảng 8.3.
+
+    \item \textbf{Về Thời gian Chạy (Total Execution Time):}
+    \textbf{PSO (cam)} tiếp tục ngốn quá nhiều thời gian.
+    ACO (xanh) và GA (xanh lá) vẫn duy trì hiệu quả, tuy nhiên đã có sự vượt trội từ ACO.
+
+    \item \textbf{Về Tốc độ Hội tụ (Số vòng lặp):}
+    ACO (xanh) cần nhiều vòng lặp nhất để hội tụ hoàn toàn nhưng liên tục cải thiện để đạt kết quả tốt.
+    PSO (cam) và GA (đỏ) hội tụ nhanh hơn (theo số vòng lặp) nhưng bị kẹt và không thể tìm ra giải pháp tốt nhất.
+\end{itemize}
+
+\paragraph{Tóm tắt (Medium):} Khi bài toán lớn lên 50 đỉnh, kết quả càng phân hóa rõ rệt. ACO tiếp tục thể hiện sự áp đảo, còn PSO trở nên càng tệ và chứng tỏ sự thiếu phù hợp.
+
+
 \subsection{ABC}
 Sau nhiều lần thử với nhiều loại bài toán khác nhau, ta thấy thuật toán ABC có độ ổn định cao, performance tốt với cả những hàm số đa cực trị hay có cực trị đặc biệt
 \begin{figure}[h]
@@ -40,6 +253,7 @@ Tuy nhiên ABC cũng có điểm hạn chế, đó là tốc độ chậm hơn �
 \end{figure}
 
 Ngoài ra, bộ nhớ sử dụng trong thuật toán ABC cũng nhiều hơn, tỉ lệ thuận với số lượng "con ong" được sử dụng.
+
 \subsection{Firefly Algorithm}
 
 \subsubsection{Thuật toán dùng để so sánh}
@@ -47,60 +261,43 @@ Ngoài ra, bộ nhớ sử dụng trong thuật toán ABC cũng nhiều hơn, t�
 Để đặt Thuật toán Đom Đóm (FA) vào bối cảnh hợp lý, chúng tôi so sánh với ba thuật toán metaheuristic cổ điển: Hill Climbing (HC), Simulated Annealing (SA) và Genetic Algorithm (GA).  
 Toàn bộ thuật toán được hiện thực trong cùng một khung mã Python, dùng chung: (i) giao diện bài toán, (ii) cơ chế sinh nghiệm khởi tạo, (iii) chuẩn hoá cách ghi log (history, số đánh giá, trạng thái run, \dots) và (iv) pipeline phân tích/visualize dùng chung cho cả Rastrigin và Knapsack.
 
-\paragraph{Hill Climbing (HC).}
-HC là baseline tham lam địa phương: luôn giữ một nghiệm hiện tại, sinh lân cận và chỉ chấp nhận nghiệm tốt hơn; khi không cải thiện sau một số vòng lặp thì restart.
+\begin{description}[leftmargin=1.8em, labelsep=0.6em, style=nextline]
 
-\textbf{Triển khai trong framework.}
-\begin{itemize}[leftmargin=1.6em]
-    \item \textbf{Rastrigin (liên tục):} nghiệm được mã hoá dưới dạng vector thực; lân cận sinh bằng perturbation ngẫu nhiên trên từng chiều (Gaussian/Uniform tuỳ cấu hình). Mỗi vòng lặp đánh giá một tập lân cận có kích thước cố định và chọn best improvement. Số vòng lặp hiệu dụng được suy ra từ budget và số lân cận mỗi vòng.
-    \item \textbf{Knapsack (0/1):} nghiệm là vector nhị phân; lân cận sinh bằng bit-flip trên một số vị trí; khi bị kẹt lâu trên plateau (không cải thiện trong một số vòng) thì restart. Hàm mục tiêu dùng đúng cùng quy ước với các thuật toán khác (maximize giá trị, đồng thời kiểm tra ràng buộc).
-\end{itemize}
+    \item[\textbf{Hill Climbing (HC).}]
+    HC là baseline tham lam địa phương: luôn giữ một nghiệm hiện tại, sinh lân cận và chỉ chấp nhận nghiệm tốt hơn; khi không cải thiện sau một số vòng lặp thì restart.
+    \begin{itemize}[leftmargin=1.8em, topsep=2pt]
+        \item \textbf{Rastrigin (liên tục):} nghiệm được mã hoá dưới dạng vector thực; lân cận sinh bằng perturbation ngẫu nhiên trên từng chiều (Gaussian/Uniform tuỳ cấu hình). Mỗi vòng lặp đánh giá một tập lân cận có kích thước cố định và chọn best improvement; số vòng lặp hiệu dụng được suy ra từ budget và số lân cận mỗi vòng.
+        \item \textbf{Knapsack (0/1):} nghiệm là vector nhị phân; lân cận sinh bằng bit-flip trên một số vị trí; khi bị kẹt lâu trên plateau (không cải thiện trong một số vòng) thì restart. Hàm mục tiêu dùng cùng quy ước với các thuật toán khác (tối đa hoá giá trị, đồng thời kiểm tra ràng buộc).
+    \end{itemize}
 
-\paragraph{Simulated Annealing (SA).}
-SA dùng cùng cấu trúc lân cận với HC, nhưng cho phép chấp nhận nghiệm xấu hơn với xác suất
-\[
-    \mathbb{P}(\text{chấp nhận}) = \exp\!\left(-\frac{\Delta f}{T}\right),
-\]
-trong đó $T$ là nhiệt độ, giảm dần theo lịch làm nguội hình học
-$T_{k+1} = \text{cooling\_rate} \cdot T_k$ cho tới khi chạm $T_{\min}$.
+    \item[\textbf{Simulated Annealing (SA).}]
+    SA dùng cùng cấu trúc lân cận với HC, nhưng cho phép chấp nhận nghiệm xấu hơn với xác suất
+    \[
+        \mathbb{P}(\text{chấp nhận}) = \exp\!\left(-\frac{\Delta f}{T}\right),
+    \]
+    trong đó $T$ là nhiệt độ, giảm dần theo lịch làm nguội hình học
+    $T_{k+1} = \text{cooling\_rate} \cdot T_k$ cho tới khi chạm $T_{\min}$.
+    \begin{itemize}[leftmargin=1.8em, topsep=2pt]
+        \item \textbf{Rastrigin (liên tục):} dùng cùng kiểu perturbation như HC để đảm bảo so sánh công bằng; nhiệt độ khởi tạo $T_0$ tương đối cao, hệ số làm nguội gần 1, và $T_{\min}$ cố định cho mọi cấu hình.
+        \item \textbf{Knapsack (0/1):} vẫn dùng lân cận bit-flip; chỉ điều chỉnh $T_0$ và \texttt{cooling\_rate}. Mỗi bước đánh giá đúng một nghiệm mới, nên số vòng lặp bằng budget.
+    \end{itemize}
 
-\textbf{Triển khai trong framework.}
-\begin{itemize}[leftmargin=1.6em]
-    \item \textbf{Rastrigin (liên tục):} dùng cùng kiểu perturbation như HC để đảm bảo so sánh công bằng; nhiệt độ khởi tạo $T_0$ tương đối cao, hệ số làm nguội gần 1, và $T_{\min}$ cố định cho mọi cấu hình.
-    \item \textbf{Knapsack (0/1):} vẫn dùng lân cận bit-flip; chỉ điều chỉnh $T_0$ và \texttt{cooling\_rate}. Mỗi bước đánh giá đúng một nghiệm mới, nên số vòng lặp bằng budget.
-\end{itemize}
+    \item[\textbf{Genetic Algorithm (GA).}]
+    GA duy trì một quần thể cá thể và lặp lại chu trình: chọn lọc (tournament selection), lai ghép (crossover) và đột biến (mutation), kèm một mức elitism để giữ lại các cá thể tốt nhất qua thế hệ.
+    \begin{itemize}[leftmargin=1.8em, topsep=2pt]
+        \item \textbf{Rastrigin (liên tục):} cá thể là vector thực chiều $d$; crossover và mutation được thiết kế cho không gian liên tục, với tỉ lệ crossover/mutation và kích thước quần thể \texttt{pop\_size} được cố định theo từng cấu hình Rastrigin trong \texttt{config.py}. Budget tổng được phân bổ thành $\text{max\_iter} \times \text{pop\_size}$ lượt đánh giá.
+        \item \textbf{Knapsack (0/1):} cá thể là vector nhị phân; crossover và mutation đều thao tác trên bit; \texttt{pop\_size} tăng theo kích thước bài toán (lớn hơn cho $n=200$ so với $n=50,100$). Trong mọi trường hợp luôn bật elitism và sử dụng tournament selection với kích thước giải đấu cố định.
+    \end{itemize}
 
-\paragraph{Genetic Algorithm (GA).}
-GA duy trì một quần thể cá thể và lặp lại chu trình: chọn lọc (tournament selection), lai ghép (crossover) và đột biến (mutation), kèm một mức elitism để giữ lại các cá thể tốt nhất qua thế hệ.
+    \item[\textbf{Firefly Algorithm (FA).}]
+    FA mô phỏng bầy đom đóm trong đó mỗi nghiệm là một cá thể phát sáng; cá thể kém sáng di chuyển về phía cá thể sáng hơn với cường độ phụ thuộc khoảng cách và tham số hấp dẫn $\beta_0$, trong khi thành phần nhiễu có biên độ $\alpha$ giúp duy trì khả năng khám phá.
+    \begin{itemize}[leftmargin=1.8em, topsep=2pt]
+        \item \textbf{Rastrigin (liên tục):} FA được dùng dưới dạng chuẩn trong không gian liên tục: vị trí đom đóm là vector thực, khoảng cách được tính trong không gian Euclid, và chuyển động kết hợp giữa thành phần hút (về các nghiệm tốt hơn) và nhiễu ngẫu nhiên. Ba cấu hình Rastrigin trong \texttt{config.py}—\texttt{quick\_convergence} ($d=10$), \texttt{multimodal\_escape} ($d=30$) và \texttt{scalability} ($d=50$)—mỗi cấu hình có một bộ tham số FA riêng (số đom đóm, $\alpha$, $\beta_0$, $\gamma$). Khi dimension tăng, \texttt{n\_fireflies} và budget tăng để bù lại độ khó; $\alpha$ được giữ trong khoảng vừa đủ để tránh hội tụ quá sớm; $\gamma$ giảm dần theo $d$ nhằm tránh việc lực hút bị triệt tiêu quá nhanh do khoảng cách tăng theo $\sqrt{d}$.
+        \item \textbf{Knapsack (0/1):}\cite{pisinger2005hard} dùng biến thể FA đã rời rạc hoá, đúng với cấu hình trong \texttt{config.py} và \texttt{instance\_generator.py}: mỗi đom đóm là một vector nhị phân chiều $n$; chuyển động có hướng lật tối đa \texttt{max\_flips\_per\_move} $=3$ bit để tiến gần cá thể sáng hơn; ngoài ra mỗi bit còn có xác suất bị lật do nhiễu $\alpha_{\text{flip}} = 0{,}2$ để duy trì đa dạng. Ràng buộc sức chứa được xử lý bằng chiến lược repair \texttt{greedy\_remove} (loại dần các vật phẩm có tỉ lệ $v_k/w_k$ thấp nhất) để đưa nghiệm về trạng thái feasible; cơ chế penalty vẫn được hỗ trợ trong code nhưng không được dùng trong benchmark chính. Số đom đóm \texttt{n\_fireflies} tăng theo kích thước bài toán: với $n \le 100$ dùng $30$ đom đóm, với $n=200$ dùng $40$; budget tổng tương ứng là $5000$ và $10000$ lần đánh giá, phân bổ thành $\text{max\_iter} \times \text{n\_fireflies}$.
+    \end{itemize}
 
-\textbf{Triển khai trong framework.}
-\begin{itemize}[leftmargin=1.6em]
-    \item \textbf{Rastrigin (liên tục):} cá thể là vector thực chiều $d$; crossover và mutation được thiết kế cho không gian liên tục, với tỉ lệ crossover/mutation và kích thước quần thể \texttt{pop\_size} được cố định theo từng cấu hình Rastrigin trong \texttt{config.py}. Budget tổng được phân bổ thành $ \text{max\_iter} \times \text{pop\_size}$ lượt đánh giá.
-    \item \textbf{Knapsack (0/1):} cá thể là vector nhị phân; crossover và mutation đều thao tác trên bit; \texttt{pop\_size} tăng theo kích thước bài toán (lớn hơn cho $n=200$ so với $n=50,100$). Trong mọi trường hợp luôn bật elitism và sử dụng tournament selection với kích thước giải đấu cố định.
-\end{itemize}
+\end{description}
 
-\paragraph{Firefly Algorithm (FA).}
-FA mô phỏng bầy đom đóm trong đó mỗi nghiệm là một cá thể phát sáng; cá thể kém sáng di chuyển về phía cá thể sáng hơn với cường độ phụ thuộc khoảng cách và tham số hấp dẫn $\beta_0$, trong khi thành phần nhiễu có biên độ $\alpha$ giúp duy trì khả năng khám phá.
-
-\textbf{FA liên tục cho Rastrigin.}
-FA được dùng dưới dạng chuẩn trong không gian liên tục: vị trí đom đóm là vector thực, khoảng cách được tính trong không gian Euclid, và chuyển động kết hợp giữa thành phần hút (về các nghiệm tốt hơn) và nhiễu ngẫu nhiên.  
-
-Ba cấu hình Rastrigin trong \texttt{config.py}—\texttt{quick\_convergence} ($d=10$), \texttt{multimodal\_escape} ($d=30$) và \texttt{scalability} ($d=50$)—mỗi cấu hình có một bộ tham số FA riêng (số đom đóm, $\alpha$, $\beta_0$, $\gamma$) đã được cố định trước. Điểm chung là:
-\begin{itemize}[leftmargin=1.6em]
-    \item Khi dimension tăng, \texttt{n\_fireflies} và budget tăng để bù lại độ khó cao hơn.
-    \item $\alpha$ được điều chỉnh trong khoảng giá trị vừa đủ để tránh hội tụ quá sớm nhưng không làm thuật toán trở nên hoàn toàn ngẫu nhiên.
-    \item $\gamma$ giảm dần khi $d$ tăng nhằm tránh việc lực hút bị triệt tiêu quá nhanh do khoảng cách tăng theo $\sqrt{d}$.
-\end{itemize}
-
-\textbf{FA rời rạc cho Knapsack.}\cite{pisinger2005hard}
-Đối với Knapsack 0/1, chúng tôi dùng biến thể FA đã rời rạc hoá, đúng với cấu hình trong \texttt{config.py} và \texttt{instance\_generator.py}:
-\begin{itemize}[leftmargin=1.6em]
-    \item \emph{Biểu diễn:} mỗi đom đóm là một vector nhị phân chiều $n$.
-    \item \emph{Chuyển động có hướng:} khi một cá thể di chuyển về phía cá thể sáng hơn, nó lật tối đa \texttt{max\_flips\_per\_move} $=3$ bit để tiến lại gần cấu hình đích.
-    \item \emph{Nhiễu:} ngoài chuyển động có hướng, mỗi bit còn có xác suất bị lật do nhiễu $\alpha_{\text{flip}} = 0{,}2$ để duy trì đa dạng.
-    \item \emph{Ràng buộc:} luôn dùng chiến lược repair \texttt{greedy\_remove} (loại dần các vật phẩm có tỉ lệ $v_k/w_k$ thấp nhất) để đưa nghiệm trở về trạng thái feasible. Cơ chế penalty vẫn được hỗ trợ trong code, nhưng trong benchmark chính, cấu hình được dùng là repair.
-    \item \emph{Quần thể và budget:} số đom đóm \texttt{n\_fireflies} tăng theo kích thước bài toán: với $n \le 100$ dùng $30$ đom đóm, với $n=200$ dùng $40$; budget tổng tương ứng là $5000$ và $10000$ lần đánh giá, phân bổ thành $\text{max\_iter} \times \text{n\_fireflies}$.
-\end{itemize}
 
 \paragraph{Lưu ý về tham số.}
 Các tham số \emph{không} dùng chung cho toàn bộ lớp bài toán, mà được cố định \textbf{theo từng kịch bản benchmark}:
@@ -626,45 +823,48 @@ Khoảng cách điển hình trong không gian $d$ chiều tăng theo $\sqrt{d}$
 
 Điểm này gợi ý rằng muốn FA cạnh tranh được trên continuous high-dimensional, cần cơ chế điều chỉnh $\gamma$ và $\alpha$ theo thời gian hoặc theo phân bố quần thể thay vì giữ cố định.
 
-\paragraph{Knapsack: sức mạnh của FA rời rạc kết hợp repair heuristic.}
+\paragraph{Knapsack: FA rời rạc giữa tốc độ hội tụ và chất lượng nghiệm cuối.}
 
-Trên Knapsack, tình thế đảo chiều hoàn toàn. FA rời rạc thể hiện rất mạnh do đúng cấu trúc bài toán:
+Trên Knapsack, FA rời rạc kết hợp repair heuristic vẫn có một số điểm mạnh rất rõ, nhưng không còn là “người thắng tuyệt đối” nếu nhìn vào chất lượng nghiệm cuối và so sánh thống kê.
 
 \begin{itemize}[leftmargin=1.6em]
-    \item Cơ chế lật bit có hướng giống local search có định hướng, vốn thích hợp với không gian 0/1.
-    \item Greedy repair theo tỷ số $v_k / w_k$ không chỉ khôi phục feasibility mà còn tăng giá trị mục tiêu, khiến mỗi bước repair giống như một bước tối ưu hoá cục bộ.
-    \item Toàn bộ pipeline (bit-flip định hướng + nhiễu nhỏ + repair tham lam) tạo ra phân bố gap nhỏ hơn đáng kể, được xác nhận lại qua performance/data profiles và thống kê (Wilcoxon + Copeland).
+    \item Cơ chế lật bit có hướng khiến FA rất phù hợp để nhanh chóng đẩy nghiệm về một vùng có giá trị mục tiêu chấp nhận được trong không gian 0/1; data profile cho thấy FA đạt coverage cao với các ngưỡng gap tương đối “thoáng”.
+    \item Greedy repair theo tỷ số $v_k / w_k$ giúp khôi phục feasibility và cải thiện giá trị mục tiêu, nên mỗi bước repair vẫn giống một pha tối ưu hoá cục bộ hợp lý.
+    \item Tuy nhiên, các boxplot fixed-budget cho thấy median gap của FA gần như luôn cao nhất trong bốn thuật toán, với phương sai nhỏ và ít tail tốt: FA hội tụ nhanh nhưng bị kẹt trong vùng nghiệm kém và không tận dụng thêm ngân sách.
+    \item So sánh cặp đôi và điểm Copeland củng cố kết luận này: GA và đặc biệt là SA thắng FA một cách có hệ thống cả ở mức penalty lẫn sau repair, trong khi HC cũng thường xuyên vượt lên FA.
 \end{itemize}
 
-Kết luận không phải “FA luôn tốt hơn GA”, mà là: \emph{trong biến thể rời rạc hiện tại}, FA đặc biệt phù hợp với cấu trúc Knapsack 0/1 — và điều này hiển thị rất rõ qua mọi chỉ số.
+Nói cách khác, trong biến thể rời rạc hiện tại, FA là một \emph{baseline nhanh và ổn định} để đạt xấp xỉ thô trên Knapsack 0/1, nhưng \emph{không phải} thuật toán tốt nhất nếu quan tâm tới chất lượng nghiệm cuối sát tối ưu; vai trò đó thuộc về SA (mạnh nhất về tổng thể) và GA (đối thủ cạnh tranh trực tiếp, tương tác rất tốt với repair).
 
-\paragraph{Ý nghĩa và hạn chế của performance/data profiles khi success rate thấp.}
+\paragraph{Ý nghĩa và hạn chế của performance/data profiles khi success rate thấp hoặc target “thoáng”.}
 
-Dolan–Moré performance profile và Moré–Wild data profile là công cụ so sánh mạnh, nhưng dễ gây ảo giác nếu success rate thấp:
+Dolan–Moré performance profile và Moré–Wild data profile là công cụ so sánh mạnh, nhưng rất dễ gây ảo giác nếu success rate thấp hoặc nếu tập target được chọn quá lỏng:
 
 \begin{itemize}[leftmargin=1.6em]
-    \item Performance profile chỉ xét những run đạt target $\Rightarrow$ thuật toán có ít run thành công vẫn có thể “đẹp”.
-    \item Data profile phản ánh coverage tốt hơn nhưng phụ thuộc mạnh vào target và ngân sách.
+    \item Performance profile chỉ xét những run đạt target $\Rightarrow$ một thuật toán có ít run thành công vẫn có thể trông “đẹp” nếu số ít lần thành công đó xảy ra nhanh.
+    \item Data profile phản ánh coverage tốt hơn nhưng phụ thuộc mạnh vào cách chọn target và ngân sách; nếu target chỉ yêu cầu gap thô, thì một thuật toán nhanh nhưng dừng sớm vẫn được đánh giá cao.
 \end{itemize}
 
 Trong báo cáo này:
 
 \begin{itemize}[leftmargin=1.6em]
-    \item Rastrigin high-dimensional: GA và FA trông đẹp trên performance profile, nhưng ECDF và data profile cho thấy coverage thấp.
-    \item Knapsack: tất cả đồ thị đều kể cùng một câu chuyện — FA vượt trội GA/HC/SA một cách nhất quán.
+    \item Rastrigin high-dimensional: GA và FA trông tương đối tốt trên performance profile, nhưng ECDF và data profile cho thấy coverage rất thấp ở các target khó; phần lớn run không thật sự giải được bài toán.
+    \item Knapsack: data/profile cho thấy FA có tốc độ và độ ổn định rất cao để đạt các ngưỡng gap tương đối lỏng, nhưng khi đối chiếu với fixed-budget gap và so sánh cặp đôi/Copeland, rõ ràng GA và đặc biệt là SA cho nghiệm cuối tốt hơn và áp đảo FA về mặt thống kê.
 \end{itemize}
+
+Kinh nghiệm rút ra là: performance/data profiles luôn phải được đọc cùng với ECDF, fixed-budget gap và phân tích thống kê, đặc biệt khi ta chỉ đang làm việc với các mức xấp xỉ thô, chưa tiệm cận optimum.
 
 \paragraph{Không có thuật toán tối ưu “mọi nơi”: liên hệ với No Free Lunch.}
 
 Ngay trong hai bài toán của benchmark, tính “không miễn phí” thể hiện rõ:
 
 \begin{itemize}[leftmargin=1.6em]
-    \item GA mạnh hơn FA/HC/SA trên Rastrigin continuous (đặc biệt 10D).
-    \item FA rời rạc + repair mạnh hơn GA/HC/SA trên Knapsack 0/1.
-    \item HC và SA hiếm khi đứng đầu, nhưng là baseline quan trọng để đánh giá mặt bằng độ khó.
+    \item Trên Rastrigin continuous (đặc biệt ở 10 chiều), GA mạnh hơn ba thuật toán còn lại cả về sai số cuối lẫn xác suất đạt các target khó, dù bản thân nó vẫn chưa “giải tốt” bài toán ở dimension cao.
+    \item Trên Knapsack 0/1, SA là thuật toán mạnh nhất về tổng thể (Copeland cao nhất, tail nghiệm tốt nhất), GA là đối thủ cạnh tranh trực tiếp nhờ tương tác tốt với repair, trong khi FA chủ yếu nổi bật ở khả năng nhanh chóng đạt được xấp xỉ thô và độ ổn định cao trên các target lỏng.
+    \item HC và đặc biệt là FA hiếm khi đứng đầu về chất lượng nghiệm cuối, nhưng là baseline quan trọng để đánh giá mặt bằng độ khó và để phân tách rõ vai trò của local search đơn giản so với các metaheuristic phức tạp hơn.
 \end{itemize}
 
-Điểm cốt lõi: \emph{hiệu năng phụ thuộc bài toán}, không có solver nào thống trị toàn bộ.
+Điểm cốt lõi: \emph{hiệu năng phụ thuộc bài toán} (landscape, ràng buộc, cách mã hoá, ngân sách), không có solver nào thống trị toàn bộ.
 
 \paragraph{Bài học về thiết kế benchmark và cách diễn giải kết quả.}
 
@@ -674,7 +874,7 @@ Một số kinh nghiệm rút ra từ quá trình xây dựng pipeline:
     \item \textbf{Metric phải đúng:} nhầm hướng cực trị khiến performance/data profile phẳng hoàn toàn — bài học lớn nhất khi phân tích Rastrigin.
     \item \textbf{ERT phải đi cùng success rate:} nếu không, ERT trên target khó trở nên vô nghĩa.
     \item \textbf{Hyperparameter cố định theo kịch bản:} thiết kế này đảm bảo công bằng, nhưng chỉ đại diện cho “out-of-the-box baseline”, không phải hiệu năng tối ưu.
-    \item \textbf{Kết luận phải phản ánh giới hạn:} báo cáo tốt phải dám chỉ ra nơi thuật toán thất bại thay vì chỉ nhấn mạnh điểm mạnh.
+    \item \textbf{Kết luận phải phản ánh giới hạn:} báo cáo tốt phải dám chỉ ra nơi thuật toán thất bại (ví dụ FA trên Rastrigin high-dimensional, hay FA trên Knapsack nếu xét nghiệm cuối) thay vì chỉ nhấn mạnh điểm mạnh.
 \end{itemize}
 
 \paragraph{Tổng kết.}
@@ -683,11 +883,32 @@ Benchmark này cho thấy:
 
 \begin{itemize}[leftmargin=1.6em]
     \item Trên Rastrigin, không thuật toán nào đạt mức giải strong khi dimension tăng; GA vẫn là lựa chọn tương đối tốt nhất trong bốn, nhưng chỉ theo nghĩa tương đối.
-    \item Trên Knapsack, FA rời rạc kết hợp greedy repair vượt trội GA/HC/SA về gap, coverage và kết quả thống kê.
+    \item Trên Knapsack, FA rời rạc kết hợp greedy repair là một baseline nhanh và ổn định để đạt xấp xỉ thô, thể hiện rất tốt trên data/performance profiles với các target lỏng; tuy nhiên, về chất lượng nghiệm cuối và so sánh thống kê, SA là thuật toán mạnh nhất, GA là đối thủ cạnh tranh trực tiếp, HC đứng giữa, còn FA thường xuyên là lựa chọn kém nhất.
 \end{itemize}
 
 Giá trị của benchmark không nằm ở việc tìm một “người thắng tuyệt đối”, mà ở việc chỉ ra thuật toán nào phù hợp với cấu trúc nào, dưới ngân sách nào — và minh bạch về nơi mỗi thuật toán thất bại.
 
 
+
 \subsection{Cuckoo Search}
+
+\begin{itemize}
+  \item CS hoạt động rất tốt trên hàm lồi như \textbf{Sphere}.
+  \item Trên hàm đa cực như \textbf{Rastrigin}, CS chưa tìm đến giá trị tối ưu 0, còn GA đạt 0. Nguyên nhân phổ biến:
+  \begin{itemize}
+    \item Rastrigin có nhiều local minima; CS có cơ chế Lévy giúp khám phá, nhưng tham số (step\_size, $p_a$, $\beta$, số cá thể) có thể chưa phù hợp.
+    \item GA có cơ chế mutation và có thể dễ dàng duy trì tính đa dạng quần thể nếu được cấu hình tốt.
+  \end{itemize}
+  \item CS có ít tham số và đơn giản hơn; GA có nhiều thao tác (selection/crossover/mutation) cho phép đa dạng nghiệm mạnh hơn.
+\end{itemize}
+\begin{itemize}
+    \item Trong thực nghiệm thì CS chạy nhanh hơn GA ở cùng quy mô và số vòng lặp, nhưng yếu tố này phụ thuộc vào cài đặt chi tiết (vectorization, cách tính fitness, chi phí crossover/mutation...).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{picture/cs-ga.png}
+    \caption{Kết quả so sánh CS và GA trên Rastrigin 10D}
+    \label{fig:cs_ga_compare}
+\end{figure}
+\item Hình~\ref{fig:cs_ga_compare} trình bày đường hội tụ của hai thuật toán Cuckoo Search (CS) và Genetic Algorithm (GA) trên hàm Rastrigin trong không gian 10 chiều. Kết quả cho thấy GA giảm giá trị fitness nhanh và ổn định hơn, trong khi CS có xu hướng chậm lại sau một số vòng lặp đầu và bị kẹt tại mức fitness cao hơn. Điều này minh họa sự khác biệt trong khả năng khai thác cục bộ của GA và khả năng khám phá mang tính ngẫu nhiên mạnh của CS.
+\end{itemize}
 
