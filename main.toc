@@ -127,6 +127,5 @@
 \contentsline {paragraph}{Bài học về thiết kế benchmark và cách diễn giải kết quả.}{63}{paragraph*.64}%
 \contentsline {paragraph}{Tổng kết.}{63}{paragraph*.65}%
 \contentsline {subsection}{\numberline {9.4}Cuckoo Search}{63}{subsection.9.4}%
-\contentsline {section}{\numberline {10}Kết luận chung}{65}{section.10}%
+\contentsline {section}{\numberline {10}Kết luận}{64}{section.10}%
 \contentsline {section}{\numberline {}Phân công công việc}{65}{section.10}%
-\contentsline {section}{\numberline {}Phụ lục}{65}{table.caption.67}%

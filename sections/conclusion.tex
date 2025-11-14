@@ -1,1 +1,22 @@
-\section{Kết luận chung}
+\section{Kết luận}
+
+Trên TSP, ACO là thuật toán bầy đàn duy nhất thực sự “đáng tiền”: vừa cho tour rất gần tối ưu, vừa giữ 
+thời gian chạy và khả năng mở rộng tốt; nhược điểm chính chỉ là hội tụ tinh chỉnh giai đoạn cuối hơi 
+chậm. PSO, khi bị ép sang không gian hoán vị, gần như phá sản: thời gian chạy cao hơn ACO/GA hàng chục 
+lần và chất lượng nghiệm nhất quán là tệ nhất, xác nhận nó không phù hợp cho TSP với cách mã hoá hiện 
+tại.
+
+Ở nhóm bài toán liên tục, Cuckoo Search cho thấy ưu thế rõ trên Sphere (lồi, đơn cực), nhưng trên 
+Rastrigin đa cực thì không chạm được optimum trong khi GA làm được; bù lại, CS đơn giản hơn và chạy 
+nhanh hơn GA ở cùng cấu hình. Firefly Algorithm hoạt động tốt ở Rastrigin 10D nhưng sụp hẳn khi 
+dimension tăng, và trên Knapsack 0/1 bản rời rạc chỉ đóng vai trò baseline nhanh, bị GA và đặc biệt SA 
+áp đảo về nghiệm cuối. 
+
+Artificial Bee Colony (ABC), cho thấy một đặc tính khá đối lập 
+với các thuật toán classic làm baseline: chạy chậm và tiêu tốn nhiều bộ nhớ hơn, 
+nhưng lại là thuật toán duy nhất tìm đúng global optimum trên Rastrigin 2D 
+và luôn cho nghiệm đúng trong bài test kiểm chứng. Với dữ liệu hiện tại, ABC 
+có thể xem như một lựa chọn chậm nhưng đáng tin cậy — phù hợp khi ưu tiên chất lượng nghiệm hơn tốc độ.
+
+Tóm lại, năm thuật toán bầy đàn không có thuật toán nào thống trị tuyệt đối: mỗi thuật toán chỉ mạnh trong đúng cấu trúc mà nó hợp, và toàn bộ kết quả cho thấy bài toán mới là thứ quyết định số phận của thuật toán, chứ không phải ngược lại.
+
