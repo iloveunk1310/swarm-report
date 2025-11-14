@@ -24,6 +24,7 @@
 \usepackage{enumitem}
 \usepackage{geometry}
 \usepackage{subcaption}
+\usepackage{float}
 \geometry{margin=1in}
 
 \setlist[itemize]{label=-}
@@ -67,7 +68,7 @@
         \begin{minipage}{0.45\textwidth}
             \centering
             \textbf{Giáo viên hướng dẫn}\\[4pt]
-            Thầy Lê Hoài Bắc\\
+            GS. TS. Lê Hoài Bắc\\
             Thầy Lê Nhựt Nam
         \end{minipage}
 
@@ -146,9 +147,25 @@ Bùi Anh Quân       & 23122017
 \end{tabularx}
 \end{table}
 
+% ------------ PHỤ LỤC ------------
+\appendix
 
-\bibliographystyle{alpha}
-\bibliography{references}
+\section*{Phụ lục}
+\addcontentsline{toc}{section}{Phụ lục}
 
+\subsection*{Source code}
+\addcontentsline{toc}{subsection}{Source code}
+
+\noindent\url{https://github.com/iloveunk1310/Group_11_23TNT_CSAI_Lab1.git}
+
+
+\subsection*{Tài liệu tham khảo}
+\addcontentsline{toc}{subsection}{Tài liệu tham khảo}
+
+\begingroup
+  \renewcommand{\refname}{}% xoá heading mặc định "Tài liệu"
+  \bibliographystyle{alpha}
+  \bibliography{references}
+\endgroup
 
 \end{document}

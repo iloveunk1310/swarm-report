@@ -129,3 +129,6 @@
 \contentsline {subsection}{\numberline {9.4}Cuckoo Search}{63}{subsection.9.4}%
 \contentsline {section}{\numberline {10}Kết luận}{64}{section.10}%
 \contentsline {section}{\numberline {}Phân công công việc}{65}{section.10}%
+\contentsline {section}{Phụ lục}{65}{table.caption.67}%
+\contentsline {subsection}{Source code}{65}{section*.68}%
+\contentsline {subsection}{Tài liệu tham khảo}{65}{section*.68}%
