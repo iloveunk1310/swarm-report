@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.12)  13 NOV 2025 19:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.12)  14 NOV 2025 14:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -608,17 +608,33 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (./main.toc [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [2] (./sections/introduction.tex) (./sections/ant_colony_optimization.tex [3] [4]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 85.
- [5]
-LaTeX Font Info:    Trying to load font information for T5+cmtt on input line 121.
+ [3] (./sections/introduction.tex) (./sections/genetic_algorithm.tex
+<picture/giraffe.png, id=522, 641.39626pt x 639.89063pt>
+File: picture/giraffe.png Graphic file (type png)
+<use picture/giraffe.png>
+Package pdftex.def Info: picture/giraffe.png  used on input line 17.
+(pdftex.def)             Requested size: 271.7835pt x 271.1444pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4] [5 <./picture/giraffe.png>]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 73.
+ [6] [7] [8] [9] [10]) (./sections/problems.tex [11]
+<picture/tsp.png, id=669, 397.485pt x 258.9675pt>
+File: picture/tsp.png Graphic file (type png)
+<use picture/tsp.png>
+Package pdftex.def Info: picture/tsp.png  used on input line 18.
+(pdftex.def)             Requested size: 271.7835pt x 177.07553pt.
+ [12]
+LaTeX Font Info:    Trying to load font information for T5+cmtt on input line 34.
  (/usr/share/texlive/texmf-dist/tex/latex/vntex/t5cmtt.fd
 File: t5cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)) (./sections/particle_swarm_optimization.tex [6] [7] [8]) (./sections/artificial_bee_colony.tex [9] [10]) (./sections/firefly_algorithm.tex [11] [12] [13] [14] [15]
+) [13 <./picture/tsp.png>] [14] [15] [16]) (./sections/ant_colony_optimization.tex [17] [18] [19]) (./sections/particle_swarm_optimization.tex [20] [21] [22]) (./sections/artificial_bee_colony.tex [23] [24]) (./sections/firefly_algorithm.tex [25] [26] [27] [28] [29]
 Overfull \hbox (5.86777pt too wide) in paragraph at lines 182--183
 []\T5/cmr/m/it/10.95 Mutation\T5/cmr/m/n/10.95 : perturbation tøng chi·u vîi x¡c su§t mutation_rate; c¡c gi¡ trà mutation_rate
  []
@@ -633,192 +649,180 @@ Overfull \hbox (25.03738pt too wide) in paragraph at lines 218--219
 []\T5/cmr/m/n/10.95 Vîi Rastrigin: méi c§u h¼nh \T5/cmtt/m/n/10.95 quick_convergence \T5/cmr/m/n/10.95 (10D), \T5/cmtt/m/n/10.95 multimodal_escape \T5/cmr/m/n/10.95 (30D), \T5/cmtt/m/n/10.95 scalability
  []
 
-[16]
-Overfull \hbox (13.06409pt too wide) in paragraph at lines 230--231
+[30]) (./sections/cuckoo_search.tex [31]) (./sections/results.tex
+Overfull \hbox (13.06409pt too wide) in paragraph at lines 10--11
 \T5/cmr/m/n/10.95 cüc tiºu ^^_àa ph÷ìng v  mët cüc tiºu to n cöc t¤i $\OT1/cmr/bx/n/10.95 0$ \T5/cmr/m/n/10.95 vîi $\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OT1/cmr/bx/n/10.95 0\OT1/cmr/m/n/10.95 ) = 0$ \T5/cmr/m/n/10.95 :contentReference[oaicite:2]index=2. 
  []
 
-[17]
-<picture/rastrigin_ecdf_quick_convergence.png, id=567, 859.7721pt x 354.123pt>
+[32] [33]
+<picture/rastrigin_ecdf_quick_convergence.png, id=966, 859.7721pt x 354.123pt>
 File: picture/rastrigin_ecdf_quick_convergence.png Graphic file (type png)
 <use picture/rastrigin_ecdf_quick_convergence.png>
-Package pdftex.def Info: picture/rastrigin_ecdf_quick_convergence.png  used on input line 283.
+Package pdftex.def Info: picture/rastrigin_ecdf_quick_convergence.png  used on input line 68.
 (pdftex.def)             Requested size: 430.31812pt x 177.23936pt.
- [18 <./picture/rastrigin_ecdf_quick_convergence.png>]
-<picture/rastrigin_ecdf_multimodal_escape.png, id=577, 856.3995pt x 354.123pt>
+<picture/rastrigin_ecdf_multimodal_escape.png, id=967, 856.3995pt x 354.123pt>
 File: picture/rastrigin_ecdf_multimodal_escape.png Graphic file (type png)
 <use picture/rastrigin_ecdf_multimodal_escape.png>
-Package pdftex.def Info: picture/rastrigin_ecdf_multimodal_escape.png  used on input line 298.
+Package pdftex.def Info: picture/rastrigin_ecdf_multimodal_escape.png  used on input line 83.
 (pdftex.def)             Requested size: 430.31812pt x 177.94182pt.
-<picture/rastrigin_ecdf_scalability.png, id=578, 859.7721pt x 353.8821pt>
+ [34 <./picture/rastrigin_ecdf_quick_convergence.png>]
+<picture/rastrigin_ecdf_scalability.png, id=975, 859.7721pt x 353.8821pt>
 File: picture/rastrigin_ecdf_scalability.png Graphic file (type png)
 <use picture/rastrigin_ecdf_scalability.png>
-Package pdftex.def Info: picture/rastrigin_ecdf_scalability.png  used on input line 313.
+Package pdftex.def Info: picture/rastrigin_ecdf_scalability.png  used on input line 98.
 (pdftex.def)             Requested size: 430.31812pt x 177.11879pt.
- [19 <./picture/rastrigin_ecdf_multimodal_escape.png>]
-<picture/rastrigin_fixed_budget_quick_convergence.png, id=586, 859.0494pt x 357.2547pt>
+ [35 <./picture/rastrigin_ecdf_multimodal_escape.png> <./picture/rastrigin_ecdf_scalability.png>]
+<picture/rastrigin_fixed_budget_quick_convergence.png, id=984, 859.0494pt x 357.2547pt>
 File: picture/rastrigin_fixed_budget_quick_convergence.png Graphic file (type png)
 <use picture/rastrigin_fixed_budget_quick_convergence.png>
-Package pdftex.def Info: picture/rastrigin_fixed_budget_quick_convergence.png  used on input line 329.
+Package pdftex.def Info: picture/rastrigin_fixed_budget_quick_convergence.png  used on input line 114.
 (pdftex.def)             Requested size: 407.66833pt x 169.53964pt.
- [20 <./picture/rastrigin_ecdf_scalability.png> <./picture/rastrigin_fixed_budget_quick_convergence.png>]
-<picture/rastrigin_fixed_budget_multimodal_escape.png, id=596, 859.0494pt x 357.2547pt>
+<picture/rastrigin_fixed_budget_multimodal_escape.png, id=985, 859.0494pt x 357.2547pt>
 File: picture/rastrigin_fixed_budget_multimodal_escape.png Graphic file (type png)
 <use picture/rastrigin_fixed_budget_multimodal_escape.png>
-Package pdftex.def Info: picture/rastrigin_fixed_budget_multimodal_escape.png  used on input line 344.
+Package pdftex.def Info: picture/rastrigin_fixed_budget_multimodal_escape.png  used on input line 129.
 (pdftex.def)             Requested size: 407.66833pt x 169.53964pt.
-<picture/rastrigin_fixed_budget_scalability.png, id=597, 858.8085pt x 357.2547pt>
+ [36 <./picture/rastrigin_fixed_budget_quick_convergence.png>]
+<picture/rastrigin_fixed_budget_scalability.png, id=993, 858.8085pt x 357.2547pt>
 File: picture/rastrigin_fixed_budget_scalability.png Graphic file (type png)
 <use picture/rastrigin_fixed_budget_scalability.png>
-Package pdftex.def Info: picture/rastrigin_fixed_budget_scalability.png  used on input line 359.
+Package pdftex.def Info: picture/rastrigin_fixed_budget_scalability.png  used on input line 144.
 (pdftex.def)             Requested size: 407.66833pt x 169.58871pt.
- [21 <./picture/rastrigin_fixed_budget_multimodal_escape.png> <./picture/rastrigin_fixed_budget_scalability.png>]
-<picture/rastrigin_ert_bronze.png, id=606, 859.0494pt x 356.0502pt>
+ [37 <./picture/rastrigin_fixed_budget_multimodal_escape.png> <./picture/rastrigin_fixed_budget_scalability.png>]
+<picture/rastrigin_ert_bronze.png, id=1004, 859.0494pt x 356.0502pt>
 File: picture/rastrigin_ert_bronze.png Graphic file (type png)
 <use picture/rastrigin_ert_bronze.png>
-Package pdftex.def Info: picture/rastrigin_ert_bronze.png  used on input line 377.
+Package pdftex.def Info: picture/rastrigin_ert_bronze.png  used on input line 162.
 (pdftex.def)             Requested size: 430.31812pt x 178.35606pt.
-<picture/rastrigin_ert_silver.png, id=607, 859.0494pt x 356.0502pt>
+<picture/rastrigin_ert_silver.png, id=1005, 859.0494pt x 356.0502pt>
 File: picture/rastrigin_ert_silver.png Graphic file (type png)
 <use picture/rastrigin_ert_silver.png>
-Package pdftex.def Info: picture/rastrigin_ert_silver.png  used on input line 384.
+Package pdftex.def Info: picture/rastrigin_ert_silver.png  used on input line 169.
 (pdftex.def)             Requested size: 430.31812pt x 178.35606pt.
-<picture/rastrigin_ert_gold.png, id=608, 859.0494pt x 356.0502pt>
+<picture/rastrigin_ert_gold.png, id=1006, 859.0494pt x 356.0502pt>
 File: picture/rastrigin_ert_gold.png Graphic file (type png)
 <use picture/rastrigin_ert_gold.png>
-Package pdftex.def Info: picture/rastrigin_ert_gold.png  used on input line 391.
+Package pdftex.def Info: picture/rastrigin_ert_gold.png  used on input line 176.
 (pdftex.def)             Requested size: 430.31812pt x 178.35606pt.
- [22 <./picture/rastrigin_ert_bronze.png> <./picture/rastrigin_ert_silver.png>]
-<picture/rastrigin_perf_profile.png, id=619, 712.8231pt x 421.3341pt>
+ [38 <./picture/rastrigin_ert_bronze.png> <./picture/rastrigin_ert_silver.png>]
+<picture/rastrigin_perf_profile.png, id=1017, 712.8231pt x 421.3341pt>
 File: picture/rastrigin_perf_profile.png Graphic file (type png)
 <use picture/rastrigin_perf_profile.png>
-Package pdftex.def Info: picture/rastrigin_perf_profile.png  used on input line 406.
+Package pdftex.def Info: picture/rastrigin_perf_profile.png  used on input line 191.
 (pdftex.def)             Requested size: 385.02547pt x 227.58131pt.
- [23 <./picture/rastrigin_ert_gold.png>]
-<picture/rastrigin_data_profile.png, id=626, 714.0276pt x 421.3341pt>
+ [39 <./picture/rastrigin_ert_gold.png>]
+<picture/rastrigin_data_profile.png, id=1024, 714.0276pt x 421.3341pt>
 File: picture/rastrigin_data_profile.png Graphic file (type png)
 <use picture/rastrigin_data_profile.png>
-Package pdftex.def Info: picture/rastrigin_data_profile.png  used on input line 421.
+Package pdftex.def Info: picture/rastrigin_data_profile.png  used on input line 206.
 (pdftex.def)             Requested size: 385.02547pt x 227.202pt.
- [24 <./picture/rastrigin_perf_profile.png> <./picture/rastrigin_data_profile.png>]
-<picture/rastrigin_diversity_quick_convergence.png, id=637, 1004.553pt x 712.8231pt>
+ [40 <./picture/rastrigin_perf_profile.png> <./picture/rastrigin_data_profile.png>]
+<picture/rastrigin_diversity_quick_convergence.png, id=1035, 1004.553pt x 712.8231pt>
 File: picture/rastrigin_diversity_quick_convergence.png Graphic file (type png)
 <use picture/rastrigin_diversity_quick_convergence.png>
-Package pdftex.def Info: picture/rastrigin_diversity_quick_convergence.png  used on input line 445.
+Package pdftex.def Info: picture/rastrigin_diversity_quick_convergence.png  used on input line 230.
 (pdftex.def)             Requested size: 430.31812pt x 305.35503pt.
-<picture/rastrigin_diversity_multimodal_escape.png, id=638, 1004.553pt x 712.8231pt>
+<picture/rastrigin_diversity_multimodal_escape.png, id=1036, 1004.553pt x 712.8231pt>
 File: picture/rastrigin_diversity_multimodal_escape.png Graphic file (type png)
 <use picture/rastrigin_diversity_multimodal_escape.png>
-Package pdftex.def Info: picture/rastrigin_diversity_multimodal_escape.png  used on input line 452.
+Package pdftex.def Info: picture/rastrigin_diversity_multimodal_escape.png  used on input line 237.
 (pdftex.def)             Requested size: 430.31812pt x 305.35503pt.
- [25 <./picture/rastrigin_diversity_quick_convergence.png>]
-<picture/rastrigin_diversity_scalability.png, id=648, 1004.553pt x 712.8231pt>
+ [41 <./picture/rastrigin_diversity_quick_convergence.png>]
+<picture/rastrigin_diversity_scalability.png, id=1045, 1004.553pt x 712.8231pt>
 File: picture/rastrigin_diversity_scalability.png Graphic file (type png)
 <use picture/rastrigin_diversity_scalability.png>
-Package pdftex.def Info: picture/rastrigin_diversity_scalability.png  used on input line 459.
+Package pdftex.def Info: picture/rastrigin_diversity_scalability.png  used on input line 244.
 (pdftex.def)             Requested size: 430.31812pt x 305.35503pt.
- [26 <./picture/rastrigin_diversity_multimodal_escape.png> <./picture/rastrigin_diversity_scalability.png>]
-<picture/rastrigin_stagnation_quick_convergence.png, id=658, 1004.3121pt x 357.2547pt>
+ [42 <./picture/rastrigin_diversity_multimodal_escape.png> <./picture/rastrigin_diversity_scalability.png>]
+<picture/rastrigin_stagnation_quick_convergence.png, id=1055, 1004.3121pt x 357.2547pt>
 File: picture/rastrigin_stagnation_quick_convergence.png Graphic file (type png)
 <use picture/rastrigin_stagnation_quick_convergence.png>
-Package pdftex.def Info: picture/rastrigin_stagnation_quick_convergence.png  used on input line 500.
+Package pdftex.def Info: picture/rastrigin_stagnation_quick_convergence.png  used on input line 285.
 (pdftex.def)             Requested size: 430.31812pt x 153.07684pt.
- [27]
-<picture/rastrigin_stagnation_multimodal_escape.png, id=666, 1004.3121pt x 357.2547pt>
+ [43]
+<picture/rastrigin_stagnation_multimodal_escape.png, id=1064, 1004.3121pt x 357.2547pt>
 File: picture/rastrigin_stagnation_multimodal_escape.png Graphic file (type png)
 <use picture/rastrigin_stagnation_multimodal_escape.png>
-Package pdftex.def Info: picture/rastrigin_stagnation_multimodal_escape.png  used on input line 507.
+Package pdftex.def Info: picture/rastrigin_stagnation_multimodal_escape.png  used on input line 292.
 (pdftex.def)             Requested size: 430.31812pt x 153.07684pt.
-<picture/rastrigin_stagnation_scalability.png, id=667, 1004.3121pt x 357.2547pt>
+<picture/rastrigin_stagnation_scalability.png, id=1065, 1004.3121pt x 357.2547pt>
 File: picture/rastrigin_stagnation_scalability.png Graphic file (type png)
 <use picture/rastrigin_stagnation_scalability.png>
-Package pdftex.def Info: picture/rastrigin_stagnation_scalability.png  used on input line 514.
+Package pdftex.def Info: picture/rastrigin_stagnation_scalability.png  used on input line 299.
 (pdftex.def)             Requested size: 430.31812pt x 153.07684pt.
- [28 <./picture/rastrigin_stagnation_quick_convergence.png> <./picture/rastrigin_stagnation_multimodal_escape.png> <./picture/rastrigin_stagnation_scalability.png>]
+ [44 <./picture/rastrigin_stagnation_quick_convergence.png> <./picture/rastrigin_stagnation_multimodal_escape.png> <./picture/rastrigin_stagnation_scalability.png>]
 
-LaTeX Warning: Reference `subsec:metrics' on page 29 undefined on input line 548.
+LaTeX Warning: Reference `subsec:metrics' on page 45 undefined on input line 324.
 
-<picture/knapsack_fixed_budget_Gap_10pct.png, id=676, 1292.4285pt x 357.2547pt>
+<picture/knapsack_fixed_budget_Gap_10pct.png, id=1074, 1292.4285pt x 357.2547pt>
 File: picture/knapsack_fixed_budget_Gap_10pct.png Graphic file (type png)
 <use picture/knapsack_fixed_budget_Gap_10pct.png>
-Package pdftex.def Info: picture/knapsack_fixed_budget_Gap_10pct.png  used on input line 552.
+Package pdftex.def Info: picture/knapsack_fixed_budget_Gap_10pct.png  used on input line 328.
 (pdftex.def)             Requested size: 443.9066pt x 122.70242pt.
-<picture/knapsack_fixed_budget_Gap_30pct.png, id=677, 1292.4285pt x 357.2547pt>
+<picture/knapsack_fixed_budget_Gap_30pct.png, id=1075, 1292.4285pt x 357.2547pt>
 File: picture/knapsack_fixed_budget_Gap_30pct.png Graphic file (type png)
 <use picture/knapsack_fixed_budget_Gap_30pct.png>
-Package pdftex.def Info: picture/knapsack_fixed_budget_Gap_30pct.png  used on input line 559.
+Package pdftex.def Info: picture/knapsack_fixed_budget_Gap_30pct.png  used on input line 335.
 (pdftex.def)             Requested size: 443.9066pt x 122.70242pt.
-[29 <./picture/knapsack_fixed_budget_Gap_10pct.png>]
-<picture/knapsack_fixed_budget_Gap_50pct.png, id=685, 1292.4285pt x 357.2547pt>
+<picture/knapsack_fixed_budget_Gap_50pct.png, id=1076, 1292.4285pt x 357.2547pt>
 File: picture/knapsack_fixed_budget_Gap_50pct.png Graphic file (type png)
 <use picture/knapsack_fixed_budget_Gap_50pct.png>
-Package pdftex.def Info: picture/knapsack_fixed_budget_Gap_50pct.png  used on input line 566.
+Package pdftex.def Info: picture/knapsack_fixed_budget_Gap_50pct.png  used on input line 342.
 (pdftex.def)             Requested size: 443.9066pt x 122.70242pt.
-<picture/knapsack_fixed_budget_Gap_100pct.png, id=686, 1292.4285pt x 357.2547pt>
+[45 <./picture/knapsack_fixed_budget_Gap_10pct.png> <./picture/knapsack_fixed_budget_Gap_30pct.png>]
+<picture/knapsack_fixed_budget_Gap_100pct.png, id=1085, 1292.4285pt x 357.2547pt>
 File: picture/knapsack_fixed_budget_Gap_100pct.png Graphic file (type png)
 <use picture/knapsack_fixed_budget_Gap_100pct.png>
-Package pdftex.def Info: picture/knapsack_fixed_budget_Gap_100pct.png  used on input line 573.
+Package pdftex.def Info: picture/knapsack_fixed_budget_Gap_100pct.png  used on input line 349.
 (pdftex.def)             Requested size: 443.9066pt x 122.70242pt.
- [30 <./picture/knapsack_fixed_budget_Gap_30pct.png> <./picture/knapsack_fixed_budget_Gap_50pct.png> <./picture/knapsack_fixed_budget_Gap_100pct.png>]
-<picture/knapsack_data_profiles.png, id=698, 714.0276pt x 434.3427pt>
+ [46 <./picture/knapsack_fixed_budget_Gap_50pct.png> <./picture/knapsack_fixed_budget_Gap_100pct.png>]
+<picture/knapsack_data_profiles.png, id=1094, 714.0276pt x 434.3427pt>
 File: picture/knapsack_data_profiles.png Graphic file (type png)
 <use picture/knapsack_data_profiles.png>
-Package pdftex.def Info: picture/knapsack_data_profiles.png  used on input line 626.
+Package pdftex.def Info: picture/knapsack_data_profiles.png  used on input line 402.
 (pdftex.def)             Requested size: 443.9066pt x 270.03197pt.
- [31]
+ [47]
 
-LaTeX Warning: Citation `more2009benchmarking' on page 32 undefined on input line 631.
+LaTeX Warning: Citation `more2009benchmarking' on page 48 undefined on input line 407.
 
-<picture/knapsack_performance_profiles.png, id=706, 714.0276pt x 434.3427pt>
+<picture/knapsack_performance_profiles.png, id=1101, 714.0276pt x 434.3427pt>
 File: picture/knapsack_performance_profiles.png Graphic file (type png)
 <use picture/knapsack_performance_profiles.png>
-Package pdftex.def Info: picture/knapsack_performance_profiles.png  used on input line 635.
+Package pdftex.def Info: picture/knapsack_performance_profiles.png  used on input line 411.
 (pdftex.def)             Requested size: 443.9066pt x 270.03197pt.
-[32 <./picture/knapsack_data_profiles.png>]
-<picture/knapsack_pairwise_heatmap_overall.png, id=715, 673.3155pt x 577.6782pt>
+[48 <./picture/knapsack_data_profiles.png>]
+<picture/knapsack_pairwise_heatmap_overall.png, id=1110, 673.3155pt x 577.6782pt>
 File: picture/knapsack_pairwise_heatmap_overall.png Graphic file (type png)
 <use picture/knapsack_pairwise_heatmap_overall.png>
-Package pdftex.def Info: picture/knapsack_pairwise_heatmap_overall.png  used on input line 645.
+Package pdftex.def Info: picture/knapsack_pairwise_heatmap_overall.png  used on input line 421.
 (pdftex.def)             Requested size: 443.9066pt x 380.85449pt.
- [33 <./picture/knapsack_performance_profiles.png>]
-<picture/knapsack_copeland_ranking.png, id=722, 710.1732pt x 426.6339pt>
+ [49 <./picture/knapsack_performance_profiles.png>]
+<picture/knapsack_copeland_ranking.png, id=1118, 710.1732pt x 426.6339pt>
 File: picture/knapsack_copeland_ranking.png Graphic file (type png)
 <use picture/knapsack_copeland_ranking.png>
-Package pdftex.def Info: picture/knapsack_copeland_ranking.png  used on input line 652.
+Package pdftex.def Info: picture/knapsack_copeland_ranking.png  used on input line 428.
 (pdftex.def)             Requested size: 443.9066pt x 266.67807pt.
- [34 <./picture/knapsack_pairwise_heatmap_overall.png>]
+ [50 <./picture/knapsack_pairwise_heatmap_overall.png>]
 
-LaTeX Warning: Citation `demvsar2006statistical' on page 35 undefined on input line 657.
+LaTeX Warning: Citation `demvsar2006statistical' on page 51 undefined on input line 433.
 
-<picture/knapsack_pairwise_heatmap_penalty.png, id=731, 674.0382pt x 571.1739pt>
+<picture/knapsack_pairwise_heatmap_penalty.png, id=1127, 674.0382pt x 571.1739pt>
 File: picture/knapsack_pairwise_heatmap_penalty.png Graphic file (type png)
 <use picture/knapsack_pairwise_heatmap_penalty.png>
-Package pdftex.def Info: picture/knapsack_pairwise_heatmap_penalty.png  used on input line 668.
+Package pdftex.def Info: picture/knapsack_pairwise_heatmap_penalty.png  used on input line 444.
 (pdftex.def)             Requested size: 443.9066pt x 376.1654pt.
-[35 <./picture/knapsack_copeland_ranking.png>]
-<picture/knapsack_pairwise_heatmap_repair.png, id=738, 674.0382pt x 571.1739pt>
+[51 <./picture/knapsack_copeland_ranking.png>]
+<picture/knapsack_pairwise_heatmap_repair.png, id=1134, 674.0382pt x 571.1739pt>
 File: picture/knapsack_pairwise_heatmap_repair.png Graphic file (type png)
 <use picture/knapsack_pairwise_heatmap_repair.png>
-Package pdftex.def Info: picture/knapsack_pairwise_heatmap_repair.png  used on input line 675.
+Package pdftex.def Info: picture/knapsack_pairwise_heatmap_repair.png  used on input line 451.
 (pdftex.def)             Requested size: 443.9066pt x 376.1654pt.
- [36 <./picture/knapsack_pairwise_heatmap_penalty.png>] [37 <./picture/knapsack_pairwise_heatmap_repair.png>]
-Overfull \hbox (1.16008pt too wide) in paragraph at lines 734--735
+ [52 <./picture/knapsack_pairwise_heatmap_penalty.png>] [53 <./picture/knapsack_pairwise_heatmap_repair.png>]
+Overfull \hbox (1.16008pt too wide) in paragraph at lines 510--511
 [] []\T5/cmr/bx/n/10.95 Þ ngh¾a v  h¤n ch¸ cõa performance/data profiles khi success rate th§p.[] \T5/cmr/m/n/10.95 Dolan^^UMor²
  []
 
-[38]) (./sections/cuckoo_search.tex [39] [40]) (./sections/genetic_algorithm.tex [41]
-<picture/giraffe.png, id=804, 641.39626pt x 639.89063pt>
-File: picture/giraffe.png Graphic file (type png)
-<use picture/giraffe.png>
-Package pdftex.def Info: picture/giraffe.png  used on input line 17.
-(pdftex.def)             Requested size: 271.7835pt x 271.1444pt.
- [42 <./picture/giraffe.png>]) (./sections/problems.tex [43]
-<picture/tsp.png, id=825, 397.485pt x 258.9675pt>
-File: picture/tsp.png Graphic file (type png)
-<use picture/tsp.png>
-Package pdftex.def Info: picture/tsp.png  used on input line 18.
-(pdftex.def)             Requested size: 271.7835pt x 177.07553pt.
- [44 <./picture/tsp.png>] [45]) (./sections/results.tex) (./main.bbl) [46] (./main.aux)
+[54]) (./sections/conclusion.tex) (./main.bbl [55]) [56] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -828,21 +832,21 @@ L3 programming layer <2024-01-22>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A5BCD47FDAF70F366433838A1F3CC369;14702.
+(rerunfilecheck)             Checksum: 06F8AE5EE73B1E7D0851DC653180FE1A;19794.
  ) 
 Here is how much of TeX's memory you used:
- 15007 strings out of 475556
- 242053 string characters out of 5782323
- 1944975 words of memory out of 5000000
- 36597 multiletter control sequences out of 15000+600000
+ 15192 strings out of 475556
+ 244944 string characters out of 5782323
+ 1943975 words of memory out of 5000000
+ 36634 multiletter control sequences out of 15000+600000
  580715 words of font info for 84 fonts, out of 8000000 for 9000
  331 hyphenation exceptions out of 8191
- 75i,9n,79p,1122b,852s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,10n,79p,1112b,872s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vntt10.pfb>
-Output written on main.pdf (46 pages, 5349851 bytes).
+Output written on main.pdf (56 pages, 5392766 bytes).
 PDF statistics:
- 1025 PDF objects out of 1200 (max. 8388607)
- 868 compressed objects within 9 object streams
- 339 named destinations out of 1000 (max. 500000)
- 690 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1362 PDF objects out of 1440 (max. 8388607)
+ 1192 compressed objects within 12 object streams
+ 484 named destinations out of 1000 (max. 500000)
+ 946 words of extra memory for PDF output out of 10000 (max. 10000000)
 

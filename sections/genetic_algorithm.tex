@@ -87,3 +87,288 @@ Schema Theorem (dạng bất đẳng thức cho kì vọng):
 \STATE Trả về cá thể tốt nhất tìm được.
 \end{algorithmic}
 \end{algorithm}
+
+\subsection{Hill Climbing (Steepest Ascent)}
+\subsubsection{Giới thiệu chung}
+
+Hill Climbing (leo đồi, \emph{steepest-ascent hill climbing}) là một giải thuật tìm kiếm cục bộ (local search) đơn giản, hoạt động bằng cách lặp lại hai bước: sinh lân cận và di chuyển sang nghiệm lân cận ``tốt nhất'' nếu nó cải thiện hàm mục tiêu. Thuật toán mang tính tham lam (greedy): luôn ưu tiên cải thiện tức thời, nên dễ rơi vào cực trị địa phương, plateau (vùng bằng phẳng) hoặc ridge (sườn hẹp).
+
+Trong bối cảnh tối ưu hóa, Hill Climbing có thể áp dụng cho cả không gian nghiệm rời rạc (ví dụ: Knapsack) và liên tục (ví dụ: Rastrigin, nếu ta định nghĩa được phép biến đổi lân cận). Trong đồ án này, Hill Climbing được dùng như một baseline truyền thống để so sánh với các metaheuristic bầy đàn.
+
+\subsubsection{Cơ sở toán học}
+
+Gọi $\mathcal{X}$ là không gian nghiệm và $f:\mathcal{X}\to\mathbb{R}$ là hàm mục tiêu (giả sử bài toán tối thiểu hóa). Với mỗi nghiệm $x\in\mathcal{X}$, ta định nghĩa một tập lân cận $N(x)\subset\mathcal{X}$ thông qua một phép biến đổi cục bộ (ví dụ: lật một bit trong mã hóa nhị phân, hoán vị hai phần tử, hoặc nhiễu Gaussian trong không gian liên tục).
+
+Ở bước lặp $k$, Hill Climbing dạng \emph{steepest ascent} (cho bài toán tối đa hóa) hoặc \emph{steepest descent} (cho bài toán tối thiểu hóa) thực hiện:
+
+\[
+x_{k+1} = \arg\min_{y \in N(x_k)} f(y)
+\]
+
+và chỉ cập nhật nếu $f(x_{k+1}) < f(x_k)$ (tối thiểu hóa). Thuật toán dừng khi:
+\[
+\min_{y\in N(x_k)} f(y) \ge f(x_k),
+\]
+tức là không còn lân cận nào cải thiện được hàm mục tiêu – ta đạt tới một cực trị địa phương (local optimum) theo cấu trúc lân cận đã chọn.
+
+Độ phức tạp mỗi vòng lặp phụ thuộc vào kích thước lân cận:
+\[
+\text{cost\_per\_iter} = \mathcal{O}\big(|N(x)| \cdot \text{cost\_eval}\big),
+\]
+trong đó \text{cost\_eval} là chi phí tính $f(x)$. Tổng chi phí xấp xỉ $\mathcal{O}(K\cdot |N|\cdot \text{cost\_eval})$ với $K$ là số vòng lặp đến khi hội tụ hoặc đạt ngưỡng dừng.
+
+\subsubsection{Cách hoạt động của thuật toán}
+
+\begin{algorithm}[H]
+\caption{Hill Climbing (Steepest Ascent / Descent)}
+\begin{algorithmic}[1]
+\STATE \textbf{Input:} nghiệm khởi tạo $x_0$, hàm mục tiêu $f$, hàm sinh lân cận $N(x)$, số vòng lặp tối đa $K$, ngưỡng cải thiện $\epsilon$.
+\STATE Đặt $x \gets x_0$.
+\FOR{$k = 1$ \TO $K$}
+    \STATE Sinh tập lân cận $N(x) = \{y_1,\dots,y_m\}$.
+    \STATE Tìm nghiệm tốt nhất trong lân cận:
+    \[
+        y^\star = \arg\min_{y\in N(x)} f(y) \quad \text{(giả sử tối thiểu hóa)}.
+    \]
+    \IF{$f(y^\star) < f(x) - \epsilon$}
+        \STATE Cập nhật $x \gets y^\star$.
+    \ELSE
+        \STATE \textbf{break} \COMMENT{Không còn cải thiện đáng kể, dừng}
+    \ENDIF
+\ENDFOR
+\STATE \textbf{Output:} nghiệm cuối cùng $x$ và giá trị $f(x)$.
+\end{algorithmic}
+\end{algorithm}
+
+
+\subsection{Simulated Annealing}
+\subsubsection{Giới thiệu chung}
+
+Simulated Annealing (SA - tôi luyện mô phỏng) là một metaheuristic tìm kiếm cục bộ có yếu tố ngẫu nhiên, lấy cảm hứng từ quá trình tôi luyện vật liệu trong vật lý. Khác với Hill Climbing, SA cho phép chấp nhận tạm thời các nghiệm \emph{xấu hơn} với một xác suất phụ thuộc vào nhiệt độ $T$, giúp thuật toán có khả năng thoát khỏi cực trị địa phương.
+
+SA được đề xuất bởi Kirkpatrick và cộng sự (1983) như một mở rộng của thuật toán Metropolis. Với lịch trình làm nguội (cooling schedule) đủ chậm, SA có bảo đảm hội tụ về nghiệm tối ưu toàn cục trong giới hạn lý thuyết, dù trong thực tế thường sử dụng lịch trình nhanh hơn để đạt hiệu quả tính toán.
+
+\subsubsection{Cơ sở toán học}
+
+Giả sử bài toán tối thiểu hóa $f:\mathcal{X}\to\mathbb{R}$. Tại bước $k$, với nghiệm hiện tại $x_k$ và nhiệt độ $T_k>0$, SA sinh một lân cận $y\in N(x_k)$ và xét hiệu:
+\[
+\Delta f = f(y) - f(x_k).
+\]
+
+Quy tắc chấp nhận:
+\[
+x_{k+1} =
+\begin{cases}
+y, & \text{nếu } \Delta f \le 0 \quad (\text{cải thiện})\\[4pt]
+y \text{ với xác suất } p_{\text{accept}} = \exp\!\left(-\dfrac{\Delta f}{T_k}\right), & \text{nếu } \Delta f > 0\\[4pt]
+x_k, & \text{ngược lại}.
+\end{cases}
+\]
+
+Khi $T_k$ cao, xác suất chấp nhận nghiệm xấu tương đối lớn, giúp thuật toán khám phá không gian rộng hơn. Khi $T_k \to 0$, thuật toán dần trở nên giống Hill Climbing (chỉ chấp nhận nghiệm cải thiện). Lịch trình làm nguội thường được chọn dưới dạng:
+\[
+T_{k+1} = \alpha T_k, \quad 0 < \alpha < 1,
+\]
+hoặc
+\[
+T_k = \frac{T_0}{1 + \beta k},
+\]
+với $T_0$ là nhiệt độ ban đầu và $\beta>0$ là hệ số làm nguội.
+
+\subsubsection{Cách hoạt động của thuật toán}
+
+\begin{algorithm}[H]
+\caption{Simulated Annealing (SA)}
+\begin{algorithmic}[1]
+\STATE \textbf{Input:} nghiệm khởi tạo $x_0$, hàm mục tiêu $f$, hàm sinh lân cận $N(x)$, nhiệt độ ban đầu $T_0$, nhiệt độ tối thiểu $T_{\min}$, số vòng lặp tối đa $K$, hệ số làm nguội $\alpha \in (0,1)$.
+\STATE Đặt $x \gets x_0$, $x_{\text{best}} \gets x_0$, $T \gets T_0$.
+\FOR{$k = 1$ \TO $K$}
+    \STATE Chọn ngẫu nhiên $y \in N(x)$.
+    \STATE Tính $\Delta f = f(y) - f(x)$.
+    \IF{$\Delta f \le 0$}
+        \STATE chấp nhận $y$: $x \gets y$.
+    \ELSE
+        \STATE Lấy $u \sim \text{Uniform}(0,1)$.
+        \IF{$u < \exp(-\Delta f / T)$}
+            \STATE chấp nhận $y$: $x \gets y$.
+        \ENDIF
+    \ENDIF
+    \IF{$f(x) < f(x_{\text{best}})$}
+        \STATE Cập nhật nghiệm tốt nhất $x_{\text{best}} \gets x$.
+    \ENDIF
+    \STATE Cập nhật nhiệt độ $T \gets \alpha T$.
+    \IF{$T < T_{\min}$}
+        \STATE \textbf{break}
+    \ENDIF
+\ENDFOR
+\STATE \textbf{Output:} nghiệm tốt nhất $x_{\text{best}}$ và giá trị $f(x_{\text{best}})$.
+\end{algorithmic}
+\end{algorithm}
+
+
+\subsection{Breadth-First Search (BFS)}
+\subsubsection{Giới thiệu chung}
+
+Breadth-First Search (BFS - tìm kiếm theo bề rộng) là một thuật toán tìm kiếm trên đồ thị/ cây trạng thái, khám phá các đỉnh (trạng thái) theo từng ``lớp độ sâu'' tăng dần. BFS là thuật toán \emph{uninformed search} kinh điển, đảm bảo tìm được lời giải tối ưu về số bước (nếu mỗi cạnh có cùng chi phí) và luôn hoàn chỉnh (complete) nếu không gian trạng thái hữu hạn.
+
+Trong đồ án, BFS được sử dụng như một baseline truyền thống cho các bài toán rời rạc có không gian trạng thái nhỏ, nơi có thể duyệt gần như toàn bộ không gian (ví dụ: phiên bản nhỏ của Knapsack, bài toán đường đi trên lưới, ...).
+
+\subsubsection{Cơ sở toán học}
+
+Mô hình hóa bài toán dưới dạng đồ thị trạng thái có hướng hoặc vô hướng:
+\[
+G = (V, E),
+\]
+trong đó mỗi đỉnh $v\in V$ tương ứng với một trạng thái, và mỗi cạnh $(u,v)\in E$ tương ứng với một phép chuyển trạng thái hợp lệ. Cho $s$ là trạng thái xuất phát, $G$ là tập đích (\emph{goal states}).
+
+BFS mở rộng các đỉnh theo thứ tự độ sâu tăng dần: tất cả các đỉnh ở độ sâu $0$, rồi đến tất cả ở độ sâu $1$, ..., cho tới khi gặp một đỉnh thuộc $G$.
+
+Với $b$ là hệ số phân nhánh (branching factor), $d$ là độ sâu nhỏ nhất của lời giải, độ phức tạp xấp xỉ:
+\[
+\text{Time} = \mathcal{O}(b^d),\qquad
+\text{Space} = \mathcal{O}(b^d),
+\]
+do phải lưu toàn bộ ``vòng biên'' (frontier) ở mỗi lớp độ sâu. Đây là điểm yếu của BFS trên không gian trạng thái lớn.
+
+\subsubsection{Cách hoạt động của thuật toán}
+
+\begin{algorithm}[H]
+\caption{Breadth-First Search (BFS)}
+\begin{algorithmic}[1]
+\STATE \textbf{Input:} đồ thị trạng thái $(V,E)$ (ngầm qua hàm sinh hàng xóm), trạng thái bắt đầu $s$, tập đích $G$.
+\STATE Khởi tạo hàng đợi $Q \gets \emptyset$, tập đã thăm $Visited \gets \emptyset$.
+\STATE Thêm $s$ vào $Q$ và $Visited$.
+\WHILE{$Q$ không rỗng}
+    \STATE Lấy phần tử đầu hàng đợi $u \gets Q.\text{pop\_front}()$.
+    \IF{$u \in G$}
+        \STATE Dừng và trả về đường đi từ $s$ đến $u$ (truy vết qua \emph{parent}).
+    \ENDIF
+    \FOR{mỗi hàng xóm $v$ của $u$}
+        \IF{$v \notin Visited$}
+            \STATE Thêm $v$ vào $Visited$.
+            \STATE Gán \emph{parent} của $v$ là $u$ (để truy vết đường đi).
+            \STATE Thêm $v$ vào cuối hàng đợi $Q$.
+        \ENDIF
+    \ENDFOR
+\ENDWHILE
+\STATE Nếu vòng lặp kết thúc mà không tìm được đích, báo ``không có lời giải''.
+\end{algorithmic}
+\end{algorithm}
+
+
+\subsection{Depth-First Search (DFS)}
+\subsubsection{Giới thiệu chung}
+
+Depth-First Search (DFS - tìm kiếm theo chiều sâu) là một thuật toán tìm kiếm trên đồ thị/cây, luôn ưu tiên đi sâu theo một nhánh cho tới khi không đi tiếp được nữa, rồi quay lui (backtracking). DFS cũng là một thuật toán \emph{uninformed search}, không đảm bảo tối ưu và trong không gian vô hạn có thể không dừng nếu không có cơ chế cắt tỉa.
+
+Ưu điểm chính của DFS là chi phí bộ nhớ thấp hơn BFS, nên được dùng như baseline cho các bài toán rời rạc với không gian trạng thái lớn nhưng độ sâu hữu hạn.
+
+\subsubsection{Cơ sở toán học}
+
+Với cùng mô hình đồ thị trạng thái $G=(V,E)$, DFS mở rộng các đỉnh theo thứ tự \emph{đi sâu nhất có thể}. Nếu dùng phiên bản có giới hạn độ sâu $L$ (depth-limited DFS), ta chỉ cho phép đi tới độ sâu tối đa $L$ rồi quay lui.
+
+Với hệ số phân nhánh $b$ và độ sâu tối đa $m$ (có thể lớn hơn $d$), độ phức tạp:
+\[
+\text{Time} = \mathcal{O}(b^m),\qquad
+\text{Space} = \mathcal{O}(b \cdot m),
+\]
+do chỉ lưu một đường đi hiện tại và các nhánh chưa mở ở mỗi mức.
+
+\subsubsection{Cách hoạt động của thuật toán}
+
+\begin{algorithm}[H]
+\caption{Depth-First Search (DFS) dạng dùng ngăn xếp}
+\begin{algorithmic}[1]
+\STATE \textbf{Input:} đồ thị trạng thái $(V,E)$ (ngầm qua hàm sinh hàng xóm), trạng thái bắt đầu $s$, tập đích $G$.
+\STATE Khởi tạo ngăn xếp $S \gets \emptyset$, tập đã thăm $Visited \gets \emptyset$.
+\STATE Thêm $s$ vào $S$.
+\WHILE{$S$ không rỗng}
+    \STATE Lấy phần tử trên đỉnh ngăn xếp $u \gets S.\text{pop}()$.
+    \IF{$u \in Visited$}
+        \STATE \textbf{continue}
+    \ENDIF
+    \STATE Thêm $u$ vào $Visited$.
+    \IF{$u \in G$}
+        \STATE Dừng và trả về đường đi từ $s$ đến $u$ (truy vết qua \emph{parent}).
+    \ENDIF
+    \FOR{mỗi hàng xóm $v$ của $u$}
+        \IF{$v \notin Visited$}
+            \STATE Gán \emph{parent} của $v$ là $u$.
+            \STATE Thêm $v$ vào ngăn xếp $S$.
+        \ENDIF
+    \ENDFOR
+\ENDWHILE
+\STATE Nếu vòng lặp kết thúc mà không tìm được đích, báo ``không có lời giải''.
+\end{algorithmic}
+\end{algorithm}
+
+
+\subsection{A* Search}
+\subsubsection{Giới thiệu chung}
+
+A* Search là một thuật toán tìm kiếm có định hướng (informed search) sử dụng hàm heuristic để dẫn hướng tìm kiếm tới đích. A* đặc biệt phổ biến trong các bài toán tìm đường (path-finding) trên lưới, đồ thị, hoặc bản đồ, nhờ khả năng tìm được đường đi tối ưu với chi phí trung bình thấp hơn nhiều so với các thuật toán uninformed như BFS.
+
+Ý tưởng cốt lõi của A* là đánh giá mỗi trạng thái $n$ bằng một hàm:
+\[
+f(n) = g(n) + h(n),
+\]
+trong đó $g(n)$ là chi phí thực tế từ trạng thái bắt đầu đến $n$, còn $h(n)$ là ước lượng chi phí còn lại từ $n$ đến đích. Nếu $h(n)$ được chọn ``tốt'', A* sẽ tập trung mở rộng các trạng thái tiềm năng, giảm đáng kể số lượng trạng thái phải duyệt.
+
+\subsubsection{Cơ sở toán học}
+
+Xét đồ thị có trọng số dương:
+\[
+G = (V,E), \quad c(u,v) > 0 \text{ là chi phí trên cạnh } (u,v).
+\]
+Cho $s$ là trạng thái bắt đầu, $G$ (trùng ký hiệu, nhưng ngữ cảnh khác) là tập trạng thái đích. Với mỗi nút $n$, ta định nghĩa:
+\begin{itemize}
+    \item $g(n)$: chi phí đường đi tốt nhất từ $s$ đến $n$ đã biết cho tới thời điểm hiện tại;
+    \item $h(n)$: heuristic ước lượng chi phí tối thiểu từ $n$ đến một đích bất kỳ;
+    \item $f(n) = g(n) + h(n)$: ước lượng tổng chi phí của đường đi đi qua $n$.
+\end{itemize}
+
+Heuristic $h$ được gọi là \emph{admissible} nếu:
+\[
+0 \le h(n) \le h^\star(n), \quad \forall n,
+\]
+trong đó $h^\star(n)$ là chi phí thật sự tối thiểu từ $n$ đến đích. Khi $h$ admissible và chi phí cạnh là dương, A* đảm bảo tìm được đường đi tối ưu. Nếu $h$ còn thỏa thêm tính \emph{consistent} (hay \emph{monotone}):
+\[
+h(u) \le c(u,v) + h(v), \quad \forall (u,v)\in E,
+\]
+thì giá trị $f(n)$ dọc theo một đường đi sẽ không giảm, và mỗi nút chỉ cần đưa ra khỏi hàng đợi ưu tiên một lần.
+
+\subsubsection{Cách hoạt động của thuật toán}
+
+\begin{algorithm}[H]
+\caption{A* Search}
+\begin{algorithmic}[1]
+\STATE \textbf{Input:} đồ thị $(V,E)$, chi phí cạnh $c(u,v)$, trạng thái bắt đầu $s$, tập đích $G$, heuristic $h(n)$.
+\STATE Khởi tạo tập mở (open set) là một hàng đợi ưu tiên $OPEN$, tập đóng $CLOSED$.
+\STATE Với mọi $n\in V$, đặt $g(n) \gets +\infty$. Đặt $g(s) \gets 0$, $f(s) \gets h(s)$.
+\STATE Thêm $s$ vào $OPEN$ với khóa $f(s)$.
+\WHILE{$OPEN$ không rỗng}
+    \STATE Lấy nút $n$ trong $OPEN$ có $f(n)$ nhỏ nhất và loại nó khỏi $OPEN$.
+    \IF{$n \in G$}
+        \STATE Dừng và trả về đường đi tối ưu từ $s$ đến $n$ (truy vết qua \emph{parent}).
+    \ENDIF
+    \STATE Thêm $n$ vào $CLOSED$.
+    \FOR{mỗi hàng xóm $v$ của $n$}
+        \IF{$v \in CLOSED$}
+            \STATE \textbf{continue}
+        \ENDIF
+        \STATE Tính chi phí tạm thời $g_{\text{tent}} \gets g(n) + c(n,v)$.
+        \IF{$g_{\text{tent}} < g(v)$}
+            \STATE Cập nhật \emph{parent} của $v$ là $n$.
+            \STATE Cập nhật $g(v) \gets g_{\text{tent}}$.
+            \STATE Cập nhật $f(v) \gets g(v) + h(v)$.
+            \IF{$v$ chưa nằm trong $OPEN$}
+                \STATE Thêm $v$ vào $OPEN$ với khóa $f(v)$.
+            \ELSE
+                \STATE Cập nhật khóa của $v$ trong $OPEN$.
+            \ENDIF
+        \ENDIF
+    \ENDFOR
+\ENDWHILE
+\STATE Nếu vòng lặp kết thúc mà không gặp trạng thái đích, báo ``không có đường đi''.
+\end{algorithmic}
+\end{algorithm}
